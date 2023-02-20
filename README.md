@@ -19,6 +19,9 @@ The program implements most of the common constraints (`L243-252` in `optimize.p
 
 Also please note the type of constraint sign used (i.e., >=, <=, ==) for each constraint in the `optimize.py` file during input.
 
+Currently the inputs are set to solve [this](https://www.futbin.com/squad-building-challenge/ea/1290/Premier%20League%20&%20LaLiga) SBC challenge. 
+
+To execute the program, simply run: `py main.py` after running `pip install ortools`.
 
 ### Dependencies
 
