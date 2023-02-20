@@ -5,20 +5,24 @@ FORMATION = "4-2-3-1"
 # Currently only works for 11 players :)
 NUM_PLAYERS = 11
 
-'''Have a look at the constraints in optimize.py to see exactly what kind of inequality it is (==, >=, <=)'''
+FIX_PLAYERS  = 1 # FIX_PLAYERS = 1 => players will be picked based on the formation and 0 otherwise.
+         
+'''Have a look at the constraints in optimize.py to see exactly what kind of inequality it is (==, >=, <=).
+   Also check what kind of cards are present in the dataset. For example no Icons and Heroes are there in the dataset.
+'''
 
 COUNTRY = ["England", "Spain"]
-NUM_COUNTRY = 2 # Total num_players from above countries >= NUM_COUNTRY
+NUM_COUNTRY = 11 # Total players from above countries >= NUM_COUNTRY
 
 MAX_NUM_COUNTRY = 5 # Maximum from same country
 
 LEAGUE = ["Premier League", "LaLiga Santander"]
-NUM_LEAGUE = 11  # Total num_players from above leagues >= NUM_LEAGUE
+NUM_LEAGUE = 11  # Total players from above leagues >= NUM_LEAGUE
 
 MAX_NUM_LEAGUE = 5 # Maximum from same league
 
 CLUB = ["Arsenal", "Chelsea"]
-NUM_CLUB = 2  # Total num_players from above clubs >= NUM_CLUB
+NUM_CLUB = 2  # Total players from above clubs >= NUM_CLUB
 
 MAX_NUM_CLUB = 1  # Maximum from same club
 
@@ -27,14 +31,16 @@ NUM_RARITY_1 = [1]  # This is for cases like "Gold IF: Min X (0/X)"
 
 RARITY_2 = ["Rare"]  # len(RARITY_2) == len(NUM_RARITY_2)
 NUM_RARITY_2 = [4]   # This is for cases like "Rare: Min X (0/X)""
-
+                 
 SQUAD_RATING = 79      # Squad Rating: Min XX
 
 MIN_OVERALL = [83]     # len(MIN_OVERALL) == len(NUM_MIN_OVERALL)
 NUM_MIN_OVERALL = [1]  # Minimum OVR of XX : Min X
 
 CHEMISTRY = 15  # Squad Total Chemistry Points: Min X
-                # Currently doesn't work for Icons and Heroes 
+               # Currently doesn't work for Icons and Heroes
+               # If there is no constraint on total chemistry, then set this to 0. 
+               # Will work properly only if FIX_PLAYERS = 1
 
 CHEM_PER_PLAYER = 0  # Chemistry Points Per Player: Min X
 

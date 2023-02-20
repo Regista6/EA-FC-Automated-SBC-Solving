@@ -3,14 +3,14 @@ from ortools.sat.python import cp_model
 
 def create_var(model, num_players, num_country, num_league, num_clubs):
     '''Create the relevant variables'''
-
     # player[i] = 1 => i^th player is considered and 0 otherwise
     player = [model.NewBoolVar(f"player{i}") for i in range(num_players)]
-    
+
     # These variables are basically chemistry of each club, league and nation
     z_club = [model.NewIntVar(0, 3, f"z_club{i}") for i in range(num_clubs)]
     z_league = [model.NewIntVar(0, 3, f"z_league{i}") for i in range(num_league)]
     z_nation = [model.NewIntVar(0, 3, f"z_nation{i}") for i in range(num_country)]
+    
     # chem[i] = chemistry of i^th player
     chem = [model.NewIntVar(input.CHEM_PER_PLAYER, 3, f"chem{i}") for i in range(num_players)]
 
@@ -34,16 +34,17 @@ def create_basic_constraints(df, model, player, num_players):
         model.Add(cp_model.LinearExpr.Sum(expr) <= 1)
 
     # Formation constraint
-    mark_pos = {}
-    formation_list = input.formation_dict[input.FORMATION]
-    for pos in formation_list:
-        if pos in mark_pos:
-            continue
-        mark_pos[pos] = 1
-        idxes = list(df[df["Position"] == pos].index)
-        cnt = formation_list.count(pos)
-        expr = [player[j] for j in idxes]
-        model.Add(cp_model.LinearExpr.Sum(expr) == cnt)
+    if input.FIX_PLAYERS == 1:
+        mark_pos = {}
+        formation_list = input.formation_dict[input.FORMATION]
+        for pos in formation_list:
+            if pos in mark_pos:
+                continue
+            mark_pos[pos] = 1
+            idxes = list(df[df["Position"] == pos].index)
+            cnt = formation_list.count(pos)
+            expr = [player[j] for j in idxes]
+            model.Add(cp_model.LinearExpr.Sum(expr) == cnt)
     return model
 
 def create_country_constraint(df, model, player):
@@ -56,7 +57,6 @@ def create_country_constraint(df, model, player):
     model.Add(cp_model.LinearExpr.Sum(expr) >= input.NUM_COUNTRY)
     return model
 
-
 def create_league_constraint(df, model, player):
     '''Create league constraint (>=)'''
     idxes = []
@@ -66,7 +66,6 @@ def create_league_constraint(df, model, player):
     expr = [player[j] for j in idxes]
     model.Add(cp_model.LinearExpr.Sum(expr) >= input.NUM_LEAGUE)
     return model
-
 
 def create_club_constraint(df, model, player):
     '''Create club constraint (>=)'''
@@ -83,7 +82,7 @@ def create_rarity_1_constraint(df, model, player):
        silver TOTW, etc (>=).
     '''
     for i, rarity in enumerate(input.RARITY_1):
-        idxes = list(df[(df["Type"] == rarity[0]) & (df["Sub_Type"] == rarity[1])].index)
+        idxes = list(df[(df["Color"] == rarity[0]) & (df["Rarity"] == rarity[1])].index)
         expr = [player[j] for j in idxes]
         model.Add(cp_model.LinearExpr.Sum(expr) >= input.NUM_RARITY_1[i])
     return model
@@ -95,7 +94,7 @@ def create_squad_rating_constraint(df, model, player):
     return model
 
 def create_min_overall_constraint(df, model, player):
-    '''Num players with a particular rating (>=)'''
+    '''Minimum OVR of XX : Min X (>=)'''
     rating = df["Rating"].tolist()
     for i, rat in enumerate(input.MIN_OVERALL):
         idxes = list(df[df["Rating"] >= rat].index)
@@ -103,12 +102,11 @@ def create_min_overall_constraint(df, model, player):
         model.Add(cp_model.LinearExpr.Sum(expr) >= input.NUM_MIN_OVERALL[i])
     return model
 
-
 def create_chemistry_constraint(df, model, chem, z_club, z_league, z_nation, 
                                 player, num_players, num_clubs, num_league, num_country, 
                                 country_dict, league_dict, club_dict):
     '''Optimize Chemistry (>=)
-       Currently doesn't work for Icons and Heros.
+       Currently doesn't work for Icons and Heroes.
     '''
     for i in range(num_players):
         p_club, p_league, p_nation = df.loc[i, "Club"], df.loc[i, "League"], df.loc[i, "Country"]
@@ -170,7 +168,7 @@ def create_chemistry_constraint(df, model, chem, z_club, z_league, z_nation,
     for i in range(num_players):
         model.AddMultiplicationEquality(chem_expr[i], player[i], chem[i])
 
-    model.Add(cp_model.LinearExpr.Sum(chem_expr) >= 19)
+    model.Add(cp_model.LinearExpr.Sum(chem_expr) >= input.CHEMISTRY)
     return model
 
 def create_max_club_constraint(df, model, player):
@@ -182,7 +180,6 @@ def create_max_club_constraint(df, model, player):
         model.Add(cp_model.LinearExpr.Sum(expr) <= input.MAX_NUM_CLUB)
     return model
 
-
 def create_max_league_constraint(df, model, player):
     '''Maximum player from same league (<=)'''
     league_list = df["League"].unique()
@@ -191,7 +188,6 @@ def create_max_league_constraint(df, model, player):
         expr = [player[j] for j in idxes]
         model.Add(cp_model.LinearExpr.Sum(expr) <= input.MAX_NUM_LEAGUE)
     return model
-
 
 def create_max_country_constraint(df, model, player):
     '''Maximum player from same country (<=)'''
@@ -202,19 +198,16 @@ def create_max_country_constraint(df, model, player):
         model.Add(cp_model.LinearExpr.Sum(expr) <= input.MAX_NUM_COUNTRY)
     return model
 
-
 def create_rarity_2_constraint(df, model, player):
-    '''[Rare, Non Rare, TOTW ... etc] (>=).
-       No Icons and Heroes in dataset.'''
-    for i, sub_type in enumerate(input.RARITY_2):
-        idxes = list(df[df["Sub_Type"] == sub_type].index)
+    '''[Rare, Non Rare, TOTW ... etc] (>=).'''
+    for i, rarity in enumerate(input.RARITY_2):
+        idxes = list(df[df["Rarity"] == rarity].index)
         expr = [player[j] for j in idxes]
         model.Add(cp_model.LinearExpr.Sum(expr) >= input.NUM_RARITY_2[i])
     return model
 
-
 def set_objective(df, model, player):
-    '''Set Objective (Minimize) Based on Cost'''
+    '''Set objective (minimize) based on cost'''
     cost = df["Cost"].tolist()
     model.Minimize(cp_model.LinearExpr.WeightedSum(player, cost))
     return model
@@ -246,7 +239,7 @@ def SBC(df):
     '''Essential constraints'''
     model = create_basic_constraints(df, model, player, num_players)
 
-    '''Comment out constraints not required'''
+    '''Comment out the constraints not required'''
     #model = create_country_constraint(df, model, player)
     model = create_league_constraint(df, model, player)
     #model = create_club_constraint(df, model, player)
@@ -257,25 +250,35 @@ def SBC(df):
     #model = create_max_league_constraint(df, model, player)
     #model = create_max_country_constraint(df, model, player)
     model = create_rarity_2_constraint(df, model, player)
+    '''Comment out the constraints not required'''
+
+    '''If there is no constraint on total chemistry, simply set input.CHEMISTRY = 0
+       instead of commenting out this constraint.
+    '''
     model = create_chemistry_constraint(df, model, chem, z_club, z_league, z_nation, 
                                         player, num_players, num_clubs, num_league, num_country, 
                                         country_dict, league_dict, club_dict)
     
-    #model = set_objective(df, model, player)
+    '''Set objective based on player cost'''
+    model = set_objective(df, model, player)
 
     '''Solve'''
     print("Solve Started")
     solver = cp_model.CpSolver()
-    #solver.parameters.log_search_progress = True
+    solver.parameters.max_time_in_seconds = 100.0
     status = solver.Solve(model)
     assert (status == cp_model.OPTIMAL or status == cp_model.FEASIBLE)
-    final_idx = []
-    final_chem = 0
+    
+    if status == cp_model.OPTIMAL:
+        print("Solution is Optimal !!. ")
+    elif status == cp_model.FEASIBLE:
+        print("Solution is not Optimal. Instead feasible soln. produced.")
+        
+    final_players = []
+    final_chem = []
+    df['Chemistry'] = 0 # We only care about chemistry of selected players
     for i in range(num_players):
         if solver.Value(player[i]) == 1:
-            final_idx.append(i)
-            final_chem += solver.Value(chem[i])
-            player_name = df.loc[i, "Name"]
-            print(f"{player_name}: {int(solver.Value(chem[i]))}")
-    print(f"Final Chemistry: {final_chem}")
-    return final_idx
+            final_players.append(i)
+            df.loc[i, "Chemistry"] = solver.Value(chem[i])
+    return final_players
