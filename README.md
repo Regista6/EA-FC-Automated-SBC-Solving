@@ -15,16 +15,18 @@ Please note that it will require some amount of manual post-processing if there 
 
 The constraints used in the program are created in the `optimize.py` file and the optimization problem is solved using [Google CP-SAT solver](https://developers.google.com/optimization/cp/cp_solver).
 
-The program implements most of the common constraints (`L243-252` in `optimize.py`). Feel free to comment out the constraints that are not required. 
+The program implements most of the common constraints (`L331-346` in `optimize.py`). Feel free to comment out the constraints that are not required. 
 
 Also please note the type of constraint sign used (i.e., >=, <=, ==) for each constraint in the `optimize.py` file during input.
 
-Currently the inputs are set to solve [this](https://www.futbin.com/squad-building-challenge/ea/1290/Premier%20League%20&%20LaLiga) SBC challenge. The final list of players is written into the file `output.xlsx`.
+Currently the inputs are set to solve [this](https://www.futbin.com/squad-building-challenges/EXPIRED/1576/outstanding) SBC challenge. The final list of players is written into the file `output.xlsx`.
 
-To execute the program, simply run `py main.py` after running `pip install ortools`.
+To execute the program, simply run `py main.py` after installing the required dependencies.
 
 ### Dependencies
 
-- [Google OR-Tools v9.4](https://github.com/google/or-tools)
+- [Google OR-Tools v9.5](https://github.com/google/or-tools)
 
 - Python 3.9
+
+- pandas and openpyxl
