@@ -11,7 +11,7 @@ The dataset serves as a `proof-of-concept demonstration` of the system's functio
 
 The inputs to the different constraints can be found in the `input.py` file. Currently, the program works for 11 players only.
 
-Please note that it will require some amount of manual post-processing if there are constraints involving cards that are not there in the dataset or if some constraints are ignored incase they haven't been implemented or if the [chemistry](https://www.rockpapershotgun.com/fifa-23-chemistry) logic (Icons and Heroes) hasn't been implemented due to difficulty in incoporating their unique chemistry rules.
+Please note that it will require some amount of manual post-processing if there are constraints involving cards that are not there in the dataset or if some constraints haven't been implemented or if the [chemistry](https://www.rockpapershotgun.com/fifa-23-chemistry) logic (Icons and Heroes) hasn't been implemented due to difficulty in incoporating their unique chemistry rules.
 
 The constraints used in the program are created in the `optimize.py` file and the optimization problem is solved using [Google CP-SAT solver](https://developers.google.com/optimization/cp/cp_solver).
 
