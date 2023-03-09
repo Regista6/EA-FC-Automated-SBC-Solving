@@ -366,23 +366,20 @@ def SBC(df):
     
     '''Solver Parameters'''
     #solver.parameters.random_seed = 42
-    solver.parameters.max_time_in_seconds = 1200
+    solver.parameters.max_time_in_seconds = 5000
     #solver.parameters.log_search_progress = True
     # Specify the number of parallel workers (i.e. threads) to use during search (default = 8).
     # This should usually be lower than your number of available cpus + hyperthread in your machine.
-    # Set to 16 or 32 if you have high-end CPU :).
+    # Set to 16 or 24 if you have high-end CPU :).
     solver.parameters.num_search_workers = 8  
     #solver.parameters.cp_model_presolve = False
     #solver.parameters.stop_after_first_solution = True 
     '''Solver Parameters'''
     
     status = solver.Solve(model)
+    print(input.status_dict[status])
+    print('\n')
     assert (status == cp_model.OPTIMAL or status == cp_model.FEASIBLE)
-
-    if status == cp_model.OPTIMAL:
-        print("Solution is Optimal !!. ")
-    elif status == cp_model.FEASIBLE:
-        print("Optimality couldn't be proved. Instead feasible solution produced.")
 
     final_players = []
     final_chem = []
