@@ -12,7 +12,7 @@ def create_var(model, num_players, num_country, num_league, num_clubs):
     z_nation = [model.NewIntVar(0, 3, f"z_nation{i}") for i in range(num_country)]
 
     # chem[i] = chemistry of i^th player
-    chem = [model.NewIntVar(input.CHEM_PER_PLAYER, 3, f"chem{i}") for i in range(num_players)]
+    chem = [model.NewIntVar(0, 3, f"chem{i}") for i in range(num_players)]
 
     # Needed for chemistry constraint
     b_c = [[model.NewBoolVar(f"b_c{j}{i}") for i in range(4)]for j in range(num_clubs)]
@@ -184,7 +184,10 @@ def create_chemistry_constraint(df, model, chem, z_club, z_league, z_nation,
         model.AddExactlyOne(b_n[j])
                            
     chem_expr = [model.NewIntVar(0, 3, f"obj_expr{i}") for i in range(num_players)]
-    
+     
+    for i in range(num_players):
+        model.Add(chem[i] >= input.CHEM_PER_PLAYER).OnlyEnforceIf(player[i])
+
     for i in range(num_players):
         model.AddMultiplicationEquality(chem_expr[i], player[i], chem[i])
 

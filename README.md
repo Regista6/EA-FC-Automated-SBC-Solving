@@ -25,7 +25,7 @@ To execute the program, simply run `py main.py` after installing the required de
 
 ### Dependencies
 
-- [Google OR-Tools v9.5](https://github.com/google/or-tools)
+- [Google OR-Tools v9.6](https://github.com/google/or-tools)
 
 - Python 3.9
 
