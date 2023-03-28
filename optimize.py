@@ -324,8 +324,6 @@ def set_objective(df, model, player):
     '''Set objective (minimize) based on cost'''
     cost = df["Cost"].tolist()
     model.Minimize(cp_model.LinearExpr.WeightedSum(player, cost))
-    # set upper bound cost sum to 30000
-    model.Add(cp_model.LinearExpr.WeightedSum(player, cost) <= 100000)
     return model
 
 def get_dict(df, col):
