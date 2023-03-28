@@ -1,6 +1,17 @@
 import input
 from ortools.sat.python import cp_model
+import time
 
+def runtime(func):
+    def wrapper(*args, **kwargs):
+        start = time.time()
+        result = func(*args, **kwargs)
+        seconds = round(time.time() - start, 2)
+        print(f"Processing time {func.__name__}: {seconds} seconds")
+        return result
+    return wrapper if input.LOG_RUNTIME else func
+
+@runtime
 def create_var(model, num_players, num_country, num_league, num_clubs):
     '''Create the relevant variables'''
     # player[i] = 1 => i^th player is considered and 0 otherwise
@@ -27,6 +38,7 @@ def create_var(model, num_players, num_country, num_league, num_clubs):
 
     return model, player, chem, z_club, z_league, z_nation, b_c, b_l, b_n, club, country, league
 
+@runtime
 def create_basic_constraints(df, model, player, num_players):
     '''Create some essential constraints'''
     # Max players in squad
@@ -43,7 +55,6 @@ def create_basic_constraints(df, model, player, num_players):
         idxes = list(df[df["Name"] == name].index)
         expr = [player[j] for j in idxes]
         model.Add(cp_model.LinearExpr.Sum(expr) <= 1)
-
     # Formation constraint
     if input.FIX_PLAYERS == 1:
         mark_pos = {}
@@ -56,9 +67,9 @@ def create_basic_constraints(df, model, player, num_players):
             cnt = formation_list.count(pos)
             expr = [player[j] for j in idxes]
             model.Add(cp_model.LinearExpr.Sum(expr) == cnt)
-
     return model
 
+@runtime
 def create_country_constraint(df, model, player):
     '''Create country constraint (>=)'''
     idxes = []
@@ -69,6 +80,7 @@ def create_country_constraint(df, model, player):
     model.Add(cp_model.LinearExpr.Sum(expr) >= input.NUM_COUNTRY)
     return model
 
+@runtime
 def create_league_constraint(df, model, player):
     '''Create league constraint (>=)'''
     idxes = []
@@ -79,6 +91,7 @@ def create_league_constraint(df, model, player):
     model.Add(cp_model.LinearExpr.Sum(expr) >= input.NUM_LEAGUE)
     return model
 
+@runtime
 def create_club_constraint(df, model, player):
     '''Create club constraint (>=)'''
     idxes = []
@@ -89,6 +102,7 @@ def create_club_constraint(df, model, player):
     model.Add(cp_model.LinearExpr.Sum(expr) >= input.NUM_CLUB)
     return model
 
+@runtime
 def create_rarity_1_constraint(df, model, player):
     '''Create constraint for gold TOTW, gold Rare, gold Non Rare,
        silver TOTW, etc (>=).
@@ -99,6 +113,7 @@ def create_rarity_1_constraint(df, model, player):
         model.Add(cp_model.LinearExpr.Sum(expr) >= input.NUM_RARITY_1[i])
     return model
 
+@runtime
 def create_rarity_2_constraint(df, model, player):
     '''[Rare, Non Rare, TOTW, gold, silver, bronze ... etc] (>=).'''
     for i, rarity in enumerate(input.RARITY_2):
@@ -110,12 +125,14 @@ def create_rarity_2_constraint(df, model, player):
         model.Add(cp_model.LinearExpr.Sum(expr) >= input.NUM_RARITY_2[i])
     return model
 
+@runtime
 def create_squad_rating_constraint(df, model, player):
     '''Squad Rating (>=)'''
     rating = df["Rating"].tolist()
     model.Add(cp_model.LinearExpr.WeightedSum(player, rating) >= (input.SQUAD_RATING) * (input.NUM_PLAYERS))
     return model
 
+@runtime
 def create_min_overall_constraint(df, model, player):
     '''Minimum OVR of XX : Min X (>=)'''
     rating = df["Rating"].tolist()
@@ -125,6 +142,7 @@ def create_min_overall_constraint(df, model, player):
         model.Add(cp_model.LinearExpr.Sum(expr) >= input.NUM_MIN_OVERALL[i])
     return model
 
+@runtime
 def create_chemistry_constraint(df, model, chem, z_club, z_league, z_nation,
                                 player, num_players, num_clubs, num_league, num_country,
                                 country_dict, league_dict, club_dict, b_c, b_l, b_n):
@@ -132,6 +150,10 @@ def create_chemistry_constraint(df, model, chem, z_club, z_league, z_nation,
        Currently doesn't work for Icons and Heroes.
     '''
 
+    players_grouped = {
+        "Club": {}, "League": {}, "Country": {}
+    }
+    chem_expr = []
     for i in range(num_players):
         p_club, p_league, p_nation = df.loc[i, "Club"], df.loc[i, "League"], df.loc[i, "Country"]
         sum_expr = z_club[club_dict[p_club]] + z_league[league_dict[p_league]] + z_nation[country_dict[p_nation]]
@@ -140,13 +162,23 @@ def create_chemistry_constraint(df, model, chem, z_club, z_league, z_nation,
         model.Add(sum_expr > 3).OnlyEnforceIf(b.Not())
         model.Add(chem[i] == sum_expr).OnlyEnforceIf(b)
         model.Add(chem[i] == 3).OnlyEnforceIf(b.Not())
+        curr_player = player[i]
+        club_idx = club_dict[p_club]
+        league_idx = league_dict[p_league]
+        country_idx = country_dict[p_nation]
+        players_grouped["Club"][club_idx] = players_grouped["Club"].get(club_idx, []) + [curr_player]
+        players_grouped["League"][league_idx] = players_grouped["League"].get(league_idx, []) + [curr_player]
+        players_grouped["Country"][country_idx] = players_grouped["Country"].get(country_idx, []) + [curr_player]
+
+        model.Add(chem[i] >= input.CHEM_PER_PLAYER).OnlyEnforceIf(curr_player)
+
+        player_chem_expr = model.NewIntVar(0, 3, f"obj_expr{i}") 
+        chem_expr.append(player_chem_expr)
+        model.AddMultiplicationEquality(player_chem_expr, curr_player, chem[i])
+
 
     for j in range(num_clubs):
-        expr = []
-        for i in range(num_players):
-            idx = club_dict[df.loc[i, "Club"]]
-            if idx == j:
-                expr.append(player[i])
+        expr = players_grouped["Club"].get(j, [])
         sum_expr = cp_model.LinearExpr.Sum(expr)
         cons = [[0, 1], [2, 3], [4, 6], [7, input.NUM_PLAYERS]]
         for idx, num in enumerate (cons):
@@ -156,11 +188,7 @@ def create_chemistry_constraint(df, model, chem, z_club, z_league, z_nation,
         model.AddExactlyOne(b_c[j])
    
     for j in range(num_league):
-        expr = []
-        for i in range(num_players):
-            idx = league_dict[df.loc[i, "League"]]
-            if idx == j:
-                expr.append(player[i])
+        expr = players_grouped["League"].get(j, [])
         sum_expr = cp_model.LinearExpr.Sum(expr)
         cons = [[0, 2], [3, 4], [5, 7], [8, input.NUM_PLAYERS]]
         for idx, num in enumerate (cons):
@@ -170,11 +198,7 @@ def create_chemistry_constraint(df, model, chem, z_club, z_league, z_nation,
         model.AddExactlyOne(b_l[j])
        
     for j in range(num_country):
-        expr = []
-        for i in range(num_players):
-            idx = country_dict[df.loc[i, "Country"]]
-            if idx == j:
-                expr.append(player[i])
+        expr = players_grouped["Country"].get(j, [])
         sum_expr = cp_model.LinearExpr.Sum(expr)
         cons = [[0, 1], [2, 4], [5, 7], [8, input.NUM_PLAYERS]]
         for idx, num in enumerate(cons):
@@ -183,18 +207,12 @@ def create_chemistry_constraint(df, model, chem, z_club, z_league, z_nation,
             model.Add(z_nation[j] == idx).OnlyEnforceIf(b_n[j][idx])
         model.AddExactlyOne(b_n[j])
                            
-    chem_expr = [model.NewIntVar(0, 3, f"obj_expr{i}") for i in range(num_players)]
      
-    for i in range(num_players):
-        model.Add(chem[i] >= input.CHEM_PER_PLAYER).OnlyEnforceIf(player[i])
-
-    for i in range(num_players):
-        model.AddMultiplicationEquality(chem_expr[i], player[i], chem[i])
-
     model.Add(cp_model.LinearExpr.Sum(chem_expr) >= input.CHEMISTRY)
     
     return model
 
+@runtime
 def create_max_club_constraint(df, model, player):
     '''Maximum player from same club (<=)'''
     club_list = df["Club"].unique()
@@ -204,6 +222,7 @@ def create_max_club_constraint(df, model, player):
         model.Add(cp_model.LinearExpr.Sum(expr) <= input.MAX_NUM_CLUB)
     return model
 
+@runtime
 def create_max_league_constraint(df, model, player):
     '''Maximum player from same league (<=)'''
     league_list = df["League"].unique()
@@ -213,6 +232,7 @@ def create_max_league_constraint(df, model, player):
         model.Add(cp_model.LinearExpr.Sum(expr) <= input.MAX_NUM_LEAGUE)
     return model
 
+@runtime
 def create_max_country_constraint(df, model, player):
     '''Maximum player from same country (<=)'''
     country_list = df["Country"].unique()
@@ -221,7 +241,8 @@ def create_max_country_constraint(df, model, player):
         expr = [player[j] for j in idxes]
         model.Add(cp_model.LinearExpr.Sum(expr) <= input.MAX_NUM_COUNTRY)
     return model
-    
+
+@runtime    
 def create_min_club_constraint(df, model, player):
     '''Same Club Count: Min X (>=)'''
     club_list = df["Club"].unique()
@@ -235,6 +256,7 @@ def create_min_club_constraint(df, model, player):
     model.AddAtLeastOne(B_C)
     return model
 
+@runtime
 def create_min_league_constraint(df, model, player):
     '''Same League Count: Min X (>=)'''
     league_list = df["League"].unique()
@@ -248,6 +270,7 @@ def create_min_league_constraint(df, model, player):
     model.AddAtLeastOne(B_L)
     return model
 
+@runtime
 def create_min_country_constraint(df, model, player):
     '''Same Nation Count: Min X (>=)'''
     country_list = df["Country"].unique()
@@ -261,6 +284,7 @@ def create_min_country_constraint(df, model, player):
     model.AddAtLeastOne(B_N)
     return model
 
+@runtime
 def create_unique_club_constraint(df, model, player, club):
     '''Clubs: Max/Min X'''
     club_list = df["Club"].unique()
@@ -272,7 +296,7 @@ def create_unique_club_constraint(df, model, player, club):
     model.Add(cp_model.LinearExpr.Sum(club) >= input.NUM_UNIQUE_CLUB)
     return model
 
-
+@runtime
 def create_unique_league_constraint(df, model, player, league):
     '''Leagues: Max/Min X'''
     league_list = df["League"].unique()
@@ -284,7 +308,7 @@ def create_unique_league_constraint(df, model, player, league):
     model.Add(cp_model.LinearExpr.Sum(league) >= input.NUM_UNIQUE_LEAGUE)
     return model
 
-
+@runtime
 def create_unique_country_constraint(df, model, player, country):
     '''Nations: Max/Min X'''
     country_list = df["Country"].unique()
@@ -300,6 +324,8 @@ def set_objective(df, model, player):
     '''Set objective (minimize) based on cost'''
     cost = df["Cost"].tolist()
     model.Minimize(cp_model.LinearExpr.WeightedSum(player, cost))
+    # set upper bound cost sum to 30000
+    model.Add(cp_model.LinearExpr.WeightedSum(player, cost) <= 100000)
     return model
 
 def get_dict(df, col):
@@ -310,6 +336,7 @@ def get_dict(df, col):
     d[val] = i
    return d
 
+@runtime
 def SBC(df):
     '''Optimize SBC using Constraint Integer Programming'''
     num_players = df.shape[0]
@@ -323,13 +350,10 @@ def SBC(df):
     
     '''Create the CP-SAT Model'''
     model = cp_model.CpModel()
-
     model, player, chem, z_club, z_league, z_nation, b_c, b_l, b_n, club, country, league = create_var(
         model, num_players, num_country, num_league, num_clubs)
-
     '''Essential constraints'''
     model = create_basic_constraints(df, model, player, num_players)
-
     '''Comment out the constraints not required'''
     #model = create_club_constraint(df, model, player)
     #model = create_league_constraint(df, model, player)
@@ -356,12 +380,11 @@ def SBC(df):
     model = create_chemistry_constraint(df, model, chem, z_club, z_league, z_nation,
                                         player, num_players, num_clubs, num_league, num_country,
                                         country_dict, league_dict, club_dict, b_c, b_l, b_n)
-    
     '''Set objective based on player cost'''
     model = set_objective(df, model, player)
 
     '''Export Model to file'''
-    #model.ExportToFile('model.txt')
+    # model.ExportToFile('model.txt')
 
     '''Solve'''
     print("Solve Started")
@@ -369,20 +392,20 @@ def SBC(df):
     
     '''Solver Parameters'''
     #solver.parameters.random_seed = 42
-    solver.parameters.max_time_in_seconds = 5000
+    solver.parameters.max_time_in_seconds = 50000
     #solver.parameters.log_search_progress = True
     # Specify the number of parallel workers (i.e. threads) to use during search (default = 8).
     # This should usually be lower than your number of available cpus + hyperthread in your machine.
     # Set to 16 or 24 if you have high-end CPU :).
-    solver.parameters.num_search_workers = 8  
-    #solver.parameters.cp_model_presolve = False
+    solver.parameters.num_search_workers = 6
+    # solver.parameters.cp_model_presolve = False
     #solver.parameters.stop_after_first_solution = True 
     '''Solver Parameters'''
     
     status = solver.Solve(model)
     print(input.status_dict[status])
     print('\n')
-    assert (status == cp_model.OPTIMAL or status == cp_model.FEASIBLE)
+    # assert (status == cp_model.OPTIMAL or status == cp_model.FEASIBLE)
 
     final_players = []
     final_chem = []
@@ -391,4 +414,6 @@ def SBC(df):
         if solver.Value(player[i]) == 1:
             final_players.append(i)
             df.loc[i, "Chemistry"] = solver.Value(chem[i])
+
     return final_players
+

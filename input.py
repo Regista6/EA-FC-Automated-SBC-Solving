@@ -95,3 +95,5 @@ status_dict = {
     3: "INFEASIBLE: The problem has been proven infeasible.",
     4: "OPTIMAL: An optimal feasible solution has been found."
 }
+
+LOG_RUNTIME = False

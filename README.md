@@ -25,6 +25,8 @@ To execute the program, simply run `py main.py` after installing the required de
 
 ### Dependencies
 
+Run `pip3 install -r requirements.txt` to install the required dependencies.
+
 - [Google OR-Tools v9.6](https://github.com/google/or-tools)
 
 - Python 3.9
