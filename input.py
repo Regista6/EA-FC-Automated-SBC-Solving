@@ -96,4 +96,4 @@ status_dict = {
     4: "OPTIMAL: An optimal feasible solution has been found."
 }
 
-LOG_RUNTIME = False
+LOG_RUNTIME = True
