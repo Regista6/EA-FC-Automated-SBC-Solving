@@ -10,7 +10,7 @@ FORMATION = "3-4-3"
 # Currently only works for 11 players :)
 NUM_PLAYERS = 11
 
-FIX_PLAYERS  = 1 # FIX_PLAYERS = 1 => players will be picked based on the formation and 0 otherwise.
+FIX_PLAYERS  = 0 # FIX_PLAYERS = 1 => players will be picked based on the formation and 0 otherwise.
          
 COUNTRY = ["England", "Spain"]
 NUM_COUNTRY = 11 # Total players from above countries >= NUM_COUNTRY
@@ -45,9 +45,8 @@ MIN_OVERALL = [83]     # len(MIN_OVERALL) == len(NUM_MIN_OVERALL)
 NUM_MIN_OVERALL = [1]  # Minimum OVR of XX : Min X
 
 CHEMISTRY = 24  # Squad Total Chemistry Points: Min X
-               # Currently doesn't work for Icons and Heroes
-               # If there is no constraint on total chemistry, then set this to 0. 
-               # Will work properly only if FIX_PLAYERS = 1
+                # Currently doesn't work for Icons and Heroes
+                # If there is no constraint on total chemistry, then set this to 0. 
 
 CHEM_PER_PLAYER = 0  # Chemistry Points Per Player: Min X
 
