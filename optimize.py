@@ -84,28 +84,31 @@ def create_basic_constraints(df, model, player, map_idx, players_grouped, num_cn
 @runtime
 def create_country_constraint(df, model, player, map_idx, players_grouped, num_cnts):
     '''Create country constraint (>=)'''
-    expr = []
-    for nation in input.COUNTRY:
-        expr += players_grouped["Country"].get(map_idx["Country"][nation], [])
-    model.Add(cp_model.LinearExpr.Sum(expr) >= input.NUM_COUNTRY)
+    for i, nation_list in enumerate(input.COUNTRY):
+        expr = []
+        for nation in nation_list:
+            expr += players_grouped["Country"].get(map_idx["Country"][nation], [])
+        model.Add(cp_model.LinearExpr.Sum(expr) >= input.NUM_COUNTRY[i])
     return model
 
 @runtime
 def create_league_constraint(df, model, player, map_idx, players_grouped, num_cnts):
     '''Create league constraint (>=)'''
-    expr = []
-    for league in input.LEAGUE:
-        expr += players_grouped["League"].get(map_idx["League"][league], [])
-    model.Add(cp_model.LinearExpr.Sum(expr) >= input.NUM_LEAGUE)
+    for i, league_list in enumerate(input.LEAGUE):
+        expr = []
+        for league in league_list:
+            expr += players_grouped["League"].get(map_idx["League"][league], [])
+        model.Add(cp_model.LinearExpr.Sum(expr) >= input.NUM_LEAGUE[i])
     return model
 
 @runtime
 def create_club_constraint(df, model, player, map_idx, players_grouped, num_cnts):
     '''Create club constraint (>=)'''
-    expr = []
-    for club in input.CLUB:
-        expr += players_grouped["Club"].get(map_idx["Club"][club], [])
-    model.Add(cp_model.LinearExpr.Sum(expr) >= input.NUM_CLUB)
+    for i, club_list in enumerate(input.CLUB):
+        expr = []
+        for club in club_list:
+            expr += players_grouped["Club"].get(map_idx["Club"][club], [])
+        model.Add(cp_model.LinearExpr.Sum(expr) >= input.NUM_CLUB[i])
     return model
 
 @runtime
@@ -158,7 +161,7 @@ def create_chemistry_constraint(df, model, chem, z_club, z_league, z_nation, pla
     club_dict, league_dict, country_dict, pos_dict = map_idx["Club"], map_idx["League"], map_idx["Country"], map_idx["Position"]
 
     formation_list = input.formation_dict[input.FORMATION]
-    cnt ={}
+    cnt = {}
     for Pos in formation_list:    
         cnt[Pos] = formation_list.count(Pos)
 
@@ -184,11 +187,13 @@ def create_chemistry_constraint(df, model, chem, z_club, z_league, z_nation, pla
             model.Add(pos[i] == 0)
 
         model.Add(chem[i] >= input.CHEM_PER_PLAYER).OnlyEnforceIf(player[i])
-        player_chem_expr_1 = model.NewIntVar(0, 3, f"chem_expr_1{i}")
+        player_chem_expr_1 = model.NewBoolVar(f"chem_expr_1{i}")
         model.AddMultiplicationEquality(player_chem_expr_1, player[i], pos[i])
         player_chem_expr = model.NewIntVar(0, 3, f"chem_expr{i}")
         model.AddMultiplicationEquality(player_chem_expr, player_chem_expr_1, chem[i])
         chem_expr.append(player_chem_expr)
+
+    pos_expr = []
 
     if input.FIX_PLAYERS == 0:
         '''
@@ -198,16 +203,14 @@ def create_chemistry_constraint(df, model, chem, z_club, z_league, z_nation, pla
         '''
         for Pos, num in cnt.items():
             t_expr = players_grouped["Position"].get(pos_dict[Pos], [])
+            pos_expr += t_expr
             expr = [m_pos[p] for p in t_expr]
             model.Add(cp_model.LinearExpr.Sum(expr) <= num)
-    
+        
     club_bucket = [[0, 1], [2, 3], [4, 6], [7, input.NUM_PLAYERS]]
 
     for j in range(num_clubs):
         t_expr = players_grouped["Club"].get(j, [])
-        pos_expr = []
-        for Pos, num in cnt.items():
-            pos_expr += players_grouped["Position"].get(pos_dict[Pos], [])
         # We need players from j^th club whose position is there in the input formation.
         # Since only such players would contribute towards chemistry.
         t_expr_1 = list(set(t_expr) & set(pos_expr)) 
@@ -227,9 +230,6 @@ def create_chemistry_constraint(df, model, chem, z_club, z_league, z_nation, pla
 
     for j in range(num_league):
         t_expr = players_grouped["League"].get(j, [])
-        pos_expr = []
-        for Pos, num in cnt.items():
-            pos_expr += players_grouped["Position"].get(pos_dict[Pos], [])
         # We need players from j^th league whose position is there in the input formation.
         # Since only such players would contribute towards chemistry.
         t_expr_1 = list(set(t_expr) & set(pos_expr))
@@ -249,9 +249,6 @@ def create_chemistry_constraint(df, model, chem, z_club, z_league, z_nation, pla
 
     for j in range(num_country):
         t_expr = players_grouped["Country"].get(j, [])
-        pos_expr = []
-        for Pos, num in cnt.items():
-            pos_expr += players_grouped["Position"].get(pos_dict[Pos], [])
         # We need players from j^th country whose position is there in the input formation.
         # Since only such players would contribute towards chemistry.
         t_expr_1 = list(set(t_expr) & set(pos_expr))

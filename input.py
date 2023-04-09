@@ -12,22 +12,22 @@ NUM_PLAYERS = 11
 
 FIX_PLAYERS  = 0 # FIX_PLAYERS = 1 => players will be picked based on the formation and 0 otherwise.
          
-COUNTRY = ["England", "Spain"]
-NUM_COUNTRY = 11 # Total players from above countries >= NUM_COUNTRY
+COUNTRY = [["England", "Spain"], ["Germany"]]
+NUM_COUNTRY = [2, 1] # Total players from i^th list >= NUM_COUNTRY[i]
 
 MAX_NUM_COUNTRY = 5  # Maximum from same country
 NUM_UNIQUE_COUNTRY = 0  # Nations: Max/Min X
 MIN_NUM_COUNTRY = 5  # Same Nation Count: Min X
 
-LEAGUE = ["Premier League", "LaLiga Santander"]
-NUM_LEAGUE = 11  # Total players from above leagues >= NUM_LEAGUE
+LEAGUE = [["Premier League", "LaLiga Santander"]]
+NUM_LEAGUE = [11]  # Total players from i^th list >= NUM_LEAGUE[i]
 
 MAX_NUM_LEAGUE = 4  # Maximum from same league
 NUM_UNIQUE_LEAGUE = 4  # Leagues: Max/Min X
 MIN_NUM_LEAGUE = 4  # Same League Count: Min X
 
-CLUB = ["Real Madrid"]
-NUM_CLUB = 1  # Total players from above clubs >= NUM_CLUB
+CLUB = [["Real Madrid", "Arsenal"], ["FC Bayern"]]
+NUM_CLUB = [3, 2]  # Total players from i^th list >= NUM_CLUB[i]
 
 MAX_NUM_CLUB = 2  # Maximum from same club
 NUM_UNIQUE_CLUB = 5  # Clubs: Max/Min X
