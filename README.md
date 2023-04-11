@@ -2,7 +2,7 @@
 
 ### Notes 
 
-The project utilizes a dataset of 10,000 players (`input.xlsx`) obtained from [FutDB](https://futdb.app)
+The project utilizes a dataset of 10,000 players (`input.csv`) obtained from [FutDB](https://futdb.app)
 along with their respective prices, as the input source. The data has been also manually tinkered with to fill in some of the gaps.  
 
 `The goal is to obtain the squad with the minimum cost.` 
@@ -15,7 +15,7 @@ Please note that it will require some amount of manual post-processing if there 
 
 The constraints used in the program are created in the `optimize.py` file and the optimization problem is solved using [Google CP-SAT solver](https://developers.google.com/optimization/cp/cp_solver).
 
-The program implements most of the common constraints (`L406-421` in `optimize.py`). Feel free to comment out the constraints that are not required. 
+The program implements most of the common constraints (`L400-415` in `optimize.py`). Feel free to comment out the constraints that are not required. 
 
 Also please note the type of constraint sign used (i.e., >=, <=, ==) for each constraint in the `optimize.py` file during input.
 
