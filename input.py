@@ -1,8 +1,3 @@
-'''
-   Have a look at the constraints in optimize.py to see exactly what kind of inequality it is (==, >=, <=).
-   Also check what kind of cards are present in the dataset. For example no Icons and Heroes are there in the dataset.
-'''
-
 '''INPUTS'''
 
 FORMATION = "3-4-3"
@@ -15,37 +10,36 @@ FIX_PLAYERS  = 0 # FIX_PLAYERS = 1 => players will be picked based on the format
 COUNTRY = [["England", "Spain"], ["Germany"]]
 NUM_COUNTRY = [2, 1] # Total players from i^th list >= NUM_COUNTRY[i]
 
-MAX_NUM_COUNTRY = 5  # Maximum from same country
+MAX_NUM_COUNTRY = 5  # Same Nation Count: Max X
 NUM_UNIQUE_COUNTRY = 0  # Nations: Max/Min X
 MIN_NUM_COUNTRY = 5  # Same Nation Count: Min X
 
 LEAGUE = [["Premier League", "LaLiga Santander"]]
 NUM_LEAGUE = [11]  # Total players from i^th list >= NUM_LEAGUE[i]
 
-MAX_NUM_LEAGUE = 4  # Maximum from same league
+MAX_NUM_LEAGUE = 4  # Same League Count: Max X
 NUM_UNIQUE_LEAGUE = 4  # Leagues: Max/Min X
 MIN_NUM_LEAGUE = 4  # Same League Count: Min X
 
 CLUB = [["Real Madrid", "Arsenal"], ["FC Bayern"]]
 NUM_CLUB = [3, 2]  # Total players from i^th list >= NUM_CLUB[i]
 
-MAX_NUM_CLUB = 2  # Maximum from same club
+MAX_NUM_CLUB = 2  # Same Club Count: Max X
 NUM_UNIQUE_CLUB = 5  # Clubs: Max/Min X
 MIN_NUM_CLUB = 2  # Same Club Count: Min X
 
-RARITY_1 = [['gold', 'TOTW']]  # len(RARITY_1) == len(NUM_RARITY_1)
+RARITY_1 = [['Gold', 'TOTW']] 
 NUM_RARITY_1 = [1]  # This is for cases like "Gold IF: Min X (0/X)"
 
-RARITY_2 = ["Rare", "gold"]  # len(RARITY_2) == len(NUM_RARITY_2)
-NUM_RARITY_2 = [11, 11]   # This is for cases like "Rare: Min X (0/X)""
+RARITY_2 = ["RARE", "Gold"] 
+NUM_RARITY_2 = [11, 11]   # Total players from i^th Rarity >= NUM_RARITY_2[i]
                  
-SQUAD_RATING = 81      # Squad Rating: Min XX
+SQUAD_RATING = 81 # Squad Rating: Min XX
 
-MIN_OVERALL = [83]     # len(MIN_OVERALL) == len(NUM_MIN_OVERALL)
+MIN_OVERALL = [83]     
 NUM_MIN_OVERALL = [1]  # Minimum OVR of XX : Min X
 
 CHEMISTRY = 24  # Squad Total Chemistry Points: Min X
-                # Currently doesn't work for Icons and Heroes
                 # If there is no constraint on total chemistry, then set this to 0. 
 
 CHEM_PER_PLAYER = 0  # Chemistry Points Per Player: Min X

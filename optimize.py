@@ -40,7 +40,7 @@ def create_var(model, df, map_idx, num_cnts):
         players_grouped["Color"][map_idx["Color"][df.at[i, "Color"]]] = players_grouped["Color"].get(map_idx["Color"][df.at[i, "Color"]], []) + [player[i]]
         players_grouped["Rarity"][map_idx["Rarity"][df.at[i, "Rarity"]]] = players_grouped["Rarity"].get(map_idx["Rarity"][df.at[i, "Rarity"]], []) + [player[i]]
         players_grouped["Name"][map_idx["Name"][df.at[i, "Name"]]] = players_grouped["Name"].get(map_idx["Name"][df.at[i, "Name"]], []) + [player[i]]
-  
+
     # These variables are basically chemistry of each club, league and nation
     z_club = [model.NewIntVar(0, 3, f"z_club{i}") for i in range(num_clubs)]
     z_league = [model.NewIntVar(0, 3, f"z_league{i}") for i in range(num_league)]
@@ -127,7 +127,8 @@ def create_rarity_2_constraint(df, model, player, map_idx, players_grouped, num_
     '''[Rare, Non Rare, TOTW, gold, silver, bronze ... etc] (>=).'''
     for i, rarity in enumerate(input.RARITY_2):
         col = "Rarity"
-        if rarity in ["gold", "silver", "bronze"]:
+        # Change according to dataset.
+        if rarity in ["Gold", "Silver", "Bronze"]:
             col = "Color"
         expr = players_grouped[col].get(map_idx[col][rarity], [])
         model.Add(cp_model.LinearExpr.Sum(expr) >= input.NUM_RARITY_2[i])
@@ -151,7 +152,7 @@ def create_min_overall_constraint(df, model, player, map_idx, players_grouped, n
 @runtime
 def create_chemistry_constraint(df, model, chem, z_club, z_league, z_nation, player, players_grouped, num_cnts, map_idx, b_c, b_l, b_n):
     '''Optimize Chemistry (>=)
-       Currently doesn't work for Icons and Heroes.
+    (https://www.rockpapershotgun.com/fifa-23-chemistry)
     '''
     num_players = num_cnts[0]
     num_clubs = num_cnts[1]
@@ -162,26 +163,30 @@ def create_chemistry_constraint(df, model, chem, z_club, z_league, z_nation, pla
 
     formation_list = input.formation_dict[input.FORMATION]
     cnt = {}
-    for Pos in formation_list:    
+    for Pos in formation_list:
         cnt[Pos] = formation_list.count(Pos)
 
     pos = [] # pos[i] = 1 => player[i] should be placed in their position.
-    m_pos = {}
+    m_pos, m_idx = {}, {}
 
     chem_expr = []
     for i in range(num_players):
         p_club, p_league, p_nation, p_pos = df.at[i, "Club"], df.at[i, "League"], df.at[i, "Country"], df.at[i, "Position"]
         pos.append(model.NewBoolVar(f"_pos{i}"))
         m_pos[player[i]] = pos[i]
+        m_idx[player[i]] = i
         if p_pos in cnt:
-            sum_expr = z_club[club_dict[p_club]] + z_league[league_dict[p_league]] + z_nation[country_dict[p_nation]]
-            b = model.NewBoolVar(f"b{i}")
-            model.Add(sum_expr <= 3).OnlyEnforceIf(b)
-            model.Add(sum_expr > 3).OnlyEnforceIf(b.Not())
-            model.Add(chem[i] == sum_expr).OnlyEnforceIf(b)
-            model.Add(chem[i] == 3).OnlyEnforceIf(b.Not())
             if input.FIX_PLAYERS == 1:
                 model.Add(pos[i] == 1)
+            if df.at[i, "Club"] in ["ICON", "HERO"]:
+                model.Add(chem[i] == 3)
+            else:
+                sum_expr = z_club[club_dict[p_club]] + z_league[league_dict[p_league]] + z_nation[country_dict[p_nation]]
+                b = model.NewBoolVar(f"b{i}")
+                model.Add(sum_expr <= 3).OnlyEnforceIf(b)
+                model.Add(sum_expr > 3).OnlyEnforceIf(b.Not())
+                model.Add(chem[i] == sum_expr).OnlyEnforceIf(b)
+                model.Add(chem[i] == 3).OnlyEnforceIf(b.Not())
         else:
             model.Add(chem[i] == 0)
             model.Add(pos[i] == 0)
@@ -193,29 +198,31 @@ def create_chemistry_constraint(df, model, chem, z_club, z_league, z_nation, pla
         model.AddMultiplicationEquality(player_chem_expr, player_chem_expr_1, chem[i])
         chem_expr.append(player_chem_expr)
 
-    pos_expr = []
+    pos_expr = [] # Players whose position is there in the input formation.
 
-    if input.FIX_PLAYERS == 0:
-        '''
-           For example say if the solver selects 3 CMs in the final
-           solution but we only need at-least 2 of them to be in position for a 3-4-3
-           formation and be considered for chemistry calcuation.
-        '''
-        for Pos, num in cnt.items():
-            t_expr = players_grouped["Position"].get(pos_dict[Pos], [])
-            pos_expr += t_expr
+    '''
+        For example say if the solver selects 3 CMs in the final
+        solution but we only need at-least 2 of them to be in position for a 3-4-3
+        formation and be considered for chemistry calcuation.
+    '''
+    for Pos, num in cnt.items():
+        t_expr = players_grouped["Position"].get(pos_dict[Pos], [])
+        pos_expr += t_expr
+        if input.FIX_PLAYERS == 0:
             expr = [m_pos[p] for p in t_expr]
             model.Add(cp_model.LinearExpr.Sum(expr) <= num)
-        
+
     club_bucket = [[0, 1], [2, 3], [4, 6], [7, input.NUM_PLAYERS]]
 
     for j in range(num_clubs):
         t_expr = players_grouped["Club"].get(j, [])
         # We need players from j^th club whose position is there in the input formation.
         # Since only such players would contribute towards chemistry.
-        t_expr_1 = list(set(t_expr) & set(pos_expr)) 
+        t_expr_1 = list(set(t_expr) & set(pos_expr))
         expr = []
         for i, p in enumerate(t_expr_1):
+            if df.at[m_idx[p], "Club"] in ["ICON", "HERO"]: # Heroes or Icons don't contribute to club chem.
+                continue
             t_var = model.NewBoolVar(f"t_var_c{i}")
             model.AddMultiplicationEquality(t_var, p, m_pos[p])
             expr.append(t_var)
@@ -235,9 +242,14 @@ def create_chemistry_constraint(df, model, chem, z_club, z_league, z_nation, pla
         t_expr_1 = list(set(t_expr) & set(pos_expr))
         expr = []
         for i, p in enumerate(t_expr_1):
+            if df.at[m_idx[p], "Club"] == "ICON":
+                continue
             t_var = model.NewBoolVar(f"t_var_l{i}")
             model.AddMultiplicationEquality(t_var, p, m_pos[p])
-            expr.append(t_var)
+            if df.at[m_idx[p], "Club"] == "HERO":  # Heroes contribute 2x to league chem.
+                expr.append(2 * t_var)
+            else:
+                expr.append(t_var)
         sum_expr = cp_model.LinearExpr.Sum(expr)
         for idx in range(4):
             lb, ub = league_bucket[idx][0], league_bucket[idx][1]
@@ -256,7 +268,10 @@ def create_chemistry_constraint(df, model, chem, z_club, z_league, z_nation, pla
         for i, p in enumerate(t_expr_1):
             t_var = model.NewBoolVar(f"t_var_n{i}")
             model.AddMultiplicationEquality(t_var, p, m_pos[p])
-            expr.append(t_var)
+            if df.at[m_idx[p], "Club"] == "ICON": # Icons contribute 2x to country chem.
+                expr.append(2 * t_var)
+            else:
+                expr.append(t_var)
         sum_expr = cp_model.LinearExpr.Sum(expr)
         for idx in range(4):
             lb, ub = country_bucket[idx][0], country_bucket[idx][1]
@@ -269,7 +284,7 @@ def create_chemistry_constraint(df, model, chem, z_club, z_league, z_nation, pla
 
 @runtime
 def create_max_club_constraint(df, model, player, map_idx, players_grouped, num_cnts):
-    '''Maximum player from same club (<=)'''
+    '''Same Club Count: Max X (<=)'''
     num_clubs = num_cnts[1]
     for i in range(num_clubs):
         expr = players_grouped["Club"].get(i, [])
@@ -278,7 +293,7 @@ def create_max_club_constraint(df, model, player, map_idx, players_grouped, num_
 
 @runtime
 def create_max_league_constraint(df, model, player, map_idx, players_grouped, num_cnts):
-    '''Maximum player from same league (<=)'''
+    '''Same League Count: Max X (<=)'''
     num_league = num_cnts[2]
     for i in range(num_league):
         expr = players_grouped["League"].get(i, [])
@@ -287,7 +302,7 @@ def create_max_league_constraint(df, model, player, map_idx, players_grouped, nu
 
 @runtime
 def create_max_country_constraint(df, model, player, map_idx, players_grouped, num_cnts):
-    '''Maximum player from same country (<=)'''
+    '''Same Nation Count: Max X (<=)'''
     num_country = num_cnts[3]
     for i in range(num_country):
         expr = players_grouped["Country"].get(i, [])
@@ -370,12 +385,12 @@ def set_objective(df, model, player):
     return model
 
 def get_dict(df, col):
-   '''Map fields to a unique index'''
-   d = {}
-   unique_col = df[col].unique()
-   for i, val in enumerate(unique_col):
-    d[val] = i
-   return d
+    '''Map fields to a unique index'''
+    d = {}
+    unique_col = df[col].unique()
+    for i, val in enumerate(unique_col):
+        d[val] = i
+    return d
 
 @runtime
 def SBC(df):
@@ -432,7 +447,7 @@ def SBC(df):
     solver = cp_model.CpSolver()
 
     '''Solver Parameters'''
-    # solver.parameters.random_seed = 42
+    solver.parameters.random_seed = 42
     solver.parameters.max_time_in_seconds = 50000
     # solver.parameters.log_search_progress = True
     # Specify the number of parallel workers (i.e. threads) to use during search (default = 8).
@@ -447,7 +462,7 @@ def SBC(df):
     print(input.status_dict[status])
     print('\n')
     final_players = []
-    if status == 2 or status == 4: # Feasible or Optimal   
+    if status == 2 or status == 4: # Feasible or Optimal
         df['Chemistry'] = 0
         df['Is_Pos'] = 0 # Is_Pos = 1 => player should be in their position.
         for i in range(num_cnts[0]):
@@ -456,4 +471,3 @@ def SBC(df):
                 df.loc[i, "Chemistry"] = solver.Value(chem_expr[i])
                 df.loc[i, "Is_Pos"] = solver.Value(pos[i])
     return final_players
-
