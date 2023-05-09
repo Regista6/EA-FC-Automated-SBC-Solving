@@ -6,41 +6,41 @@ FORMATION = "3-4-3"
 NUM_PLAYERS = 11
 
 FIX_PLAYERS  = 0 # FIX_PLAYERS = 1 => players will be picked based on the formation and 0 otherwise.
-         
+
 COUNTRY = [["England", "Spain"], ["Germany"]]
 NUM_COUNTRY = [2, 1] # Total players from i^th list >= NUM_COUNTRY[i]
 
 MAX_NUM_COUNTRY = 5  # Same Nation Count: Max X
-NUM_UNIQUE_COUNTRY = 0  # Nations: Max/Min X
+NUM_UNIQUE_COUNTRY = 0  # Nations: Max/Min/Exactly X
 MIN_NUM_COUNTRY = 5  # Same Nation Count: Min X
 
 LEAGUE = [["Premier League", "LaLiga Santander"]]
 NUM_LEAGUE = [11]  # Total players from i^th list >= NUM_LEAGUE[i]
 
 MAX_NUM_LEAGUE = 4  # Same League Count: Max X
-NUM_UNIQUE_LEAGUE = 4  # Leagues: Max/Min X
+NUM_UNIQUE_LEAGUE = 4  # Leagues: Max/Min/Exactly X
 MIN_NUM_LEAGUE = 4  # Same League Count: Min X
 
 CLUB = [["Real Madrid", "Arsenal"], ["FC Bayern"]]
 NUM_CLUB = [3, 2]  # Total players from i^th list >= NUM_CLUB[i]
 
 MAX_NUM_CLUB = 2  # Same Club Count: Max X
-NUM_UNIQUE_CLUB = 5  # Clubs: Max/Min X
+NUM_UNIQUE_CLUB = 5  # Clubs: Max/Min/Exactly X
 MIN_NUM_CLUB = 2  # Same Club Count: Min X
 
-RARITY_1 = [['Gold', 'TOTW']] 
+RARITY_1 = [['Gold', 'TOTW']]
 NUM_RARITY_1 = [1]  # This is for cases like "Gold IF: Min X (0/X)"
 
-RARITY_2 = ["RARE", "Gold"] 
+RARITY_2 = ["RARE", "Gold"]
 NUM_RARITY_2 = [11, 11]   # Total players from i^th Rarity >= NUM_RARITY_2[i]
-                 
+
 SQUAD_RATING = 81 # Squad Rating: Min XX
 
-MIN_OVERALL = [83]     
+MIN_OVERALL = [83]
 NUM_MIN_OVERALL = [1]  # Minimum OVR of XX : Min X
 
 CHEMISTRY = 24  # Squad Total Chemistry Points: Min X
-                # If there is no constraint on total chemistry, then set this to 0. 
+                # If there is no constraint on total chemistry, then set this to 0.
 
 CHEM_PER_PLAYER = 0  # Chemistry Points Per Player: Min X
 

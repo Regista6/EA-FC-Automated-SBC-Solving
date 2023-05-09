@@ -135,10 +135,27 @@ def create_rarity_2_constraint(df, model, player, map_idx, players_grouped, num_
     return model
 
 @runtime
-def create_squad_rating_constraint(df, model, player, map_idx, players_grouped, num_cnts):
-    '''Squad Rating (>=)'''
+def create_squad_rating_constraint_1(df, model, player, map_idx, players_grouped, num_cnts):
+    '''Squad Rating: Min XX (>=) based on average rating.'''
     rating = df["Rating"].tolist()
     model.Add(cp_model.LinearExpr.WeightedSum(player, rating) >= (input.SQUAD_RATING) * (input.NUM_PLAYERS))
+    return model
+
+@runtime
+def create_squad_rating_constraint_2(df, model, player, map_idx, players_grouped, num_cnts):
+    '''Squad Rating: Min XX (>=) based on
+    https://www.reddit.com/r/EASportsFC/comments/5osq7k/new_overall_rating_figured_out.
+    Probably more accurate.
+    '''
+    num_players = num_cnts[0]
+    rating = df["Rating"].tolist()
+    scaled_rat = [rat * 11 for rat in rating] # Need to scale everything as CP-SAT works only with integers.
+    sum_scaled_rat = cp_model.LinearExpr.WeightedSum(player, scaled_rat)
+    avg_rat = cp_model.LinearExpr.WeightedSum(player, rating)
+    excess = [model.NewIntVar(0, 150, f"excess{i}") for i in range(num_players)]
+    [model.AddMaxEquality(excess[i], [(player[i] * rat - avg_rat), 0])  for i, rat in enumerate(scaled_rat)]
+    sum_excess = cp_model.LinearExpr.Sum(excess)
+    model.Add((sum_scaled_rat + sum_excess) >= (input.SQUAD_RATING) * (input.NUM_PLAYERS) * (input.NUM_PLAYERS))
     return model
 
 @runtime
@@ -347,7 +364,7 @@ def create_min_country_constraint(df, model, player, map_idx, players_grouped, n
 
 @runtime
 def create_unique_club_constraint(df, model, player, club, map_idx, players_grouped, num_cnts):
-    '''Clubs: Max/Min X'''
+    '''Clubs: Max/Min/Exactly X'''
     num_clubs = num_cnts[1]
     for i in range(num_clubs):
         expr = players_grouped["Club"].get(i, [])
@@ -358,7 +375,7 @@ def create_unique_club_constraint(df, model, player, club, map_idx, players_grou
 
 @runtime
 def create_unique_league_constraint(df, model, player, league, map_idx, players_grouped, num_cnts):
-    '''Leagues: Max/Min X'''
+    '''Leagues: Max/Min/Exactly X'''
     num_league = num_cnts[2]
     for i in range(num_league):
         expr = players_grouped["League"].get(i, [])
@@ -369,7 +386,7 @@ def create_unique_league_constraint(df, model, player, league, map_idx, players_
 
 @runtime
 def create_unique_country_constraint(df, model, player, country, map_idx, players_grouped, num_cnts):
-    '''Nations: Max/Min X'''
+    '''Nations: Max/Min/Exactly X'''
     num_country = num_cnts[3]
     for i in range(num_country):
         expr = players_grouped["Country"].get(i, [])
@@ -415,7 +432,8 @@ def SBC(df):
     # model = create_club_constraint(df, model, player, map_idx, players_grouped, num_cnts)
     # model = create_league_constraint(df, model, player, map_idx, players_grouped, num_cnts)
     # model = create_country_constraint(df, model, player, map_idx, players_grouped, num_cnts)
-    # model = create_squad_rating_constraint(df, model, player, map_idx, players_grouped, num_cnts)
+    # model = create_squad_rating_constraint_1(df, model, player, map_idx, players_grouped, num_cnts)
+    # model = create_squad_rating_constraint_2(df, model, player, map_idx, players_grouped, num_cnts)
     # model = create_min_overall_constraint(df, model, player, map_idx, players_grouped, num_cnts)
     model = create_max_club_constraint(df, model, player, map_idx, players_grouped, num_cnts)
     # model = create_max_league_constraint(df, model, player, map_idx, players_grouped, num_cnts)
@@ -448,8 +466,9 @@ def SBC(df):
 
     '''Solver Parameters'''
     solver.parameters.random_seed = 42
-    solver.parameters.max_time_in_seconds = 50000
-    # solver.parameters.log_search_progress = True
+    solver.parameters.max_time_in_seconds = 600
+    # Whether the solver should log the search progress.
+    solver.parameters.log_search_progress = False
     # Specify the number of parallel workers (i.e. threads) to use during search (default = 8).
     # This should usually be lower than your number of available cpus + hyperthread in your machine.
     # Set to 16 or 24 if you have high-end CPU :).
