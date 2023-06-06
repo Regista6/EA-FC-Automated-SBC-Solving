@@ -364,35 +364,35 @@ def create_min_country_constraint(df, model, player, map_idx, players_grouped, n
 
 @runtime
 def create_unique_club_constraint(df, model, player, club, map_idx, players_grouped, num_cnts):
-    '''Clubs: Max/Min/Exactly X'''
+    '''Clubs: Max / Min (default) / Exactly X'''
     num_clubs = num_cnts[1]
     for i in range(num_clubs):
         expr = players_grouped["Club"].get(i, [])
         model.Add(cp_model.LinearExpr.Sum(expr) >= 1).OnlyEnforceIf(club[i])
         model.Add(cp_model.LinearExpr.Sum(expr) == 0).OnlyEnforceIf(club[i].Not())
-    model.Add(cp_model.LinearExpr.Sum(club) >= input.NUM_UNIQUE_CLUB)
+    model.Add(cp_model.LinearExpr.Sum(club) >= input.NUM_UNIQUE_CLUB) # Change the sign here (>=, <=, ==).
     return model
 
 @runtime
 def create_unique_league_constraint(df, model, player, league, map_idx, players_grouped, num_cnts):
-    '''Leagues: Max/Min/Exactly X'''
+    '''Leagues: Max / Min (default) / Exactly X'''
     num_league = num_cnts[2]
     for i in range(num_league):
         expr = players_grouped["League"].get(i, [])
         model.Add(cp_model.LinearExpr.Sum(expr) >= 1).OnlyEnforceIf(league[i])
         model.Add(cp_model.LinearExpr.Sum(expr) == 0).OnlyEnforceIf(league[i].Not())
-    model.Add(cp_model.LinearExpr.Sum(league) >= input.NUM_UNIQUE_LEAGUE)
+    model.Add(cp_model.LinearExpr.Sum(league) >= input.NUM_UNIQUE_LEAGUE) # Change the sign here (>=, <=, ==).
     return model
 
 @runtime
 def create_unique_country_constraint(df, model, player, country, map_idx, players_grouped, num_cnts):
-    '''Nations: Max/Min/Exactly X'''
+    '''Nations: Max / Min (default) / Exactly X'''
     num_country = num_cnts[3]
     for i in range(num_country):
         expr = players_grouped["Country"].get(i, [])
         model.Add(cp_model.LinearExpr.Sum(expr) >= 1).OnlyEnforceIf(country[i])
         model.Add(cp_model.LinearExpr.Sum(expr) == 0).OnlyEnforceIf(country[i].Not())
-    model.Add(cp_model.LinearExpr.Sum(country) >= input.NUM_UNIQUE_COUNTRY)
+    model.Add(cp_model.LinearExpr.Sum(country) >= input.NUM_UNIQUE_COUNTRY) # Change the sign here (>=, <=, ==).
     return model
 
 def set_objective(df, model, player):
@@ -429,29 +429,45 @@ def SBC(df):
     model = create_basic_constraints(df, model, player, map_idx, players_grouped, num_cnts)
 
     '''Comment out the constraints not required'''
+
+    '''Club'''
     # model = create_club_constraint(df, model, player, map_idx, players_grouped, num_cnts)
-    # model = create_league_constraint(df, model, player, map_idx, players_grouped, num_cnts)
-    # model = create_country_constraint(df, model, player, map_idx, players_grouped, num_cnts)
-    # model = create_squad_rating_constraint_1(df, model, player, map_idx, players_grouped, num_cnts)
-    # model = create_squad_rating_constraint_2(df, model, player, map_idx, players_grouped, num_cnts)
-    # model = create_min_overall_constraint(df, model, player, map_idx, players_grouped, num_cnts)
     model = create_max_club_constraint(df, model, player, map_idx, players_grouped, num_cnts)
-    # model = create_max_league_constraint(df, model, player, map_idx, players_grouped, num_cnts)
-    # model = create_max_country_constraint(df, model, player, map_idx, players_grouped, num_cnts)
-    # model = create_unique_club_constraint(df, model, player, club, map_idx, players_grouped, num_cnts)
-    model = create_unique_league_constraint(df, model, player, league, map_idx, players_grouped, num_cnts)
-    # model = create_unique_country_constraint(df, model, player, country, map_idx, players_grouped, num_cnts)
     # model = create_min_club_constraint(df, model, player, map_idx, players_grouped, num_cnts)
+    # model = create_unique_club_constraint(df, model, player, club, map_idx, players_grouped, num_cnts)
+    '''Club'''
+
+    '''League'''
+    # model = create_league_constraint(df, model, player, map_idx, players_grouped, num_cnts)
+    # model = create_max_league_constraint(df, model, player, map_idx, players_grouped, num_cnts)
     # model = create_min_league_constraint(df, model, player, map_idx, players_grouped, num_cnts)
+    model = create_unique_league_constraint(df, model, player, league, map_idx, players_grouped, num_cnts)
+    '''League'''
+
+    '''Country'''
+    # model = create_country_constraint(df, model, player, map_idx, players_grouped, num_cnts)
+    # model = create_max_country_constraint(df, model, player, map_idx, players_grouped, num_cnts)
     model = create_min_country_constraint(df, model, player, map_idx, players_grouped, num_cnts)
+    # model = create_unique_country_constraint(df, model, player, country, map_idx, players_grouped, num_cnts)
+    '''Country'''
+
+    '''Rarity'''
     # model = create_rarity_1_constraint(df, model, player, map_idx, players_grouped, num_cnts)
     model = create_rarity_2_constraint(df, model, player, map_idx, players_grouped, num_cnts)
+    '''Rarity'''
+
+    '''Squad Rating'''
+    # model = create_squad_rating_constraint_1(df, model, player, map_idx, players_grouped, num_cnts)
+    # model = create_squad_rating_constraint_2(df, model, player, map_idx, players_grouped, num_cnts)
+    '''Squad Rating'''
+
+    '''Min Overall'''
+    # model = create_min_overall_constraint(df, model, player, map_idx, players_grouped, num_cnts)
+    '''Min Overall'''
+
     '''Comment out the constraints not required'''
 
-    '''
-       If there is no constraint on total chemistry, simply set input.CHEMISTRY = 0
-       instead of commenting out this constraint.
-    '''
+    '''If there is no constraint on total chemistry, simply set input.CHEMISTRY = 0'''
     model, pos, chem_expr = create_chemistry_constraint(df, model, chem, z_club, z_league, z_nation, player, players_grouped, num_cnts, map_idx, b_c, b_l, b_n)
 
     '''Set objective based on player cost'''
@@ -468,8 +484,8 @@ def SBC(df):
     solver.parameters.random_seed = 42
     solver.parameters.max_time_in_seconds = 600
     # Whether the solver should log the search progress.
-    solver.parameters.log_search_progress = False
-    # Specify the number of parallel workers (i.e. threads) to use during search (default = 8).
+    solver.parameters.log_search_progress = True
+    # Specify the number of parallel workers (i.e. threads) to use during search.
     # This should usually be lower than your number of available cpus + hyperthread in your machine.
     # Set to 16 or 24 if you have high-end CPU :).
     solver.parameters.num_search_workers = 8

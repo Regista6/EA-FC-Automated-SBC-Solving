@@ -2,31 +2,30 @@
 
 FORMATION = "3-4-3"
 
-# Currently only works for 11 players :)
-NUM_PLAYERS = 11
+NUM_PLAYERS = 11 # Currently only works for 11 players :)
 
 FIX_PLAYERS  = 0 # FIX_PLAYERS = 1 => players will be picked based on the formation and 0 otherwise.
-
-COUNTRY = [["England", "Spain"], ["Germany"]]
-NUM_COUNTRY = [2, 1] # Total players from i^th list >= NUM_COUNTRY[i]
-
-MAX_NUM_COUNTRY = 5  # Same Nation Count: Max X
-NUM_UNIQUE_COUNTRY = 0  # Nations: Max/Min/Exactly X
-MIN_NUM_COUNTRY = 5  # Same Nation Count: Min X
-
-LEAGUE = [["Premier League", "LaLiga Santander"]]
-NUM_LEAGUE = [11]  # Total players from i^th list >= NUM_LEAGUE[i]
-
-MAX_NUM_LEAGUE = 4  # Same League Count: Max X
-NUM_UNIQUE_LEAGUE = 4  # Leagues: Max/Min/Exactly X
-MIN_NUM_LEAGUE = 4  # Same League Count: Min X
 
 CLUB = [["Real Madrid", "Arsenal"], ["FC Bayern"]]
 NUM_CLUB = [3, 2]  # Total players from i^th list >= NUM_CLUB[i]
 
 MAX_NUM_CLUB = 2  # Same Club Count: Max X
-NUM_UNIQUE_CLUB = 5  # Clubs: Max/Min/Exactly X
 MIN_NUM_CLUB = 2  # Same Club Count: Min X
+NUM_UNIQUE_CLUB = 5  # Clubs: Max / Min (default) / Exactly X
+
+LEAGUE = [["Premier League", "LaLiga Santander"]]
+NUM_LEAGUE = [11]  # Total players from i^th list >= NUM_LEAGUE[i]
+
+MAX_NUM_LEAGUE = 4  # Same League Count: Max X
+MIN_NUM_LEAGUE = 4  # Same League Count: Min X
+NUM_UNIQUE_LEAGUE = 4  # Leagues: Max / Min (default) / Exactly X
+
+COUNTRY = [["England", "Spain"], ["Germany"]]
+NUM_COUNTRY = [2, 1] # Total players from i^th list >= NUM_COUNTRY[i]
+
+MAX_NUM_COUNTRY = 5  # Same Nation Count: Max X
+MIN_NUM_COUNTRY = 5  # Same Nation Count: Min X
+NUM_UNIQUE_COUNTRY = 0  # Nations: Max / Min (default) / Exactly X
 
 RARITY_1 = [['Gold', 'TOTW']]
 NUM_RARITY_1 = [1]  # This is for cases like "Gold IF: Min X (0/X)"
