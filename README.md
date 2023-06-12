@@ -17,7 +17,7 @@ Please note that it will require some amount of manual post-processing if there 
 
 The constraints used in the program are created in the `optimize.py` file and the optimization problem is solved using [Google CP-SAT solver](https://developers.google.com/optimization/cp/cp_solver).
 
-The program implements most of the common constraints (`L431-468` in `optimize.py`). Feel free to comment out the constraints that are not required.
+The program implements most of the common constraints (`L428-465` in `optimize.py`). Feel free to comment out the constraints that are not required.
 
 Also please note the type of constraint sign used (i.e., >=, <=, ==) for each constraint in the `optimize.py` file during input.
 

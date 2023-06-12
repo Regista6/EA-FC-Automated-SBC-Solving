@@ -15,10 +15,7 @@ def runtime(func):
 @runtime
 def create_var(model, df, map_idx, num_cnts):
     '''Create the relevant variables'''
-    num_players = num_cnts[0]
-    num_clubs = num_cnts[1]
-    num_league = num_cnts[2]
-    num_country = num_cnts[3]
+    num_players, num_clubs, num_league, num_country = num_cnts[0], num_cnts[1], num_cnts[2], num_cnts[3]
 
     player = [] # player[i] = 1 => i^th player is considered and 0 otherwise
     chem = []  # chem[i] = chemistry of i^th player
@@ -161,8 +158,11 @@ def create_squad_rating_constraint_2(df, model, player, map_idx, players_grouped
 @runtime
 def create_min_overall_constraint(df, model, player, map_idx, players_grouped, num_cnts):
     '''Minimum OVR of XX : Min X (>=)'''
-    for i, rat in enumerate(input.MIN_OVERALL):
-        expr = players_grouped["Rating"].get(map_idx["Rating"][rat], [])
+    MAX_RATING = df["Rating"].max()
+    for i, rating in enumerate(input.MIN_OVERALL):
+        expr = []
+        for rat in range(rating, MAX_RATING + 1):
+            expr += players_grouped["Rating"].get(map_idx["Rating"][rat], [])
         model.Add(cp_model.LinearExpr.Sum(expr) >= input.NUM_MIN_OVERALL[i])
     return model
 
@@ -171,10 +171,7 @@ def create_chemistry_constraint(df, model, chem, z_club, z_league, z_nation, pla
     '''Optimize Chemistry (>=)
     (https://www.rockpapershotgun.com/fifa-23-chemistry)
     '''
-    num_players = num_cnts[0]
-    num_clubs = num_cnts[1]
-    num_league = num_cnts[2]
-    num_country = num_cnts[3]
+    num_players, num_clubs, num_league, num_country = num_cnts[0], num_cnts[1], num_cnts[2], num_cnts[3]
 
     club_dict, league_dict, country_dict, pos_dict = map_idx["Club"], map_idx["League"], map_idx["Country"], map_idx["Position"]
 
@@ -219,7 +216,7 @@ def create_chemistry_constraint(df, model, chem, z_club, z_league, z_nation, pla
 
     '''
         For example say if the solver selects 3 CMs in the final
-        solution but we only need at-least 2 of them to be in position for a 3-4-3
+        solution but we only need at-most 2 of them to be in position for a 3-4-3
         formation and be considered for chemistry calcuation.
     '''
     for Pos, num in cnt.items():
