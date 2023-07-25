@@ -1,14 +1,17 @@
+import input
 import optimize
 import pandas as pd
 
-
 # Preprocess the club dataset obtained from https://github.com/ckalgos/fut-trade-enhancer.
-def preprocess_data(df):
+def preprocess_data(df: pd.DataFrame):
     df = df.drop(['Price Range', 'Bought For', 'Discard Value', 'Contract Left'], axis = 1)
     df = df.rename(columns={'Player Name': 'Name', 'Nation': 'Country', 'Quality': 'Color', 'FUTBIN Price': 'Cost'})
     df = df[df["IsUntradable"] == True]
     df = df[df["IsLoaned"] == False]
     df = df[df["Cost"] != '--NA--']
+    # Note: The filter on rating is especially useful when there is only a single constraint like Squad Rating: Min XX.
+    # Otherwise, the search space is too large and this overwhelms the solver (very slow in improving the bound).
+    # df = df[(df["Rating"] >= input.SQUAD_RATING - 1) & (df["Rating"] <= input.SQUAD_RATING + 1)]
     df = df.reset_index(drop = True).astype({'Rating': 'int32', 'Cost': 'int32'})
     return df
 

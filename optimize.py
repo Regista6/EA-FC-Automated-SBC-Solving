@@ -1,4 +1,5 @@
 import input
+from threading import Timer
 import time
 from ortools.sat.python import cp_model
 
@@ -11,6 +12,27 @@ def runtime(func):
         print(f"Processing time {func.__name__}: {seconds} seconds")
         return result
     return wrapper if input.LOG_RUNTIME else func
+
+class ObjectiveEarlyStopping(cp_model.CpSolverSolutionCallback):
+    '''Stop the search if the objective remains the same for X seconds'''
+    def __init__(self, timer_limit: int):
+        super().__init__()
+        self._timer_limit = timer_limit
+        self._timer = None
+
+    def on_solution_callback(self):
+        '''This is called everytime a solution with better objective is found.'''
+        self._reset_timer()
+
+    def _reset_timer(self):
+        if self._timer:
+            self._timer.cancel()
+        self._timer = Timer(self._timer_limit, self.StopSearch)
+        self._timer.start()
+
+    def StopSearch(self):
+        print(f"{self._timer_limit} seconds without improvement in objective. ")
+        super().StopSearch()
 
 @runtime
 def create_var(model, df, map_idx, num_cnts):
@@ -53,7 +75,6 @@ def create_var(model, df, map_idx, num_cnts):
     club = [model.NewBoolVar(f"club_{i}") for i in range(num_clubs)]
     country = [model.NewBoolVar(f"country_{i}") for i in range(num_country)]
     league = [model.NewBoolVar(f"league_{i}") for i in range(num_league)]
-
     return model, player, chem, z_club, z_league, z_nation, b_c, b_l, b_n, club, country, league, players_grouped
 
 @runtime
@@ -146,13 +167,15 @@ def create_squad_rating_constraint_2(df, model, player, map_idx, players_grouped
     '''
     num_players = num_cnts[0]
     rating = df["Rating"].tolist()
-    scaled_rat = [rat * 11 for rat in rating] # Need to scale everything as CP-SAT works only with integers.
-    sum_scaled_rat = cp_model.LinearExpr.WeightedSum(player, scaled_rat)
-    avg_rat = cp_model.LinearExpr.WeightedSum(player, rating)
-    excess = [model.NewIntVar(0, 150, f"excess{i}") for i in range(num_players)]
-    [model.AddMaxEquality(excess[i], [(player[i] * rat - avg_rat), 0])  for i, rat in enumerate(scaled_rat)]
+    avg_rat = cp_model.LinearExpr.WeightedSum(player, rating) # Assuming that the original ratings have been scaled by 11 (input.NUM_PLAYERS).
+    # This represents the max non-negative gap between player rating and squad avg_rating.
+    # Should be set to a reasonable amount to avoid overwhelming the solver.
+    # Good solutions likely don't have large gap anyways.
+    max_gap_bw_rating = min(150, (df["Rating"].max() - df["Rating"].min()) * (input.NUM_PLAYERS - 1)) # max_rat * 11 - (min_rat * 10 + max_rat) (seems alright).
+    excess = [model.NewIntVar(0, max_gap_bw_rating, f"excess{i}") for i in range(num_players)]
+    [model.AddMaxEquality(excess[i], [(player[i] * rat * input.NUM_PLAYERS - avg_rat), 0])  for i, rat in enumerate(rating)]
     sum_excess = cp_model.LinearExpr.Sum(excess)
-    model.Add((sum_scaled_rat + sum_excess) >= (input.SQUAD_RATING) * (input.NUM_PLAYERS) * (input.NUM_PLAYERS))
+    model.Add((avg_rat * input.NUM_PLAYERS + sum_excess) >= (input.SQUAD_RATING) * (input.NUM_PLAYERS) * (input.NUM_PLAYERS))
     return model
 
 @runtime
@@ -478,19 +501,25 @@ def SBC(df):
     solver = cp_model.CpSolver()
 
     '''Solver Parameters'''
-    solver.parameters.random_seed = 42
+    # solver.parameters.random_seed = 42
     solver.parameters.max_time_in_seconds = 600
     # Whether the solver should log the search progress.
     solver.parameters.log_search_progress = True
     # Specify the number of parallel workers (i.e. threads) to use during search.
     # This should usually be lower than your number of available cpus + hyperthread in your machine.
-    # Set to 16 or 24 if you have high-end CPU :).
+    # Setting this to 16 or 24 can help if the solver is slow in improving the bound.
     solver.parameters.num_search_workers = 8
+    # Stop the search when the gap between the best feasible objective (O) and
+    # our best objective bound (B) is smaller than a limit.
+    # Relative: abs(O - B) / max(1, abs(O)).
+    # Note that if the gap is reached, the search status will be OPTIMAL. But
+    # one can check the best objective bound to see the actual gap.
+    # solver.parameters.relative_gap_limit = 0.05
     # solver.parameters.cp_model_presolve = False
     # solver.parameters.stop_after_first_solution = True
     '''Solver Parameters'''
 
-    status = solver.Solve(model)
+    status = solver.Solve(model, ObjectiveEarlyStopping(timer_limit = 60))
     print(input.status_dict[status])
     print('\n')
     final_players = []
