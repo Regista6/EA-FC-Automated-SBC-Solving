@@ -179,6 +179,41 @@ def create_squad_rating_constraint_2(df, model, player, map_idx, players_grouped
     return model
 
 @runtime
+def create_squad_rating_constraint_3(df, model, player, map_idx, players_grouped, num_cnts):
+    '''Squad Rating: Min XX (>=).
+    Another way to model 'create_squad_rating_constraint_2'.
+    This significantly speeds up the model creation time and for some reason
+    the solver converges noticeably faster to a good solution, even without a rating filter
+    when tested on a single constraint like Squad Rating: Min XX.
+    '''
+    rat_list = df["Rating"].unique().tolist()
+    R = {} # This variable represents how many players have a particular rating in the final solution.
+    rat_expr = []
+    for rat in (rat_list):
+        rat_idx = map_idx["Rating"][rat]
+        expr = players_grouped["Rating"].get(rat_idx, [])
+        R[rat_idx] = model.NewIntVar(0, input.NUM_PLAYERS, f"R{rat_idx}")
+        rat_expr.append(R[rat_idx] * rat)
+        model.Add(R[rat_idx] == cp_model.LinearExpr.Sum(expr))
+    avg_rat = cp_model.LinearExpr.Sum(rat_expr)
+    # This is similar in concept to the excess variable in create_squad_rating_constraint_2.
+    excess = [model.NewIntVar(0, 1500, f"excess{i}") for i in range(len(rat_list))]
+    for rat in (rat_list):
+        rat_idx = map_idx["Rating"][rat]
+        lhs = rat * input.NUM_PLAYERS * R[rat_idx]
+        rat_expr_1 = []
+        for rat_1 in (rat_list):
+            rat_idx_1 = map_idx["Rating"][rat_1]
+            temp = model.NewIntVar(0, 15000, f"temp{rat_idx_1}")
+            model.AddMultiplicationEquality(temp, R[rat_idx], R[rat_idx_1] * rat_1)
+            rat_expr_1.append(temp)
+        rhs = cp_model.LinearExpr.Sum(rat_expr_1)
+        model.AddMaxEquality(excess[rat_idx], [lhs - rhs, 0])
+    sum_excess = cp_model.LinearExpr.Sum(excess)
+    model.Add((avg_rat * input.NUM_PLAYERS + sum_excess) >= (input.SQUAD_RATING) * (input.NUM_PLAYERS) * (input.NUM_PLAYERS))
+    return model
+
+@runtime
 def create_min_overall_constraint(df, model, player, map_idx, players_grouped, num_cnts):
     '''Minimum OVR of XX : Min X (>=)'''
     MAX_RATING = df["Rating"].max()
@@ -243,7 +278,7 @@ def create_chemistry_constraint(df, model, chem, z_club, z_league, z_nation, pla
         formation and be considered for chemistry calcuation.
     '''
     for Pos, num in cnt.items():
-        t_expr = players_grouped["Position"].get(pos_dict[Pos], [])
+        t_expr = players_grouped["Position"].get(pos_dict.get(Pos, []), [])
         pos_expr += t_expr
         if input.FIX_PLAYERS == 0:
             expr = [m_pos[p] for p in t_expr]
@@ -479,6 +514,7 @@ def SBC(df):
     '''Squad Rating'''
     # model = create_squad_rating_constraint_1(df, model, player, map_idx, players_grouped, num_cnts)
     # model = create_squad_rating_constraint_2(df, model, player, map_idx, players_grouped, num_cnts)
+    # model = create_squad_rating_constraint_3(df, model, player, map_idx, players_grouped, num_cnts)
     '''Squad Rating'''
 
     '''Min Overall'''
