@@ -234,9 +234,6 @@ def create_chemistry_constraint(df, model, chem, z_club, z_league, z_nation, pla
     club_dict, league_dict, country_dict, pos_dict = map_idx["Club"], map_idx["League"], map_idx["Country"], map_idx["Position"]
 
     formation_list = input.formation_dict[input.FORMATION]
-    cnt = {}
-    for Pos in formation_list:
-        cnt[Pos] = formation_list.count(Pos)
 
     pos = [] # pos[i] = 1 => player[i] should be placed in their position.
     m_pos, m_idx = {}, {}
@@ -247,7 +244,7 @@ def create_chemistry_constraint(df, model, chem, z_club, z_league, z_nation, pla
         pos.append(model.NewBoolVar(f"_pos{i}"))
         m_pos[player[i]] = pos[i]
         m_idx[player[i]] = i
-        if p_pos in cnt:
+        if p_pos in formation_list:
             if input.FIX_PLAYERS == 1:
                 model.Add(pos[i] == 1)
             if df.at[i, "Club"] in ["ICON", "HERO"]:
@@ -264,10 +261,10 @@ def create_chemistry_constraint(df, model, chem, z_club, z_league, z_nation, pla
             model.Add(pos[i] == 0)
 
         model.Add(chem[i] >= input.CHEM_PER_PLAYER).OnlyEnforceIf(player[i])
-        player_chem_expr_1 = model.NewBoolVar(f"chem_expr_1{i}")
-        model.AddMultiplicationEquality(player_chem_expr_1, player[i], pos[i])
+        play_pos = model.NewBoolVar(f"play_pos{i}")
+        model.AddMultiplicationEquality(play_pos, player[i], pos[i])
         player_chem_expr = model.NewIntVar(0, 3, f"chem_expr{i}")
-        model.AddMultiplicationEquality(player_chem_expr, player_chem_expr_1, chem[i])
+        model.AddMultiplicationEquality(player_chem_expr, play_pos, chem[i])
         chem_expr.append(player_chem_expr)
 
     pos_expr = [] # Players whose position is there in the input formation.
@@ -277,12 +274,13 @@ def create_chemistry_constraint(df, model, chem, z_club, z_league, z_nation, pla
         solution but we only need at-most 2 of them to be in position for a 3-4-3
         formation and be considered for chemistry calcuation.
     '''
-    for Pos, num in cnt.items():
+    for Pos in formation_list:
         t_expr = players_grouped["Position"].get(pos_dict.get(Pos, []), [])
         pos_expr += t_expr
         if input.FIX_PLAYERS == 0:
-            expr = [m_pos[p] for p in t_expr]
-            model.Add(cp_model.LinearExpr.Sum(expr) <= num)
+            play_pos = [model.NewBoolVar(f"play_pos{Pos}{i}") for i in range(len(t_expr))]
+            [model.AddMultiplicationEquality(play_pos[i], p, m_pos[p]) for i, p in enumerate(t_expr)]
+            model.Add(cp_model.LinearExpr.Sum(play_pos) <= formation_list.count(Pos))
 
     club_bucket = [[0, 1], [2, 3], [4, 6], [7, input.NUM_PLAYERS]]
 
