@@ -237,8 +237,8 @@ def create_chemistry_constraint(df, model, chem, z_club, z_league, z_nation, pla
 
     pos = [] # pos[i] = 1 => player[i] should be placed in their position.
     m_pos, m_idx = {}, {}
-
     chem_expr = []
+
     for i in range(num_players):
         p_club, p_league, p_nation, p_pos = df.at[i, "Club"], df.at[i, "League"], df.at[i, "Country"], df.at[i, "Position"]
         pos.append(model.NewBoolVar(f"_pos{i}"))
@@ -274,7 +274,7 @@ def create_chemistry_constraint(df, model, chem, z_club, z_league, z_nation, pla
         solution but we only need at-most 2 of them to be in position for a 3-4-3
         formation and be considered for chemistry calcuation.
     '''
-    for Pos in formation_list:
+    for Pos in set(formation_list):
         t_expr = players_grouped["Position"].get(pos_dict.get(Pos, []), [])
         pos_expr += t_expr
         if input.FIX_PLAYERS == 0:

@@ -2,7 +2,7 @@
 
 FORMATION = "3-4-3"
 
-NUM_PLAYERS = 11 # Currently only works for 11 players :)
+NUM_PLAYERS = 11
 
 FIX_PLAYERS  = 0 # FIX_PLAYERS = 1 => players will be picked based on the formation and 0 otherwise.
 
