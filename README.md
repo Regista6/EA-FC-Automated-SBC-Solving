@@ -1,4 +1,4 @@
-## FIFA 23 Automated [SBC](https://fifauteam.com/fifa-23-sbc/) Solving ⚽
+## FIFA 23 Automated [SBC](https://fifauteam.com/fifa-23-sbc/) Solving ⚽ [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1KoP-8zvbeh_0IjOIlrTG-u1j_QPP5DNo?usp=sharing)
 
 ### Notes
 
