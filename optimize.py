@@ -220,6 +220,8 @@ def create_min_overall_constraint(df, model, player, map_idx, players_grouped, n
     for i, rating in enumerate(input.MIN_OVERALL):
         expr = []
         for rat in range(rating, MAX_RATING + 1):
+            if rat not in map_idx["Rating"]:
+                continue
             expr += players_grouped["Rating"].get(map_idx["Rating"][rat], [])
         model.Add(cp_model.LinearExpr.Sum(expr) >= input.NUM_MIN_OVERALL[i])
     return model
@@ -275,7 +277,9 @@ def create_chemistry_constraint(df, model, chem, z_club, z_league, z_nation, pla
         formation and be considered for chemistry calcuation.
     '''
     for Pos in set(formation_list):
-        t_expr = players_grouped["Position"].get(pos_dict.get(Pos, []), [])
+        if Pos not in pos_dict:
+                continue
+        t_expr = players_grouped["Position"].get(pos_dict[Pos], [])
         pos_expr += t_expr
         if input.FIX_PLAYERS == 0:
             play_pos = [model.NewBoolVar(f"play_pos{Pos}{i}") for i in range(len(t_expr))]
@@ -417,37 +421,75 @@ def create_min_country_constraint(df, model, player, map_idx, players_grouped, n
 
 @runtime
 def create_unique_club_constraint(df, model, player, club, map_idx, players_grouped, num_cnts):
-    '''Clubs: Max / Min (default) / Exactly X'''
+    '''Clubs: Max / Min / Exactly X'''
     num_clubs = num_cnts[1]
     for i in range(num_clubs):
         expr = players_grouped["Club"].get(i, [])
         model.Add(cp_model.LinearExpr.Sum(expr) >= 1).OnlyEnforceIf(club[i])
         model.Add(cp_model.LinearExpr.Sum(expr) == 0).OnlyEnforceIf(club[i].Not())
-    model.Add(cp_model.LinearExpr.Sum(club) >= input.NUM_UNIQUE_CLUB) # Change the sign here (>=, <=, ==).
+    if input.NUM_UNIQUE_CLUB[1] == "Min":
+        model.Add(cp_model.LinearExpr.Sum(club) >= input.NUM_UNIQUE_CLUB[0])
+    elif input.NUM_UNIQUE_CLUB[1] == "Max":
+        model.Add(cp_model.LinearExpr.Sum(club) <= input.NUM_UNIQUE_CLUB[0])
+    elif input.NUM_UNIQUE_CLUB[1] == "Exactly":
+        model.Add(cp_model.LinearExpr.Sum(club) == input.NUM_UNIQUE_CLUB[0])
+    else:
+        print("**Couldn't create unique_club_constraint!**")
     return model
 
 @runtime
 def create_unique_league_constraint(df, model, player, league, map_idx, players_grouped, num_cnts):
-    '''Leagues: Max / Min (default) / Exactly X'''
+    '''Leagues: Max / Min / Exactly X'''
     num_league = num_cnts[2]
     for i in range(num_league):
         expr = players_grouped["League"].get(i, [])
         model.Add(cp_model.LinearExpr.Sum(expr) >= 1).OnlyEnforceIf(league[i])
         model.Add(cp_model.LinearExpr.Sum(expr) == 0).OnlyEnforceIf(league[i].Not())
-    model.Add(cp_model.LinearExpr.Sum(league) >= input.NUM_UNIQUE_LEAGUE) # Change the sign here (>=, <=, ==).
+    if input.NUM_UNIQUE_LEAGUE[1] == "Min":
+        model.Add(cp_model.LinearExpr.Sum(league) >= input.NUM_UNIQUE_LEAGUE[0])
+    elif input.NUM_UNIQUE_LEAGUE[1] == "Max":
+        model.Add(cp_model.LinearExpr.Sum(league) <= input.NUM_UNIQUE_LEAGUE[0])
+    elif input.NUM_UNIQUE_LEAGUE[1] == "Exactly":
+        model.Add(cp_model.LinearExpr.Sum(league) == input.NUM_UNIQUE_LEAGUE[0])
+    else:
+        print("**Couldn't create unique_league_constraint!**")
     return model
 
 @runtime
 def create_unique_country_constraint(df, model, player, country, map_idx, players_grouped, num_cnts):
-    '''Nations: Max / Min (default) / Exactly X'''
+    '''Nations: Max / Min / Exactly X'''
     num_country = num_cnts[3]
     for i in range(num_country):
         expr = players_grouped["Country"].get(i, [])
         model.Add(cp_model.LinearExpr.Sum(expr) >= 1).OnlyEnforceIf(country[i])
         model.Add(cp_model.LinearExpr.Sum(expr) == 0).OnlyEnforceIf(country[i].Not())
-    model.Add(cp_model.LinearExpr.Sum(country) >= input.NUM_UNIQUE_COUNTRY) # Change the sign here (>=, <=, ==).
+    if input.NUM_UNIQUE_COUNTRY[1] == "Min":
+        model.Add(cp_model.LinearExpr.Sum(country) >= input.NUM_UNIQUE_COUNTRY[0])
+    elif input.NUM_UNIQUE_COUNTRY[1] == "Max":
+        model.Add(cp_model.LinearExpr.Sum(country) <= input.NUM_UNIQUE_COUNTRY[0])
+    elif input.NUM_UNIQUE_COUNTRY[1] == "Exactly":
+        model.Add(cp_model.LinearExpr.Sum(country) == input.NUM_UNIQUE_COUNTRY[0])
+    else:
+        print("**Couldn't create unique_country_constraint!**")
     return model
 
+@runtime
+def prioritize_duplicates(df, model, player):
+    dup_idxes = list(df[(df["IsDuplicate"] == True)].index)
+    if not dup_idxes:
+        print("**No Duplicates Found!**")
+        return model
+    duplicates = [player[j] for j in dup_idxes]
+    dup_expr = cp_model.LinearExpr.Sum(duplicates)
+    if input.USE_ALL_DUPLICATES:
+        model.Add(dup_expr == len(dup_idxes))
+    elif input.USE_AT_LEAST_HALF_DUPLICATES:
+        model.Add(2 * dup_expr >= len(dup_idxes))
+    elif input.USE_AT_LEAST_ONE_DUPLICATE:
+        model.Add(dup_expr >= 1)
+    return model
+
+@runtime
 def set_objective(df, model, player):
     '''Set objective (minimize) based on cost'''
     cost = df["Cost"].tolist()
@@ -518,6 +560,9 @@ def SBC(df):
     '''Min Overall'''
     # model = create_min_overall_constraint(df, model, player, map_idx, players_grouped, num_cnts)
     '''Min Overall'''
+
+    '''Duplicates'''
+    # model = prioritize_duplicates(df, model, player)
 
     '''Comment out the constraints not required'''
 

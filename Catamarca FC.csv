@@ -1,570 +1,598 @@
-﻿Player Name,Rating,Quality,Rarity,Position,Nation,League,Club,Price Range,FUTBIN Price,Bought For,Discard Value,Contract Left,IsUntradable,IsLoaned
-Zidane,97,Gold,Special,CAM,France,Icons,ICON,Min:180000 Max:3400000,1420000,0,0,7,true,true,
-Roberto Carlos,97,Gold,Special,LB,Brazil,Icons,ICON,Min:10000 Max:100000,676850,0,0,23,true,true,
-Zanetti,93,Gold,Special,RB,Argentina,Icons,ICON,Min:11500 Max:180000,119000,0,0,7,true,false,
-Fernando Hierro,92,Gold,Special,LB,Spain,Icons,ICON,Min:11250 Max:80000,80000,0,0,7,true,true,
-Mbappé,91,Gold,RARE,ST,France,Ligue 1 Uber Eats,Paris SG,Min:10500 Max:80000,53500,0,0,1,true,true,
-Casemiro,91,Gold,Special,CM,Brazil,Premier League,Manchester Utd,--NA--,42000,0,0,7,true,true,
-Saliba,90,Gold,FANTASY_FUT_ON,CB,France,Premier League,Arsenal,--NA--,18750,0,0,6,true,false,
-Gabriel Strefezza,90,Gold,Special,RW,Brazil,Serie A TIM,Lecce,Min:11000 Max:60000,31500,0,0,7,true,false,
-Son,89,Gold,RARE,LW,Korea Republic,Premier League,Spurs,Min:9100 Max:27500,14500,0,0,3,true,true,
-Kane,89,Gold,RARE,ST,England,Premier League,Spurs,--NA--,14500,0,0,3,true,false,
-Diogo Costa,89,Gold,Special,GK,Portugal,Liga Portugal,FC Porto,Min:11000 Max:42500,31500,0,0,7,true,true,
-Oblak,89,Gold,RARE,GK,Slovenia,LaLiga Santander,Atlético de Madrid,Min:9100 Max:25000,25000,0,0,7,true,false,
-Modrić,88,Gold,RARE,CM,Croatia,LaLiga Santander,Real Madrid,--NA--,12500,0,0,16,true,false,
-Al Owairan,88,Gold,Special,ST,Saudi Arabia,ROSHN Saudi League,HERO,--NA--,81500,0,0,22,true,false,
-Rúben Dias,88,Gold,RARE,CB,Portugal,Premier League,Manchester City,--NA--,17500,0,0,7,true,false,
-Benteke,88,Gold,FANTASY_FUT_ON,ST,Belgium,MLS,D.C. United,Min:10750 Max:30000,11000,0,10736,7,false,false,
-ter Stegen,88,Gold,RARE,GK,Germany,LaLiga Santander,FC Barcelona,Min:6100 Max:20000,10750,0,0,3,true,false,
-Fagioli,88,Gold,Special,CM,Italy,Serie A TIM,Juventus,Min:10750 Max:30000,11000,0,0,7,true,false,
-Alexander-Arnold,87,Gold,RARE,RB,England,Premier League,Liverpool,Min:5100 Max:20000,7900,0,0,1,true,true,
-Kaká,87,Gold,Special,CAM,Brazil,Icons,ICON,--NA--,150000,0,0,10,true,true,
-Lloris,87,Gold,RARE,GK,France,Premier League,Spurs,--NA--,7900,0,0,21,true,false,
-Koulibaly,87,Gold,RARE,CB,Senegal,Premier League,Chelsea,--NA--,9200,0,0,4,true,false,
-Sócrates,87,Gold,Special,CAM,Brazil,Icons,ICON,Min:65500 Max:150000,--NA--,0,0,0,true,true,
-Fekir,87,Gold,Special,CAM,France,LaLiga Santander,Real Betis,Min:10750 Max:32500,--NA--,0,0,7,true,true,
-Essien,87,Gold,Special,CDM,Ghana,Icons,ICON,Min:65500 Max:170000,73500,0,0,7,true,true,
-Müller,87,Gold,RARE,CAM,Germany,Bundesliga,FC Bayern München,Min:5100 Max:27500,19000,0,0,7,true,false,
-Zambo Anguissa,87,Gold,CHAMPIONS_LIVE,CDM,Cameroon,Serie A TIM,Napoli FC,Min:10750 Max:30000,11000,0,0,7,true,false,
-Maignan,87,Gold,RARE,GK,France,Serie A TIM,Milan,Min:5100 Max:16000,9500,0,0,7,true,false,
-Willock,87,Gold,Special,CM,England,Premier League,Newcastle Utd,Min:10750 Max:30000,11000,0,0,7,true,false,
-Rodri,87,Gold,RARE,CDM,Spain,Premier League,Manchester City,Min:5100 Max:20000,8700,0,0,7,true,false,
-Pessina,87,Gold,Special,CAM,Italy,Serie A TIM,Monza,Min:10750 Max:30000,11000,0,0,7,true,false,
-Tchouaméni,86,Gold,Special,CDM,France,LaLiga Santander,Real Madrid,--NA--,25000,0,0,0,true,false,
-Smith Rowe,86,Gold,Special,CAM,England,Premier League,Arsenal,--NA--,16000,0,0,5,true,false,
-Dybala,86,Gold,RARE,CF,Argentina,Serie A TIM,Roma FC,--NA--,5900,0,0,7,true,false,
-Hernández,86,Gold,Special,LB,France,Serie A TIM,Milan,--NA--,30000,0,0,7,true,false,
-Govou,86,Gold,Special,ST,France,Ligue 1 Uber Eats,HERO,Min:10500 Max:30000,15000,0,0,3,true,true,
-Donovan,86,Gold,Special,CF,United States,MLS,HERO,Min:10500 Max:30000,30000,0,0,7,true,true,
-Vinícius Jr.,86,Gold,RARE,LW,Brazil,LaLiga Santander,Real Madrid,Min:3600 Max:30000,25250,0,0,7,true,true,
-Immobile,86,Gold,RARE,ST,Italy,Serie A TIM,Latium,Min:3600 Max:12000,5800,0,0,10,true,true,
-Lukaku,86,Gold,RARE,ST,Belgium,Serie A TIM,Inter,Min:3600 Max:12000,6000,0,3500,7,false,false,
-Vinícius Jr.,86,Gold,RARE,LW,Brazil,LaLiga Santander,Real Madrid,Min:3600 Max:30000,25250,0,0,7,true,false,
-Brozović,86,Gold,RARE,CDM,Croatia,Serie A TIM,Inter,Min:3600 Max:12000,6800,0,0,7,true,false,
-Fernández,86,Gold,Special,RM,Chile,Libertadores,IDV,Min:1000 Max:10000,--NA--,0,0,7,true,false,
-Raphinha,86,Gold,CHAMPIONS_LIVE,RW,Brazil,LaLiga Santander,FC Barcelona,Min:10500 Max:30000,19000,0,0,7,true,false,
-Mendy,86,Gold,RARE,GK,Senegal,Premier League,Chelsea,Min:3600 Max:12000,5900,0,0,7,true,false,
-Laporte,86,Gold,RARE,CB,Spain,Premier League,Manchester City,Min:3600 Max:12000,5800,0,0,7,true,false,
-Sissoko,86,Gold,Special,CDM,France,Ligue 1 Uber Eats,FC Nantes,Min:10500 Max:30000,18250,0,0,7,true,false,
-Fábio,86,Gold,Special,RB,Brazil,Ligue 1 Uber Eats,FC Nantes,Min:10500 Max:32500,32500,0,0,7,true,false,
-Fofana,86,Gold,Special,CB,Ivory Coast,Ligue 1 Uber Eats,RC Lens,Min:10500 Max:30000,14500,0,0,7,true,false,
-Ikoné,86,Gold,Special,RW,France,Serie A TIM,Fiorentina,Min:10500 Max:30000,10750,0,0,7,true,false,
-Alexandre Pato,86,Gold,Special,ST,Brazil,MLS,Orlando City,Min:10500 Max:37500,15750,0,0,7,true,false,
-Mahrez,86,Gold,RARE,RW,Algeria,Premier League,Manchester City,Min:3600 Max:16000,6600,0,0,7,true,false,
-Lee Dong Jun,85,Gold,Special,RM,Korea Republic,Bundesliga,Hertha Berlin,Min:5000 Max:10000,--NA--,0,0,7,true,false,
-Gyasi,85,Gold,Special,RW,Ghana,Serie A TIM,Spezia,Min:5000 Max:10000,--NA--,0,0,7,true,false,
-Fekir,85,Gold,RARE,CAM,France,LaLiga Santander,Real Betis,Min:2100 Max:10000,6900,0,0,7,true,false,
-Acuña,85,Gold,RARE,LB,Argentina,LaLiga Santander,Sevilla FC,Min:2100 Max:16000,14750,0,0,7,true,false,
-Diogo Jota,85,Gold,RARE,CF,Portugal,Premier League,Liverpool,Min:2100 Max:18000,11500,0,0,7,true,false,
-Süle,85,Gold,RARE,CB,Germany,Bundesliga,Borussia Dortmund,Min:2100 Max:10000,4500,0,0,7,true,false,
-Iago Aspas,85,Gold,RARE,ST,Spain,LaLiga Santander,RC Celta,Min:2100 Max:10000,4600,0,0,7,true,false,
-Buchanan,85,Gold,Special,RM,Canada,1A Pro League,Club Brugge,Min:100 Max:10000,--NA--,0,0,7,true,false,
-Gerard Moreno,85,Gold,RARE,ST,Spain,LaLiga Santander,Villarreal CF,Min:2100 Max:10000,4800,0,0,7,true,false,
-Gulácsi,85,Gold,RARE,GK,Hungary,Bundesliga,RB Leipzig,Min:2100 Max:10000,5200,0,0,7,true,false,
-Tuta,85,Gold,UEFA_CHAMPIONS_RTTF,CB,Brazil,Bundesliga,Frankfurt,Min:10500 Max:30000,10750,0,0,7,true,false,
-James,84,Gold,RARE,RB,England,Premier League,Chelsea,--NA--,3800,9400,1000,9,false,false,
-Ødegaard,84,Gold,RARE,CAM,Norway,Premier League,Arsenal,--NA--,3700,2400,1000,16,false,false,
-Grealish,84,Gold,RARE,CAM,England,Premier League,Manchester City,--NA--,3700,0,0,4,true,false,
-Savić,84,Gold,RARE,CB,Montenegro,LaLiga Santander,Atlético de Madrid,--NA--,4200,0,0,7,true,false,
-Havertz,84,Gold,RARE,CAM,Germany,Premier League,Chelsea,Min:1100 Max:10000,3700,0,0,5,true,true,
-Grealish,84,Gold,RARE,LW,England,Premier League,Manchester City,Min:1100 Max:10000,3700,0,0,9,true,true,
-Çalhanoğlu,84,Gold,RARE,CM,Turkey,Serie A TIM,Inter,Min:1100 Max:10000,3400,0,1000,7,false,false,
-Diaby,84,Gold,RARE,RM,France,Bundesliga,Leverkusen,Min:1100 Max:10000,3000,2900,1000,7,false,false,
-Perišić,84,Gold,RARE,LM,Croatia,Premier League,Spurs,Min:1100 Max:10000,3400,0,0,7,true,false,
-Berardi,84,Gold,RARE,RM,Italy,Serie A TIM,Sassuolo,Min:1100 Max:10000,3800,0,0,7,true,false,
-Bonucci,84,Gold,RARE,CB,Italy,Serie A TIM,Juventus,Min:1100 Max:10000,3100,0,0,7,true,false,
-Tadić,84,Gold,RARE,LW,Serbia,Eredivisie,Ajax,Min:1100 Max:10000,3400,0,0,7,true,false,
-de Vrij,84,Gold,RARE,CB,Netherlands,Serie A TIM,Inter,Min:1100 Max:10000,3700,0,0,7,true,false,
-Rafael Leão,84,Gold,RARE,LW,Portugal,Serie A TIM,Milan,Min:1100 Max:13000,9100,0,0,7,true,false,
-Bounou,84,Gold,RARE,GK,Morocco,LaLiga Santander,Sevilla FC,Min:1100 Max:10000,3700,0,0,7,true,false,
-Mount,84,Gold,RARE,CAM,England,Premier League,Chelsea,Min:1100 Max:10000,3700,0,0,7,true,false,
-Muniain,84,Gold,RARE,LM,Spain,LaLiga Santander,Athletic Club,Min:1100 Max:10000,3300,0,0,7,true,false,
-Carvajal,84,Gold,RARE,RB,Spain,LaLiga Santander,Real Madrid,Min:1100 Max:10000,9500,0,0,7,true,false,
-Tonali,84,Gold,RARE,CDM,Italy,Serie A TIM,Milan,Min:1100 Max:10000,4500,0,0,7,true,false,
-Bellingham,84,Gold,RARE,CM,England,Bundesliga,Borussia Dortmund,Min:1100 Max:16000,12750,0,0,7,true,false,
-Gómez,84,Gold,RARE,CAM,Argentina,LaLiga Santander,Sevilla FC,Min:1100 Max:10000,3300,0,0,7,true,false,
-Hazard,84,Gold,RARE,LW,Belgium,LaLiga Santander,Real Madrid,Min:1100 Max:13000,7600,0,0,7,true,false,
-Partey,84,Gold,RARE,CDM,Ghana,Premier League,Arsenal,Min:1100 Max:10000,3000,0,0,7,true,false,
-Matip,84,Gold,RARE,CB,Cameroon,Premier League,Liverpool,Min:1100 Max:10000,3600,0,0,7,true,false,
-João Félix,84,Gold,RARE,CF,Portugal,Premier League,Chelsea,Min:1100 Max:13000,10000,0,0,7,true,false,
-Kovačić,84,Gold,RARE,CM,Croatia,Premier League,Chelsea,Min:1100 Max:10000,3400,0,0,7,true,false,
-Handanovič,84,Gold,RARE,GK,Slovenia,Serie A TIM,Inter,Min:1100 Max:10000,3700,0,0,7,true,false,
-Kamada,83,Gold,Special,CAM,Japan,Bundesliga,Frankfurt,Min:10250 Max:37500,16750,0,0,7,true,false,
-Correa,83,Gold,RARE,ST,Argentina,LaLiga Santander,Atlético de Madrid,Min:800 Max:10000,3000,1900,750,12,false,false,
-Pau Torres,83,Gold,RARE,CB,Spain,LaLiga Santander,Villarreal CF,--NA--,1800,0,0,16,true,false,
-Lemar,83,Gold,RARE,CM,France,LaLiga Santander,Atlético de Madrid,--NA--,2100,0,0,16,true,false,
-Gabriel Jesus,83,Gold,RARE,ST,Brazil,Premier League,Arsenal,--NA--,7100,1600,750,18,false,false,
-Diego Carlos,83,Gold,RARE,CB,Brazil,Premier League,Aston Villa,--NA--,8000,0,0,5,true,false,
-Stones,83,Gold,RARE,CB,England,Premier League,Manchester City,--NA--,2300,0,0,5,true,false,
-Yeray,83,Gold,Special,CB,Spain,LaLiga Santander,Athletic Club,Min:10250 Max:47500,17250,0,0,7,true,true,
-Unai Simón,83,Gold,RARE,GK,Spain,LaLiga Santander,Athletic Club,Min:800 Max:10000,1700,0,0,7,true,true,
-Carlos Soler,83,Gold,RARE,CM,Spain,Ligue 1 Uber Eats,Paris SG,Min:800 Max:10000,1900,0,0,7,true,true,
-Laimer,83,Gold,RARE,CDM,Austria,Bundesliga,RB Leipzig,Min:800 Max:10000,2900,0,0,7,true,true,
-Piqué,83,Gold,RARE,CB,Spain,LaLiga Santander,FC Barcelona,Min:800 Max:11000,10000,0,750,7,false,false,
-Giménez,83,Gold,RARE,CB,Uruguay,LaLiga Santander,Atlético de Madrid,Min:800 Max:10000,1700,0,750,7,false,false,
-Carlos Soler,83,Gold,RARE,CM,Spain,Ligue 1 Uber Eats,Paris SG,Min:800 Max:10000,1900,0,0,7,true,false,
-Araujo,83,Gold,RARE,CB,Uruguay,LaLiga Santander,FC Barcelona,Min:850 Max:10000,3900,0,0,7,true,false,
-Roberto Firmino,83,Gold,RARE,CF,Brazil,Premier League,Liverpool,Min:800 Max:10000,6500,0,0,7,true,false,
-Zapata,83,Gold,RARE,ST,Colombia,Serie A TIM,Bergamo Calcio,Min:800 Max:10000,1700,0,0,7,true,false,
-David Silva,83,Gold,RARE,CAM,Spain,LaLiga Santander,Real Sociedad,Min:800 Max:10000,2500,0,0,7,true,false,
-Baumann,83,Gold,RARE,GK,Germany,Bundesliga,TSG Hoffenheim,Min:800 Max:10000,1800,0,0,7,true,false,
-Angeliño,83,Gold,RARE,LWB,Spain,Bundesliga,TSG Hoffenheim,Min:800 Max:10000,5600,0,0,7,true,false,
-Rúben Neves,83,Gold,RARE,CM,Portugal,Premier League,Wolves,Min:800 Max:10000,5800,0,0,7,true,false,
-Ricardo Pereira,83,Gold,RARE,RB,Portugal,Premier League,Leicester City,Min:800 Max:10000,2000,0,0,7,true,false,
-Gakpo,83,Gold,RARE,LW,Netherlands,Eredivisie,PSV,Min:800 Max:10000,9000,0,0,7,true,false,
-Højbjerg,83,Gold,RARE,CDM,Denmark,Premier League,Spurs,Min:800 Max:10000,1300,0,0,7,true,false,
-Ayew,83,Gold,Special,RW,Ghana,Premier League,Crystal Palace,Min:1000 Max:10000,--NA--,0,0,7,true,false,
-Ziyech,83,Gold,RARE,RW,Morocco,Premier League,Chelsea,Min:800 Max:10000,1800,0,0,7,true,false,
-Gakpo,83,Gold,RARE,LW,Netherlands,Premier League,Liverpool,Min:800 Max:10000,2300,0,0,7,true,false,
-Koke,83,Gold,RARE,CM,Spain,LaLiga Santander,Atlético de Madrid,Min:800 Max:10000,7000,0,0,7,true,false,
-Werner,82,Gold,RARE,ST,Germany,Bundesliga,RB Leipzig,Min:700 Max:10000,7100,2000,580,3,false,false,
-Tah,82,Gold,RARE,CB,Germany,Bundesliga,Leverkusen,Min:700 Max:10000,1000,0,0,4,true,true,
-Ramsdale,82,Gold,RARE,GK,England,Premier League,Arsenal,Min:700 Max:10000,1200,2600,580,29,false,false,
-Schlotterbeck,82,Gold,RARE,CB,Germany,Bundesliga,Borussia Dortmund,Min:700 Max:10000,1100,0,580,18,false,false,
-Coates,82,Gold,RARE,CB,Uruguay,Liga Portugal,Sporting CP,Min:700 Max:10000,1200,0,580,7,false,false,
-Álex Remiro,82,Gold,RARE,GK,Spain,LaLiga Santander,Real Sociedad,Min:700 Max:10000,1100,0,580,7,false,false,
-Coutinho,82,Gold,RARE,CAM,Brazil,Premier League,Aston Villa,Min:700 Max:10000,9500,0,580,7,false,false,
-Zaha,82,Gold,RARE,LW,Ivory Coast,Premier League,Crystal Palace,Min:700 Max:10000,1500,0,580,7,false,false,
-Danjuma,82,Gold,RARE,LM,Netherlands,Premier League,Spurs,Min:700 Max:10000,4400,0,580,7,false,false,
-Gosens,82,Gold,RARE,LWB,Germany,Serie A TIM,Inter,Min:700 Max:10000,1200,0,0,7,true,false,
-Orban,82,Gold,Common,CB,Hungary,Bundesliga,RB Leipzig,Min:350 Max:10000,4700,0,0,7,true,false,
-Gayà,82,Gold,RARE,LB,Spain,LaLiga Santander,Valencia CF,Min:700 Max:10000,1500,0,0,7,true,false,
-Iñigo Martínez,82,Gold,RARE,CB,Spain,LaLiga Santander,Athletic Club,Min:700 Max:10000,1100,0,0,7,true,false,
-Saka,82,Gold,RARE,RM,England,Premier League,Arsenal,Min:700 Max:10000,3000,0,0,7,true,false,
-Tah,82,Gold,RARE,CB,Germany,Bundesliga,Leverkusen,Min:700 Max:10000,1000,0,0,7,true,false,
-Isco,82,Gold,RARE,CAM,Spain,LaLiga Santander,Sevilla FC,Min:700 Max:10000,10000,0,0,7,true,false,
-David Soria,82,Gold,RARE,GK,Spain,LaLiga Santander,Getafe CF,Min:700 Max:10000,1100,0,0,7,true,false,
-Gabriel Paulista,82,Gold,RARE,CB,Brazil,LaLiga Santander,Valencia CF,Min:700 Max:10000,950,0,0,7,true,false,
-Rulli,82,Gold,RARE,GK,Argentina,LaLiga Santander,Villarreal CF,Min:700 Max:10000,--NA--,0,0,7,true,false,
-Payet,82,Gold,RARE,CAM,France,Ligue 1 Uber Eats,OM,Min:700 Max:10000,1100,0,0,7,true,false,
-Wirtz,82,Gold,RARE,CAM,Germany,Bundesliga,Leverkusen,Min:700 Max:10000,1200,0,0,7,true,false,
-Lopes,82,Gold,RARE,GK,Portugal,Ligue 1 Uber Eats,OL,Min:700 Max:10000,1100,0,0,7,true,false,
-Muriel,82,Gold,RARE,ST,Colombia,Serie A TIM,Bergamo Calcio,Min:700 Max:10000,1200,0,0,7,true,false,
-O'Nien,82,Gold,Special,CDM,England,EFL Championship,Sunderland,Min:11000 Max:95000,--NA--,0,0,7,true,false,
-Anderson Talisca,82,Gold,RARE,CF,Brazil,ROSHN Saudi League,Al Nassr,Min:700 Max:10000,1100,0,0,7,true,false,
-André Silva,82,Gold,RARE,ST,Portugal,Bundesliga,RB Leipzig,Min:700 Max:10000,1100,0,0,7,true,false,
-Grimaldo,82,Gold,RARE,LB,Spain,Liga Portugal,SL Benfica,Min:700 Max:10000,1200,0,0,7,true,false,
-Lucas Paquetá,82,Gold,RARE,CAM,Brazil,Premier League,West Ham,Min:700 Max:10000,4000,0,0,7,true,false,
-Christensen,82,Gold,RARE,CB,Denmark,LaLiga Santander,FC Barcelona,Min:700 Max:10000,1100,0,0,7,true,false,
-Fabiański,82,Gold,RARE,GK,Poland,Premier League,West Ham,Min:700 Max:10000,1100,0,0,7,true,false,
-Otávio,82,Gold,RARE,RM,Portugal,Liga Portugal,FC Porto,Min:700 Max:10000,1200,0,0,7,true,false,
-Núñez,82,Gold,RARE,ST,Uruguay,Premier League,Liverpool,Min:700 Max:11000,10000,0,0,7,true,false,
-Dani Olmo,82,Gold,RARE,CAM,Spain,Bundesliga,RB Leipzig,Min:700 Max:10000,1100,0,0,7,true,false,
-Abraham,82,Gold,RARE,ST,England,Serie A TIM,Roma FC,Min:700 Max:10000,1100,0,0,7,true,false,
-Gordon,82,Gold,Special,LM,England,Premier League,Newcastle Utd,Min:5000 Max:150000,--NA--,0,0,7,true,false,
-Pickford,82,Gold,Common,GK,England,Premier League,Everton,Min:350 Max:10000,1800,0,0,7,true,false,
-Arnautović,82,Gold,RARE,ST,Austria,Serie A TIM,Bologna,Min:700 Max:10000,1200,0,0,7,true,false,
-Tierney,81,Gold,RARE,LB,Scotland,Premier League,Arsenal,--NA--,2000,1000,575,16,false,false,
-Pepe,81,Gold,RARE,CB,Portugal,Liga Portugal,FC Porto,Min:650 Max:10000,1100,0,575,7,false,false,
-José Sá,81,Gold,RARE,GK,Portugal,Premier League,Wolves,Min:650 Max:10000,1000,0,575,6,false,false,
-Ndicka,81,Gold,RARE,CB,France,Bundesliga,Frankfurt,Min:650 Max:10000,1000,1200,575,3,false,false,
-Vertonghen,81,Gold,RARE,CB,Belgium,1A Pro League,RSC Anderlecht,Min:650 Max:10000,850,0,575,7,false,false,
-Gabriel,81,Gold,Common,CB,Brazil,Premier League,Arsenal,Min:350 Max:10000,800,0,288,7,false,false,
-Areola,81,Gold,RARE,GK,France,Premier League,West Ham,Min:650 Max:10000,900,0,0,13,true,false,
-Le Normand,81,Gold,Common,CB,France,LaLiga Santander,Real Sociedad,Min:350 Max:10000,2000,0,0,7,true,false,
-Zambo Anguissa,81,Gold,RARE,CDM,Cameroon,Serie A TIM,Napoli FC,Min:1100 Max:20000,1200,0,0,7,true,false,
-Žulj,81,Gold,Special,CAM,Austria,Ö. Bundesliga,LASK,Min:9900 Max:47500,16750,0,0,7,true,false,
-Pope,81,Gold,RARE,GK,England,Premier League,Newcastle Utd,Min:650 Max:10000,900,0,0,7,true,false,
-Pašalić,81,Gold,RARE,CAM,Croatia,Serie A TIM,Bergamo Calcio,Min:650 Max:10000,850,0,0,7,true,false,
-Fofana,81,Gold,RARE,CM,Ivory Coast,Ligue 1 Uber Eats,RC Lens,Min:650 Max:10000,950,0,0,7,true,false,
-Konaté,81,Gold,RARE,CB,France,Premier League,Liverpool,Min:650 Max:10000,1400,0,0,7,true,false,
-Tapsoba,81,Gold,RARE,CB,Burkina Faso,Bundesliga,Leverkusen,Min:650 Max:10000,1500,0,0,7,true,false,
-Ricardo Horta,81,Gold,RARE,CF,Portugal,Liga Portugal,SC Braga,Min:650 Max:10000,900,0,0,7,true,false,
-Andrich,81,Gold,RARE,CDM,Germany,Bundesliga,Leverkusen,Min:650 Max:10000,850,0,0,7,true,false,
-Demirbay,81,Gold,RARE,CM,Germany,Bundesliga,Leverkusen,Min:650 Max:10000,850,0,0,7,true,false,
-Tagliafico,81,Gold,RARE,LB,Argentina,Ligue 1 Uber Eats,OL,Min:650 Max:10000,10000,0,0,7,true,false,
-Phillips,81,Gold,RARE,CDM,England,Premier League,Manchester City,Min:650 Max:10000,4000,0,0,7,true,false,
-Neto,81,Gold,RARE,GK,Brazil,Premier League,AFC Bournemouth,Min:650 Max:10000,800,0,0,7,true,false,
-Lobotka,81,Gold,RARE,CM,Slovakia,Serie A TIM,Napoli FC,Min:650 Max:10000,800,0,0,7,true,false,
-Savanier,81,Gold,RARE,CAM,France,Ligue 1 Uber Eats,Montpellier,Min:650 Max:10000,1000,0,0,7,true,false,
-Akanji,81,Gold,RARE,CB,Switzerland,Premier League,Manchester City,Min:650 Max:10000,1400,0,0,7,true,false,
-Upamecano,81,Gold,RARE,CB,France,Bundesliga,FC Bayern München,Min:650 Max:10000,8800,0,0,7,true,false,
-Musso,81,Gold,RARE,GK,Argentina,Serie A TIM,Bergamo Calcio,Min:650 Max:10000,950,0,0,7,true,false,
-Rafael Tolói,81,Gold,RARE,CB,Italy,Serie A TIM,Bergamo Calcio,Min:650 Max:10000,900,0,0,7,true,false,
-Lucas Vázquez,81,Gold,RARE,RB,Spain,LaLiga Santander,Real Madrid,Min:650 Max:10000,1200,0,0,7,true,false,
-Barák,81,Gold,RARE,CF,Czech Republic,Serie A TIM,Fiorentina,Min:650 Max:10000,800,0,0,7,true,false,
-Marc Bartra,81,Gold,RARE,CB,Spain,Süper Lig,Trabzonspor,Min:650 Max:10000,850,0,0,7,true,false,
-Raum,81,Gold,RARE,LWB,Germany,Bundesliga,RB Leipzig,Min:650 Max:10000,950,0,0,7,true,false,
-Pedro Porro,81,Gold,RARE,RWB,Spain,Liga Portugal,Sporting CP,Min:650 Max:10000,5700,0,0,7,true,false,
-Hofmann,81,Gold,RARE,CAM,Germany,Bundesliga,M'gladbach,Min:650 Max:10000,900,0,0,7,true,false,
-Tolisso,81,Gold,RARE,CM,France,Ligue 1 Uber Eats,OL,Min:650 Max:10000,1000,0,0,7,true,false,
-Musiala,81,Gold,RARE,CM,Germany,Bundesliga,FC Bayern München,Min:650 Max:10000,3300,0,0,7,true,false,
-Keïta,81,Gold,RARE,CM,Guinea,Premier League,Liverpool,Min:650 Max:10000,900,0,0,7,true,false,
-Frimpong,80,Gold,RARE,RB,Netherlands,Bundesliga,Leverkusen,Min:650 Max:10000,4000,1100,570,19,false,false,
-Morata,80,Gold,RARE,ST,Spain,LaLiga Santander,Atlético de Madrid,Min:650 Max:10000,1800,0,570,7,false,false,
-Çakır,80,Gold,RARE,GK,Turkey,Süper Lig,Trabzonspor,Min:650 Max:10000,800,0,570,7,false,false,
-Álvarez,80,Gold,RARE,CDM,Mexico,Eredivisie,Ajax,Min:650 Max:10000,800,0,570,7,false,false,
-Consigli,80,Gold,Common,GK,Italy,Serie A TIM,Sassuolo,Min:350 Max:10000,750,0,284,7,false,false,
-Capoue,80,Gold,Common,CM,France,LaLiga Santander,Villarreal CF,Min:350 Max:10000,700,0,284,7,false,false,
-Arnold,80,Gold,Common,CDM,Germany,Bundesliga,VfL Wolfsburg,Min:350 Max:10000,800,0,0,7,true,false,
-José Fonte,80,Gold,Common,CB,Portugal,Ligue 1 Uber Eats,LOSC Lille,Min:350 Max:10000,1100,0,0,7,true,false,
-Isak,80,Gold,RARE,ST,Sweden,Premier League,Newcastle Utd,Min:650 Max:10000,1100,0,0,7,true,false,
-Ospina,80,Gold,RARE,GK,Colombia,ROSHN Saudi League,Al Nassr,Min:650 Max:10000,750,0,0,7,true,false,
-Edgar Badia,80,Gold,Common,GK,Spain,LaLiga Santander,Elche CF,Min:350 Max:10000,10000,0,0,7,true,false,
-Mignolet,80,Gold,RARE,GK,Belgium,1A Pro League,Club Brugge,Min:650 Max:10000,800,0,0,7,true,false,
-Benítez,80,Gold,RARE,GK,Argentina,Eredivisie,PSV,Min:650 Max:10000,800,0,0,7,true,false,
-Wijnaldum,80,Gold,RARE,CM,Netherlands,Serie A TIM,Roma FC,Min:650 Max:10000,800,0,0,7,true,false,
-Ortega,80,Gold,RARE,GK,Germany,Premier League,Manchester City,Min:650 Max:10000,800,0,0,7,true,false,
-Hateboer,80,Gold,RARE,RWB,Netherlands,Serie A TIM,Bergamo Calcio,Min:650 Max:10000,750,0,0,7,true,false,
-Clauss,80,Gold,RARE,RWB,France,Ligue 1 Uber Eats,OM,Min:650 Max:10000,2200,0,0,7,true,false,
-Dahoud,80,Gold,Common,CM,Germany,Bundesliga,Borussia Dortmund,Min:350 Max:10000,950,0,0,7,true,false,
-Lafont,80,Gold,RARE,GK,France,Ligue 1 Uber Eats,FC Nantes,Min:650 Max:10000,6400,0,0,7,true,false,
-Timber,80,Gold,RARE,CB,Netherlands,Eredivisie,Ajax,Min:650 Max:10000,9900,0,0,7,true,false,
-Buendía,80,Gold,Common,RM,Argentina,Premier League,Aston Villa,Min:350 Max:10000,2500,0,0,7,true,false,
-Calabria,80,Gold,RARE,RB,Italy,Serie A TIM,Milan,Min:650 Max:10000,1100,0,0,7,true,false,
-Karsdorp,80,Gold,RARE,RWB,Netherlands,Serie A TIM,Roma FC,Min:650 Max:10000,750,0,0,7,true,false,
-Aguerd,80,Gold,RARE,CB,Morocco,Premier League,West Ham,Min:650 Max:10000,900,0,0,7,true,false,
-Baku,80,Gold,RARE,RM,Germany,Bundesliga,VfL Wolfsburg,Min:650 Max:10000,1000,0,0,7,true,false,
-Sabitzer,80,Gold,RARE,CM,Austria,Bundesliga,FC Bayern München,Min:650 Max:10000,5500,0,0,7,true,false,
-Günter,80,Gold,RARE,LB,Germany,Bundesliga,SC Freiburg,Min:650 Max:10000,1000,0,0,7,true,false,
-Guendouzi,80,Gold,RARE,CM,France,Ligue 1 Uber Eats,OM,Min:650 Max:11000,1400,0,0,7,true,false,
-Hazard,80,Gold,RARE,LM,Belgium,Bundesliga,Borussia Dortmund,Min:650 Max:10000,4900,0,0,7,true,false,
-Darmian,80,Gold,Common,RWB,Italy,Serie A TIM,Inter,Min:350 Max:10000,700,0,0,7,true,false,
-Jonathan Viera,80,Gold,RARE,CAM,Spain,LaLiga SmartBank,UD Las Palmas,Min:650 Max:10000,1200,0,0,7,true,false,
-Malen,79,Gold,RARE,ST,Netherlands,Bundesliga,Borussia Dortmund,Min:650 Max:10000,10000,0,560,4,false,false,
-Szoboszlai,79,Gold,RARE,CAM,Hungary,Bundesliga,RB Leipzig,Min:650 Max:10000,750,0,560,7,false,false,
-Diogo Costa,79,Gold,Common,GK,Portugal,Liga Portugal,FC Porto,Min:350 Max:10000,5600,0,280,7,false,false,
-Tarkowski,79,Gold,Common,CB,England,Premier League,Everton,Min:350 Max:10000,10000,0,280,7,false,false,
-Weghorst,79,Gold,Common,ST,Netherlands,Süper Lig,Beşiktaş,Min:350 Max:10000,10000,0,280,7,false,false,
-Estupiñán,79,Gold,Common,LB,Ecuador,Premier League,Brighton,Min:350 Max:10000,850,0,280,7,false,false,
-Sels,79,Gold,Common,GK,Belgium,Ligue 1 Uber Eats,Strasbourg,Min:350 Max:10000,800,0,280,7,false,false,
-Montiel,79,Gold,RARE,RB,Argentina,LaLiga Santander,Sevilla FC,Min:650 Max:10000,850,0,0,3,true,false,
-Pedro,79,Gold,Common,LW,Spain,Serie A TIM,Latium,Min:350 Max:10000,700,0,0,7,true,false,
-Milik,79,Gold,Common,ST,Poland,Serie A TIM,Juventus,Min:350 Max:10000,650,0,0,7,true,false,
-Zaccagni,79,Gold,Common,LW,Italy,Serie A TIM,Latium,Min:350 Max:10000,700,0,0,7,true,false,
-Kökçü,79,Gold,Common,CM,Turkey,Eredivisie,Feyenoord,Min:350 Max:10000,750,0,0,7,true,false,
-Ismaily,79,Gold,RARE,LB,Brazil,Ligue 1 Uber Eats,LOSC Lille,Min:650 Max:10000,750,0,0,7,true,false,
-Xhaka,79,Gold,Common,CDM,Switzerland,Premier League,Arsenal,Min:350 Max:10000,900,0,0,7,true,false,
-Özcan,79,Gold,RARE,CDM,Turkey,Bundesliga,Borussia Dortmund,Min:650 Max:10000,800,0,0,7,true,false,
-Kim Min Jae,79,Gold,RARE,CB,Korea Republic,Serie A TIM,Napoli FC,Min:650 Max:10000,900,0,0,7,true,false,
-Dia,79,Gold,Common,ST,Senegal,Serie A TIM,Salernitana,Min:350 Max:10000,2000,0,0,7,true,false,
-Stanciu,79,Gold,RARE,CM,Romania,CSL,Wuhan 3 Towns,Min:650 Max:10000,750,0,0,7,true,false,
-Luis Milla,79,Gold,RARE,CDM,Spain,LaLiga Santander,Getafe CF,Min:650 Max:10000,1200,0,0,7,true,false,
-Reinildo,79,Gold,Common,LB,Mozambique,LaLiga Santander,Atlético de Madrid,Min:350 Max:10000,3300,0,0,7,true,false,
-Bellarabi,79,Gold,RARE,RM,Germany,Bundesliga,Leverkusen,Min:650 Max:10000,900,0,0,7,true,false,
-Gouiri,79,Gold,RARE,ST,France,Ligue 1 Uber Eats,Stade Rennais FC,Min:650 Max:10000,850,0,0,7,true,false,
-Matheus Reis,79,Gold,RARE,CB,Brazil,Liga Portugal,Sporting CP,Min:650 Max:10000,750,0,0,7,true,false,
-Doucouré,79,Gold,Common,CM,Mali,Premier League,Everton,Min:350 Max:10000,800,0,0,7,true,false,
-Gudelj,79,Gold,Common,CDM,Serbia,LaLiga Santander,Sevilla FC,Min:350 Max:10000,1300,0,0,7,true,false,
-Marcão,79,Gold,RARE,CB,Brazil,LaLiga Santander,Sevilla FC,Min:650 Max:10000,800,0,0,7,true,false,
-Rakitskyi,79,Gold,RARE,CB,Ukraine,Süper Lig,Adana Demirspor,Min:650 Max:10000,5000,0,0,7,true,false,
-David Neres,79,Gold,RARE,RW,Brazil,Liga Portugal,SL Benfica,Min:650 Max:10000,750,0,0,7,true,false,
-Lazzari,79,Gold,RARE,RB,Italy,Serie A TIM,Latium,Min:650 Max:10000,1000,0,0,7,true,false,
-Fofana,79,Gold,RARE,CB,France,Premier League,Chelsea,Min:650 Max:10000,6000,0,0,7,true,false,
-Golovin,79,Gold,RARE,LM,Russia,Ligue 1 Uber Eats,AS Monaco,Min:650 Max:10000,800,0,0,7,true,false,
-Ávila,79,Gold,RARE,ST,Argentina,LaLiga Santander,CA Osasuna,Min:650 Max:10000,800,0,0,7,true,false,
-João Mário,79,Gold,Common,CM,Portugal,Liga Portugal,SL Benfica,Min:350 Max:10000,700,0,0,7,true,false,
-Diego López,79,Gold,Common,GK,Spain,LaLiga Santander,Rayo Vallecano,Min:350 Max:10000,800,0,0,7,true,false,
-Marchesín,79,Gold,Common,GK,Argentina,LaLiga Santander,RC Celta,Min:350 Max:10000,1000,0,0,7,true,false,
-Pablo Fornals,79,Gold,Common,CAM,Spain,Premier League,West Ham,Min:350 Max:10000,4000,0,0,7,true,false,
-Guaita,79,Gold,Common,GK,Spain,Premier League,Crystal Palace,Min:350 Max:10000,9000,0,0,7,true,false,
-Mandanda,79,Gold,Common,GK,France,Ligue 1 Uber Eats,Stade Rennais FC,Min:350 Max:10000,900,0,0,7,true,false,
-Gabriel Martinelli,78,Gold,RARE,LM,Brazil,Premier League,Arsenal,Min:650 Max:10000,8600,0,545,18,false,false,
-Simakan,78,Gold,RARE,CB,France,Bundesliga,RB Leipzig,Min:650 Max:10000,800,0,545,26,false,false,
-Lopez,78,Gold,Common,CM,France,Serie A TIM,Sassuolo,Min:350 Max:10000,1400,0,277,7,false,false,
-Sosa,78,Gold,Common,LB,Croatia,Bundesliga,VfB Stuttgart,Min:350 Max:10000,650,0,277,3,false,false,
-Nübel,78,Gold,Common,GK,Germany,Ligue 1 Uber Eats,AS Monaco,Min:350 Max:10000,2500,0,277,3,false,false,
-Senesi,78,Gold,Common,CB,Argentina,Premier League,AFC Bournemouth,Min:350 Max:10000,750,0,277,7,false,false,
-Lingard,78,Gold,Common,CAM,England,Premier League,Nott'm Forest,Min:350 Max:10000,1800,0,277,7,false,false,
-Baumgartner,78,Gold,Common,CAM,Austria,Bundesliga,TSG Hoffenheim,Min:350 Max:10000,650,0,277,7,false,false,
-Molina,78,Gold,Common,RWB,Argentina,LaLiga Santander,Atlético de Madrid,Min:350 Max:10000,700,0,277,7,false,false,
-Odriozola,78,Gold,Common,RB,Spain,LaLiga Santander,Real Madrid,Min:350 Max:10000,900,0,277,7,false,false,
-Willian José,78,Gold,Common,ST,Brazil,LaLiga Santander,Real Betis,Min:350 Max:10000,1400,0,0,7,true,false,
-Rosario,78,Gold,Common,CDM,Netherlands,Ligue 1 Uber Eats,OGC Nice,Min:350 Max:10000,700,0,0,7,true,false,
-Dimarco,78,Gold,Common,LWB,Italy,Serie A TIM,Inter,Min:350 Max:10000,600,0,0,7,true,false,
-Gollini,78,Gold,Common,GK,Italy,Serie A TIM,Fiorentina,Min:350 Max:10000,--NA--,0,0,7,true,false,
-Driussi,78,Gold,Common,CAM,Argentina,MLS,Austin FC,Min:350 Max:10000,800,0,0,7,true,false,
-Douglas Luiz,78,Gold,Common,CDM,Brazil,Premier League,Aston Villa,Min:350 Max:10000,1100,0,0,7,true,false,
-Pérez,78,Gold,Special,CDM,Argentina,Libertadores,River Plate,Min:650 Max:10000,700,0,0,7,true,false,
-Martínez,78,Gold,RARE,ST,Venezuela,MLS,Atlanta United,Min:650 Max:10000,1300,0,0,7,true,false,
-Portu,78,Gold,RARE,RM,Spain,LaLiga Santander,Getafe CF,Min:650 Max:10000,800,0,0,7,true,false,
-Ruidíaz,78,Gold,RARE,ST,Peru,MLS,Sounders FC,Min:650 Max:10000,750,0,0,7,true,false,
-Luiz Araújo,78,Gold,Common,RM,Brazil,MLS,Atlanta United,Min:350 Max:10000,700,0,0,7,true,false,
-Holeš,78,Gold,RARE,CDM,Czech Republic,Česká Liga,Slavia Praha,Min:650 Max:10000,750,0,0,7,true,false,
-Ighalo,78,Gold,Common,ST,Nigeria,ROSHN Saudi League,Al Hilal,Min:350 Max:10000,500,0,0,7,true,false,
-Watkins,78,Gold,RARE,ST,England,Premier League,Aston Villa,Min:650 Max:10000,750,0,0,7,true,false,
-Romarinho,78,Gold,RARE,CF,Brazil,ROSHN Saudi League,Al Ittihad,Min:650 Max:10000,800,0,0,7,true,false,
-Aidoo,78,Gold,RARE,CB,Ghana,LaLiga Santander,RC Celta,Min:650 Max:10000,800,0,0,7,true,false,
-Pereyra,78,Gold,RARE,CM,Argentina,Serie A TIM,Udinese,Min:650 Max:10000,800,0,0,7,true,false,
-Fernando,78,Gold,Common,CDM,Brazil,Süper Lig,Antalyaspor,Min:350 Max:10000,700,0,0,7,true,false,
-Brahim,78,Gold,RARE,CAM,Spain,Serie A TIM,Milan,Min:650 Max:10000,1200,0,0,7,true,false,
-Guilbert,78,Gold,Common,RWB,France,Premier League,Aston Villa,Min:350 Max:10000,10000,0,0,7,true,false,
-Caputo,78,Gold,RARE,ST,Italy,Serie A TIM,Sampdoria,Min:650 Max:10000,8000,0,0,7,true,false,
-Carrillo,78,Gold,Common,RW,Peru,ROSHN Saudi League,Al Hilal,Min:350 Max:10000,600,0,0,7,true,false,
-Bamford,78,Gold,Common,ST,England,Premier League,Leeds United,Min:350 Max:10000,1300,0,0,7,true,false,
-Niakhaté,78,Gold,RARE,CB,France,Premier League,Nott'm Forest,Min:650 Max:10000,10000,0,0,7,true,false,
-Almirón,78,Gold,RARE,RM,Paraguay,Premier League,Newcastle Utd,Min:650 Max:10000,850,0,0,7,true,false,
-Toko Ekambi,78,Gold,RARE,LM,Cameroon,Ligue 1 Uber Eats,OL,Min:650 Max:10000,--NA--,0,0,7,true,false,
-Mavropanos,78,Gold,RARE,CB,Greece,Bundesliga,VfB Stuttgart,Min:650 Max:10000,800,0,0,7,true,false,
-Ito,78,Gold,RARE,RW,Japan,Ligue 1 Uber Eats,Stade de Reims,Min:650 Max:10000,750,0,0,7,true,false,
-Faraoni,78,Gold,Common,RWB,Italy,Serie A TIM,Hellas Verona,Min:350 Max:10000,650,0,0,7,true,false,
-Kalajdžić,78,Gold,Common,ST,Austria,Premier League,Wolves,Min:350 Max:10000,700,0,0,7,true,false,
-Rode,78,Gold,Common,CDM,Germany,Bundesliga,Frankfurt,Min:350 Max:10000,700,0,0,7,true,false,
-Audero,78,Gold,Common,GK,Italy,Serie A TIM,Sampdoria,Min:350 Max:10000,550,0,0,7,true,false,
-Pedro Neto,78,Gold,Common,LW,Portugal,Premier League,Wolves,Min:350 Max:10000,600,0,0,7,true,false,
-Walker-Peters,78,Gold,Common,RB,England,Premier League,Southampton,Min:350 Max:10000,10000,0,0,7,true,false,
-Lookman,77,Gold,RARE,LM,England,Serie A TIM,Bergamo Calcio,Min:650 Max:11000,--NA--,0,545,7,false,false,
-Barrow,77,Gold,Common,CF,Gambia,Serie A TIM,Bologna,Min:350 Max:10000,550,0,273,7,false,false,
-Lainer,77,Gold,Common,RB,Austria,Bundesliga,M'gladbach,Min:350 Max:10000,850,0,273,7,false,false,
-Kritsyuk,77,Gold,Common,GK,Russia,Liga Portugal,Gil Vicente,Min:350 Max:10000,600,0,273,7,false,false,
-Iago,77,Gold,Common,LWB,Brazil,Bundesliga,FC Augsburg,Min:350 Max:10000,600,0,273,7,false,false,
-Miguel Veloso,77,Gold,Common,CM,Portugal,Serie A TIM,Hellas Verona,Min:350 Max:10000,600,0,0,7,true,false,
-Kadeřábek,77,Gold,Common,RWB,Czech Republic,Bundesliga,TSG Hoffenheim,Min:350 Max:10000,550,0,0,7,true,false,
-Boga,77,Gold,Common,LW,Ivory Coast,Serie A TIM,Bergamo Calcio,Min:350 Max:10000,600,0,0,7,true,false,
-Aguilar,77,Gold,Common,RB,France,Ligue 1 Uber Eats,AS Monaco,Min:350 Max:10000,1900,0,0,7,true,false,
-Unai Vencedor,77,Gold,Common,CM,Spain,LaLiga Santander,Athletic Club,Min:350 Max:10000,700,0,0,7,true,false,
-Bou,77,Gold,Common,ST,Argentina,MLS,New England,Min:350 Max:10000,600,0,0,7,true,false,
-Koné,77,Gold,Common,CM,France,Bundesliga,M'gladbach,Min:350 Max:10000,600,0,0,7,true,false,
-Pezzella,77,Gold,Common,CB,Argentina,LaLiga Santander,Real Betis,Min:350 Max:10000,1400,0,0,7,true,false,
-Boyé,77,Gold,Common,ST,Argentina,LaLiga Santander,Elche CF,Min:350 Max:10000,600,0,0,7,true,false,
-Oxlade-Chamberlain,77,Gold,RARE,CM,England,Premier League,Liverpool,Min:650 Max:10000,1100,0,0,7,true,false,
-Vitolo,77,Gold,Common,LM,Spain,LaLiga SmartBank,UD Las Palmas,Min:350 Max:10000,650,0,0,7,true,false,
-Diallo,77,Gold,Common,ST,Senegal,Ligue 1 Uber Eats,Strasbourg,Min:350 Max:10000,750,0,0,7,true,false,
-El Shaarawy,77,Gold,Common,LW,Italy,Serie A TIM,Roma FC,Min:350 Max:10000,650,0,0,7,true,false,
-Demme,77,Gold,Common,CDM,Germany,Serie A TIM,Napoli FC,Min:350 Max:10000,700,0,0,7,true,false,
-Geertruida,77,Gold,Common,RB,Netherlands,Eredivisie,Feyenoord,Min:350 Max:10000,650,0,0,7,true,false,
-Castellanos,77,Gold,Common,ST,Argentina,LaLiga Santander,Girona FC,Min:350 Max:10000,600,0,0,7,true,false,
-Madueke,77,Gold,Common,RW,England,Eredivisie,PSV,Min:350 Max:10000,--NA--,0,0,7,true,false,
-Rodríguez,77,Gold,Special,ST,Argentina,Libertadores,Colón,Min:650 Max:10000,3000,0,0,7,true,false,
-Hložek,77,Gold,Common,CAM,Czech Republic,Bundesliga,Leverkusen,Min:350 Max:10000,900,0,0,7,true,false,
-Al Dawsari,77,Gold,RARE,LW,Saudi Arabia,ROSHN Saudi League,Al Hilal,Min:650 Max:10000,750,0,0,7,true,false,
-Svensson,77,Gold,RARE,RB,Norway,Süper Lig,Adana Demirspor,Min:650 Max:10000,750,0,0,7,true,false,
-Rosier,77,Gold,RARE,RB,France,Süper Lig,Beşiktaş,Min:650 Max:10000,800,0,0,7,true,false,
-David López,77,Gold,Common,CDM,Spain,LaLiga Santander,Girona FC,Min:350 Max:10000,1200,0,0,7,true,false,
-Badiashile,77,Gold,Common,CB,France,Ligue 1 Uber Eats,AS Monaco,Min:350 Max:10000,7300,0,0,7,true,false,
-Toney,77,Gold,Common,ST,England,Premier League,Brentford,Min:350 Max:10000,8000,0,0,7,true,false,
-Jovetić,77,Gold,Common,ST,Montenegro,Bundesliga,Hertha Berlin,Min:350 Max:10000,700,0,0,7,true,false,
-Wolf,77,Gold,Common,RM,Germany,Bundesliga,Borussia Dortmund,Min:350 Max:10000,700,0,0,7,true,false,
-Bryan Gil,77,Gold,Common,LM,Spain,Premier League,Spurs,Min:350 Max:10000,--NA--,0,0,7,true,false,
-Lazović,77,Gold,Common,LM,Serbia,Serie A TIM,Hellas Verona,Min:350 Max:10000,900,0,0,7,true,false,
-Godín,77,Gold,Special,CB,Uruguay,Libertadores,Vélez Sarsfield,Min:650 Max:10000,5200,0,0,7,true,false,
-Kristensen,77,Gold,RARE,RB,Denmark,Premier League,Leeds United,Min:650 Max:10000,800,0,0,7,true,false,
-James,77,Gold,RARE,RM,Wales,Premier League,Fulham,Min:650 Max:10000,800,0,0,7,true,false,
-Brais Méndez,77,Gold,Common,RM,Spain,LaLiga Santander,Real Sociedad,Min:350 Max:10000,800,0,0,7,true,false,
-Arthur Cabral,77,Gold,Common,ST,Brazil,Serie A TIM,Fiorentina,Min:350 Max:10000,650,0,0,7,true,false,
-Teze,77,Gold,RARE,CB,Netherlands,Eredivisie,PSV,Min:650 Max:10000,800,0,0,7,true,false,
-Bruno Viana,77,Gold,Common,CB,Brazil,CSL,Wuhan FC,Min:350 Max:10000,6000,0,0,7,true,false,
-Disasi,77,Gold,Common,CB,France,Ligue 1 Uber Eats,AS Monaco,Min:350 Max:10000,1300,0,0,7,true,false,
-Midtsjø,77,Gold,Common,CM,Norway,Süper Lig,Galatasaray,Min:350 Max:10000,600,0,0,7,true,false,
-Frattesi,77,Gold,Common,CM,Italy,Serie A TIM,Sassuolo,Min:350 Max:10000,600,0,0,7,true,false,
-Isla,76,Gold,Special,RB,Chile,Sudamericana,Uni. Católica,Min:550 Max:4900,--NA--,0,540,7,false,false,
-Coleman,76,Gold,Common,RB,Republic of Ireland,Premier League,Everton,Min:350 Max:10000,500,0,270,7,false,false,
-Winks,76,Gold,Common,CM,England,Serie A TIM,Sampdoria,Min:350 Max:10000,600,0,270,7,false,false,
-Amiri,76,Gold,Common,CAM,Germany,Bundesliga,Leverkusen,Min:350 Max:10000,700,0,270,7,false,false,
-Kenedy,76,Gold,Common,LM,Brazil,LaLiga Santander,R. Valladolid CF,Min:350 Max:10000,500,0,270,7,false,false,
-Prömel,76,Gold,Common,CM,Germany,Bundesliga,TSG Hoffenheim,Min:350 Max:10000,750,0,270,7,false,false,
-Igor,76,Gold,Common,CB,Brazil,Serie A TIM,Fiorentina,Min:350 Max:10000,600,0,270,7,false,false,
-Wilson,76,Gold,Common,RM,Wales,Premier League,Fulham,Min:350 Max:10000,650,0,270,7,false,false,
-Idrissi,76,Gold,Common,LW,Morocco,Eredivisie,Feyenoord,Min:350 Max:10000,600,0,270,7,false,false,
-Solomon,76,Gold,Common,LM,Israel,Premier League,Fulham,Min:350 Max:10000,600,0,270,7,false,false,
-Luís Neto,76,Gold,Common,CB,Portugal,Liga Portugal,Sporting CP,Min:350 Max:10000,600,0,270,7,false,false,
-Seferović,76,Gold,Common,ST,Switzerland,Süper Lig,Galatasaray,Min:350 Max:10000,7000,0,270,7,false,false,
-Webster,76,Gold,Common,CB,England,Premier League,Brighton,Min:350 Max:10000,1500,0,270,7,false,false,
-Lukeba,76,Gold,Common,CB,France,Ligue 1 Uber Eats,OL,Min:350 Max:10000,900,0,270,7,false,false,
-Mauro Júnior,76,Gold,Common,RB,Brazil,Eredivisie,PSV,Min:350 Max:10000,2600,0,270,7,false,false,
-Medina,76,Gold,RARE,CB,Argentina,Ligue 1 Uber Eats,RC Lens,Min:650 Max:10000,850,0,0,7,true,false,
-Mooy,76,Gold,Common,CM,Australia,cinch Prem,Celtic,Min:350 Max:10000,550,0,0,7,true,false,
-López,76,Gold,Special,ST,Uruguay,LPF,Central Córdoba,Min:9300 Max:45000,--NA--,0,0,7,true,false,
-Skorupski,76,Gold,Common,GK,Poland,Serie A TIM,Bologna,Min:350 Max:10000,600,0,0,7,true,false,
-Gueye,76,Gold,Common,CDM,Senegal,Ligue 1 Uber Eats,OM,Min:350 Max:10000,4000,0,0,7,true,false,
-Martínez,76,Gold,Common,RM,Argentina,ROSHN Saudi League,Al Nassr,Min:350 Max:10000,700,0,0,7,true,false,
-Gonalons,76,Gold,Common,CDM,France,Ligue 1 Uber Eats,Clermont Foot 63,Min:350 Max:10000,600,0,0,7,true,false,
-Perraud,76,Gold,Common,LB,France,Premier League,Southampton,Min:350 Max:10000,750,0,0,7,true,false,
-Henry,76,Gold,Common,ST,France,Serie A TIM,Hellas Verona,Min:350 Max:10000,650,0,0,7,true,false,
-Óscar Gil,76,Gold,Common,RB,Spain,LaLiga Santander,RCD Espanyol,Min:350 Max:10000,600,0,0,7,true,false,
-Skov Olsen,76,Gold,Common,RM,Denmark,1A Pro League,Club Brugge,Min:350 Max:10000,600,0,0,7,true,false,
-Kakuta,76,Gold,Common,CAM,DR Congo,Ligue 2 BKT,Amiens SC,Min:350 Max:10000,600,0,0,7,true,false,
-Borja,76,Gold,Special,ST,Colombia,Libertadores,River Plate,Min:650 Max:10000,700,0,0,7,true,false,
-Zampedri,76,Gold,Special,ST,Argentina,Libertadores,Uni. Católica,Min:650 Max:10000,7400,0,0,7,true,false,
-Cummings,76,Gold,Special,ST,Australia,A-League,Central Coast,Min:9300 Max:47500,--NA--,0,0,7,true,false,
-Maier,76,Gold,Common,CM,Germany,Bundesliga,FC Augsburg,Min:350 Max:10000,750,0,0,7,true,false,
-Evander,76,Gold,Common,CM,Brazil,3F Superliga,FC Midtjylland,Min:350 Max:10000,--NA--,0,0,7,true,false,
-Gómez Andrade,76,Gold,Common,CB,Colombia,MLS,Sounders FC,Min:350 Max:10000,550,0,0,7,true,false,
-Forster,76,Gold,Common,GK,England,Premier League,Spurs,Min:350 Max:10000,1200,0,0,7,true,false,
-Stach,76,Gold,RARE,CM,Germany,Bundesliga,1. FSV Mainz 05,Min:650 Max:10000,800,0,0,7,true,false,
-Ander Guevara,76,Gold,Common,CM,Spain,LaLiga Santander,Real Sociedad,Min:350 Max:10000,550,0,0,7,true,false,
-Isla,76,Gold,Special,RB,Chile,Libertadores,Uni. Católica,Min:650 Max:10000,10000,0,0,7,true,false,
-Singo,76,Gold,Common,RWB,Ivory Coast,Serie A TIM,Torino,Min:350 Max:10000,1400,0,0,7,true,false,
-Amartey,76,Gold,Common,CB,Ghana,Premier League,Leicester City,Min:350 Max:10000,550,0,0,7,true,false,
-Wind,76,Gold,Common,ST,Denmark,Bundesliga,VfL Wolfsburg,Min:350 Max:10000,600,0,0,7,true,false,
-Meling,76,Gold,Common,LB,Norway,Ligue 1 Uber Eats,Stade Rennais FC,Min:350 Max:10000,900,0,0,7,true,false,
-Rossi,76,Gold,Common,LM,Uruguay,Süper Lig,Fenerbahçe,Min:350 Max:10000,550,0,0,7,true,false,
-Morelos,76,Gold,Common,ST,Colombia,cinch Prem,Rangers,Min:350 Max:10000,600,0,0,7,true,false,
-Buyalskyi,76,Gold,Common,CM,Ukraine,Ukrayina Liha,Dynamo Kyiv,Min:350 Max:10000,600,0,0,7,true,false,
-Cuéllar,76,Gold,Common,CDM,Colombia,ROSHN Saudi League,Al Hilal,Min:350 Max:10000,600,0,0,7,true,false,
-Mykolenko,76,Gold,Common,LB,Ukraine,Premier League,Everton,Min:350 Max:10000,650,0,0,7,true,false,
-Fabra,76,Gold,Special,LB,Colombia,Libertadores,Boca Juniors,Min:650 Max:10000,700,0,0,7,true,false,
-Adams,76,Gold,RARE,CDM,United States,Premier League,Leeds United,Min:650 Max:10000,800,0,0,7,true,false,
-Fernández,76,Gold,Special,CM,Argentina,Libertadores,Boca Juniors,Min:650 Max:10000,700,0,0,7,true,false,
-Falk,76,Gold,RARE,CM,Denmark,3F Superliga,F.C. København,Min:650 Max:10000,750,0,0,7,true,false,
-Adrià Pedrosa,76,Gold,RARE,LB,Spain,LaLiga Santander,RCD Espanyol,Min:650 Max:10000,1000,0,0,7,true,false,
-Żurkowski,76,Gold,RARE,CM,Poland,Serie A TIM,Fiorentina,Min:650 Max:10000,--NA--,0,0,7,true,false,
-Almada,76,Gold,RARE,CAM,Argentina,MLS,Atlanta United,Min:650 Max:10000,800,0,0,7,true,false,
-Kudus,76,Gold,RARE,CAM,Ghana,Eredivisie,Ajax,Min:650 Max:10000,3000,0,0,7,true,false,
-Aliendro,76,Gold,Special,CM,Argentina,Libertadores,River Plate,Min:650 Max:10000,700,0,0,7,true,false,
-Edouard,76,Gold,RARE,ST,France,Premier League,Crystal Palace,Min:650 Max:10000,800,0,0,7,true,false,
-Philipp,76,Gold,Common,CF,Germany,Bundesliga,VfL Wolfsburg,Min:350 Max:10000,6000,0,0,7,true,false,
-João Victor,76,Gold,Common,CB,Brazil,Liga Portugal,SL Benfica,Min:350 Max:10000,1700,0,0,7,true,false,
-Puertas,76,Gold,Common,RM,Spain,LaLiga SmartBank,Granada CF,Min:350 Max:10000,650,0,0,7,true,false,
-Vivian,76,Gold,Common,CB,Spain,LaLiga Santander,Athletic Club,Min:350 Max:10000,800,0,0,7,true,false,
-Zimmerman,76,Gold,Common,CB,United States,MLS,Nashville SC,Min:350 Max:10000,600,0,0,7,true,false,
-Sviatchenko,76,Gold,Common,CB,Denmark,3F Superliga,FC Midtjylland,Min:350 Max:10000,900,0,0,7,true,false,
-Dennis,76,Gold,RARE,ST,Nigeria,Premier League,Nott'm Forest,Min:650 Max:10000,750,0,0,7,true,false,
-Kohr,76,Gold,RARE,CDM,Germany,Bundesliga,1. FSV Mainz 05,Min:650 Max:10000,800,0,0,7,true,false,
-Pineda,76,Gold,Common,LM,Mexico,Hellas Liga,AEK Athens,Min:350 Max:10000,550,0,0,7,true,false,
-Fraser,76,Gold,Common,RM,Scotland,Premier League,Newcastle Utd,Min:350 Max:10000,550,0,0,7,true,false,
-Bare,76,Gold,RARE,CDM,Albania,LaLiga Santander,RCD Espanyol,Min:650 Max:10000,850,0,0,7,true,false,
-Roger,76,Gold,Common,ST,Spain,LaLiga Santander,Cádiz CF,Min:300 Max:5000,650,0,0,7,true,false,
-Seferović,76,Gold,Common,ST,Switzerland,LaLiga Santander,RC Celta,Min:300 Max:5000,600,0,0,7,true,false,
-Gagliardini,76,Gold,Common,CDM,Italy,Serie A TIM,Inter,Min:350 Max:10000,800,0,0,7,true,false,
-Solanke,75,Gold,Common,ST,England,Premier League,AFC Bournemouth,Min:300 Max:10000,700,0,0,45,true,false,
-Chambers,75,Gold,Common,CB,England,Premier League,Aston Villa,Min:300 Max:10000,600,0,0,45,true,false,
-Brownhill,75,Gold,Common,CM,England,EFL Championship,Burnley,Min:300 Max:10000,550,0,0,45,true,false,
-Aribo,75,Gold,RARE,CM,Nigeria,Premier League,Southampton,Min:600 Max:10000,800,0,535,7,false,false,
-Rojas,75,Gold,Special,RB,Paraguay,Libertadores,River Plate,Min:600 Max:10000,650,0,535,7,false,false,
-Cullen,75,Gold,Common,CDM,Republic of Ireland,EFL Championship,Burnley,Min:300 Max:10000,550,0,266,7,false,false,
-Doku,75,Gold,Common,RM,Belgium,Ligue 1 Uber Eats,Stade Rennais FC,Min:300 Max:10000,650,0,266,3,false,false,
-Chardonnet,75,Gold,Common,CB,France,Ligue 1 Uber Eats,Stade Brestois 29,Min:300 Max:10000,750,0,266,7,false,false,
-Goldson,75,Gold,Common,CB,England,cinch Prem,Rangers,Min:300 Max:10000,550,0,266,7,false,false,
-Lemina,75,Gold,Common,CM,Gabon,Ligue 1 Uber Eats,OGC Nice,Min:300 Max:10000,3700,0,266,7,false,false,
-Rony Lopes,75,Gold,Common,RW,Portugal,Ligue 1 Uber Eats,ESTAC Troyes,Min:300 Max:10000,600,0,266,7,false,false,
-Pol Lirola,75,Gold,Common,RB,Spain,LaLiga Santander,Elche CF,Min:300 Max:10000,750,0,266,7,false,false,
-Fellaini,75,Gold,Common,CM,Belgium,CSL,Shandong Taishan,Min:300 Max:10000,600,0,266,7,false,false,
-Wanyama,75,Gold,Common,CDM,Kenya,MLS,CF Montréal,Min:300 Max:10000,600,0,266,7,false,false,
-Lallana,75,Gold,Common,CM,England,Premier League,Brighton,Min:300 Max:10000,550,0,266,7,false,false,
-Murillo,75,Gold,Common,CB,Colombia,Serie A TIM,Sampdoria,Min:300 Max:10000,700,0,266,7,false,false,
-Balanta,75,Gold,Common,CDM,Colombia,1A Pro League,Club Brugge,Min:300 Max:10000,3000,0,266,7,false,false,
-Kike García,75,Gold,Common,ST,Spain,LaLiga Santander,CA Osasuna,Min:300 Max:10000,600,0,266,7,false,false,
-Ducksch,75,Gold,Common,ST,Germany,Bundesliga,SV Werder Bremen,Min:300 Max:10000,700,0,266,7,false,false,
-Brignoli,75,Gold,Common,GK,Italy,Hellas Liga,Panathinaikos,Min:300 Max:10000,600,0,266,7,false,false,
-Ayling,75,Gold,Common,RB,England,Premier League,Leeds United,Min:300 Max:10000,1700,0,266,7,false,false,
-Luiz Gustavo,75,Gold,Common,CDM,Brazil,ROSHN Saudi League,Al Nassr,Min:300 Max:10000,650,0,266,7,false,false,
-Shomurodov,75,Gold,Common,ST,Uzbekistan,Serie A TIM,Spezia,Min:300 Max:5000,700,0,266,7,false,false,
-Bašić,75,Gold,Common,CM,Croatia,Serie A TIM,Latium,Min:300 Max:10000,600,0,266,7,false,false,
-Ayew,75,Gold,Common,RW,Ghana,Premier League,Crystal Palace,Min:300 Max:10000,650,0,266,7,false,false,
-Muñoz,75,Gold,Common,RB,Colombia,1A Pro League,KRC Genk,Min:300 Max:10000,600,0,266,7,false,false,
-Muriqi,75,Gold,Common,ST,Kosovo,LaLiga Santander,RCD Mallorca,Min:300 Max:10000,1400,0,266,7,false,false,
-Fran Navarro,75,Gold,Common,ST,Spain,Liga Portugal,Gil Vicente,Min:300 Max:10000,600,0,0,7,true,false,
-Barboza,75,Gold,Special,CB,Argentina,Libertadores,Libertad,Min:600 Max:10000,2100,0,0,7,true,false,
-Ajer,75,Gold,Common,CB,Norway,Premier League,Brentford,Min:300 Max:10000,650,0,0,7,true,false,
-Sosa,75,Gold,Special,GK,Uruguay,Sudamericana,Independiente,Min:300 Max:10000,9500,0,0,7,true,false,
-March,75,Gold,Common,LWB,England,Premier League,Brighton,Min:300 Max:10000,550,0,0,7,true,false,
-Escudero,75,Gold,Common,LB,Spain,LaLiga Santander,R. Valladolid CF,Min:300 Max:10000,800,0,0,7,true,false,
-Luthe,75,Gold,Common,GK,Germany,Bundesliga 2,Kaiserslautern,Min:300 Max:10000,800,0,0,7,true,false,
-Zainadine,75,Gold,Common,CB,Mozambique,Liga Portugal,Marítimo,Min:300 Max:10000,550,0,0,7,true,false,
-Cesinha,75,Gold,Common,LW,Brazil,K League 1,Daegu FC,Min:300 Max:10000,600,0,0,7,true,false,
-Rodák,75,Gold,Common,GK,Slovakia,Premier League,Fulham,Min:300 Max:10000,550,0,0,7,true,false,
-Atal,75,Gold,Common,RB,Algeria,Ligue 1 Uber Eats,OGC Nice,Min:300 Max:10000,4900,0,0,7,true,false,
-Edu Expósito,75,Gold,Common,CAM,Spain,LaLiga Santander,RCD Espanyol,Min:300 Max:10000,3400,0,0,7,true,false,
-Gregoritsch,75,Gold,Common,ST,Austria,Bundesliga,SC Freiburg,Min:300 Max:10000,650,0,0,7,true,false,
-Wallace,75,Gold,Common,CAM,England,EFL Championship,West Brom,Min:300 Max:10000,600,0,0,7,true,false,
-André Gomes,75,Gold,Common,CM,Portugal,Ligue 1 Uber Eats,LOSC Lille,Min:300 Max:10000,750,0,0,7,true,false,
-Balliu,75,Gold,Common,RB,Albania,LaLiga Santander,Rayo Vallecano,Min:300 Max:10000,550,0,0,7,true,false,
-Gutiérrez,75,Gold,Special,ST,Colombia,Libertadores,Deportivo Cali,Min:600 Max:10000,5000,0,0,7,true,false,
-Giannetti,75,Gold,Special,CB,Argentina,Libertadores,Vélez Sarsfield,Min:600 Max:10000,--NA--,0,0,7,true,false,
-Janson,75,Gold,Special,LW,Argentina,Libertadores,Vélez Sarsfield,Min:600 Max:10000,10000,0,0,7,true,false,
-Godoy,75,Gold,Special,RB,Argentina,Libertadores,Estudiantes,Min:600 Max:10000,--NA--,0,0,7,true,false,
-Sarr,75,Gold,Common,CB,France,Ligue 1 Uber Eats,AS Monaco,Min:300 Max:10000,950,0,0,7,true,false,
-Aguado,75,Gold,Common,CM,Spain,LaLiga Santander,R. Valladolid CF,Min:300 Max:10000,550,0,0,7,true,false,
-Larsen,75,Gold,Common,RB,Denmark,Süper Lig,Trabzonspor,Min:300 Max:10000,750,0,0,7,true,false,
-Höfler,75,Gold,Common,CDM,Germany,Bundesliga,SC Freiburg,Min:300 Max:10000,500,0,0,7,true,false,
-Burián,75,Gold,Special,GK,Uruguay,Libertadores,Vélez Sarsfield,Min:600 Max:10000,9200,0,0,7,true,false,
-De Laet,75,Gold,Common,RB,Belgium,1A Pro League,Royal Antwerp FC,Min:300 Max:10000,550,0,0,7,true,false,
-Seiwald,75,Gold,Common,CM,Austria,Ö. Bundesliga,RB Salzburg,Min:300 Max:10000,550,0,0,7,true,false,
-Lucero,75,Gold,Special,ST,Argentina,Libertadores,Colo-Colo,Min:600 Max:10000,--NA--,0,0,7,true,false,
-Sornoza,75,Gold,Special,CAM,Ecuador,Libertadores,IDV,Min:600 Max:10000,1000,0,0,7,true,false,
-Davies,75,Gold,Common,CM,England,Premier League,Everton,Min:300 Max:10000,600,0,0,7,true,false,
-Al Faraj,75,Gold,Common,CM,Saudi Arabia,ROSHN Saudi League,Al Hilal,Min:300 Max:10000,600,0,0,7,true,false,
-Eggestein,75,Gold,Common,CDM,Germany,Bundesliga,SC Freiburg,Min:300 Max:10000,650,0,0,7,true,false,
-Gonçalo Ramos,75,Gold,Common,ST,Portugal,Liga Portugal,SL Benfica,Min:300 Max:10000,550,0,0,7,true,false,
-Bou,75,Gold,Special,ST,Argentina,Libertadores,Vélez Sarsfield,Min:600 Max:10000,10000,0,0,7,true,false,
-Lingr,75,Gold,Common,CAM,Czech Republic,Česká Liga,Slavia Praha,Min:300 Max:10000,550,0,0,7,true,false,
-Hotto,75,Gold,Common,LW,Namibia,South African FL,Orlando Pirates,Min:300 Max:10000,550,0,0,7,true,false,
-Foulquier,75,Gold,Common,RB,France,LaLiga Santander,Valencia CF,Min:300 Max:10000,1000,0,0,7,true,false,
-Burrai,75,Gold,Special,GK,Argentina,Sudamericana,Barcelona SC,Min:300 Max:10000,--NA--,0,0,7,true,false,
-Nakamba,75,Gold,Common,CDM,Zimbabwe,Premier League,Aston Villa,Min:300 Max:10000,--NA--,0,0,7,true,false,
-Lorch,75,Gold,Common,RW,South Africa,South African FL,Orlando Pirates,Min:300 Max:10000,550,0,0,7,true,false,
-Carles Pérez,75,Gold,Common,RW,Spain,LaLiga Santander,RC Celta,Min:300 Max:10000,600,0,0,7,true,false,
-Provod,75,Gold,RARE,CM,Czech Republic,Česká Liga,Slavia Praha,Min:600 Max:10000,750,0,0,7,true,false,
-Kamara,75,Gold,RARE,CM,Finland,cinch Prem,Rangers,Min:600 Max:10000,800,0,0,7,true,false,
-Martínez,75,Gold,Special,CB,Paraguay,Libertadores,River Plate,Min:600 Max:10000,700,0,0,7,true,false,
-Pizzini,75,Gold,Special,RM,Argentina,Libertadores,Talleres,Min:600 Max:10000,10000,0,0,7,true,false,
-Samu Sáiz,75,Gold,RARE,ST,Spain,LaLiga Santander,Girona FC,Min:600 Max:10000,4500,0,0,7,true,false,
-Sulemana,75,Gold,Common,LW,Ghana,Ligue 1 Uber Eats,Stade Rennais FC,Min:300 Max:10000,9800,0,0,7,true,false,
-Iván Alejo,75,Gold,Common,RM,Spain,LaLiga Santander,Cádiz CF,Min:300 Max:10000,700,0,0,7,true,false,
-Furuhashi,75,Gold,RARE,ST,Japan,cinch Prem,Celtic,Min:600 Max:10000,800,0,0,7,true,false,
-João Paulo,75,Gold,Common,CM,Brazil,MLS,Sounders FC,Min:300 Max:10000,700,0,0,7,true,false,
-Martins Indi,75,Gold,Common,CB,Netherlands,Eredivisie,AZ,Min:300 Max:10000,800,0,0,7,true,false,
-Teuma,75,Gold,Common,CM,Malta,1A Pro League,R. Union St.-G.,Min:300 Max:10000,600,0,0,7,true,false,
-Masuaku,75,Gold,Common,LB,DR Congo,Süper Lig,Beşiktaş,Min:300 Max:10000,550,0,0,7,true,false,
-Lamptey,75,Gold,Common,RWB,Ghana,Premier League,Brighton,Min:300 Max:10000,600,0,0,7,true,false,
-Nsame,75,Gold,Common,ST,Cameroon,CSSL ,BSC Young Boys,Min:300 Max:10000,550,0,0,7,true,false,
-Danso,75,Gold,Common,CB,Austria,Ligue 1 Uber Eats,RC Lens,Min:300 Max:10000,800,0,0,7,true,false,
-Cristaldo,75,Gold,Common,CAM,Argentina,LPF,Huracán,Min:300 Max:10000,--NA--,0,0,7,true,false,
-King,75,Gold,Common,ST,Norway,Süper Lig,Fenerbahçe,Min:300 Max:10000,600,0,0,7,true,false,
-Pinnock,75,Gold,Common,CB,Jamaica,Premier League,Brentford,Min:300 Max:10000,600,0,0,7,true,false,
-Junior Firpo,75,Gold,Common,LB,Spain,Premier League,Leeds United,Min:300 Max:10000,800,0,0,7,true,false,
-Boadu,75,Gold,RARE,ST,Netherlands,Ligue 1 Uber Eats,AS Monaco,Min:600 Max:10000,1200,0,0,7,true,false,
-McCarthy,75,Gold,Common,GK,England,Premier League,Southampton,Min:300 Max:10000,650,0,0,7,true,false,
-Hause,75,Gold,Common,CB,England,EFL Championship,Watford,Min:300 Max:10000,600,0,0,7,true,false,
-Dorley,75,Gold,Common,LB,Liberia,Česká Liga,Slavia Praha,Min:300 Max:10000,600,0,0,7,true,false,
-Liénard,75,Gold,Common,LWB,France,Ligue 1 Uber Eats,Strasbourg,Min:300 Max:10000,600,0,0,7,true,false,
-Hauche,75,Gold,Special,RW,Argentina,Sudamericana,Racing Club,Min:300 Max:10000,5200,0,0,7,true,false,
-Fran García,75,Gold,Common,LB,Spain,LaLiga Santander,Rayo Vallecano,Min:300 Max:10000,10000,0,0,7,true,false,
-Billing,75,Gold,Common,CM,Denmark,Premier League,AFC Bournemouth,Min:300 Max:10000,650,0,0,7,true,false,
-Ramsey,75,Gold,RARE,CM,England,Premier League,Aston Villa,Min:600 Max:10000,800,0,0,7,true,false,
-Sallói,73,Silver,RARE,LW,Hungary,MLS,Sporting KC,Min:300 Max:10000,7000,0,256,7,false,false,
-Manu Vallejo,73,Silver,RARE,ST,Spain,LaLiga Santander,Girona FC,Min:300 Max:10000,10000,0,0,7,true,false,
-Rouault,72,Silver,Common,CB,France,Ligue 1 Uber Eats,Toulouse FC,Min:150 Max:10000,1400,0,108,7,false,false,
-Walcott,72,Silver,Common,RM,England,Premier League,Southampton,Min:150 Max:10000,4700,0,0,7,true,false,
-Andersen,71,Silver,Common,CM,Denmark,Serie BKT,Venezia,Min:150 Max:10000,700,0,0,7,true,false,
-Tagawa,70,Silver,RARE,ST,Japan,Liga Portugal,Santa Clara,Min:250 Max:10000,1000,0,0,7,true,false,
-Gerard Valentín,70,Silver,RARE,RM,Spain,LaLiga SmartBank,SD Huesca,Min:250 Max:10000,550,0,0,7,true,false,
-Coucke,69,Silver,Common,GK,Belgium,1A Pro League,KV Mechelen,Min:150 Max:10000,400,0,104,7,false,false,
-Hoppe,69,Silver,Common,ST,United States,cinch Prem,Hibernian,Min:150 Max:5000,600,0,104,7,false,false,
-Yuri Ribeiro,69,Silver,Common,LB,Portugal,PKO Ekstraklasa,Legia Warszawa,Min:150 Max:10000,1200,0,104,7,false,false,
-Tuiloma,69,Silver,Common,CB,New Zealand,MLS,Charlotte FC,Min:150 Max:5000,750,0,0,7,true,false,
-Kerr,69,Silver,RARE,CB,Scotland,EFL Championship,Wigan Athletic,Min:250 Max:10000,550,0,0,7,true,false,
-Ramírez,68,Silver,Special,ST,Argentina,Sudamericana,Gimnasia,Min:150 Max:5000,--NA--,0,102,7,false,false,
-Watmore,68,Silver,Common,ST,England,EFL Championship,Millwall,Min:150 Max:5000,650,0,102,7,false,false,
-Reyes,67,Silver,Common,CB,Colombia,MLS,Red Bulls,Min:150 Max:10000,600,0,101,7,false,false,
-McGuinness,67,Silver,Common,CB,Republic of Ireland,EFL Championship,Cardiff City,Min:150 Max:5000,750,0,101,7,false,false,
-Daubin,66,Silver,Common,CDM,France,Ligue 2 BKT,SM Caen,Min:150 Max:10000,500,0,0,7,true,false,
-Batty,65,Silver,Common,CM,England,EFL League One,Fleetwood Town,Min:150 Max:10000,900,0,0,45,true,false,
-Hylton,65,Silver,Common,ST,England,EFL League Two,Northampton,Min:150 Max:10000,900,0,0,45,true,false,
-Doyle,65,Silver,Common,ST,Republic of Ireland,SSE Airtricity PD,St. Pats,Min:150 Max:10000,850,0,98,7,false,false,
-Pijnaker,65,Silver,Common,CB,New Zealand,SSE Airtricity PD,Sligo Rovers,Min:150 Max:10000,600,0,98,7,false,false,
-Cicerelli,65,Silver,Common,LW,Italy,Serie BKT,Reggina,Min:150 Max:10000,950,0,98,7,false,false,
-Clare,65,Silver,Common,CB,England,EFL League One,Charlton Ath,Min:150 Max:10000,--NA--,0,0,7,true,false,
-Nygren,65,Silver,Common,ST,Sweden,3F Superliga,FC Nordsjælland,Min:150 Max:10000,750,0,0,7,true,false,
-Featherstone,63,Bronze,Common,CDM,England,EFL League Two,Hartlepool,Min:150 Max:10000,250,0,0,45,true,false,
-Cooke,63,Bronze,Common,CAM,England,EFL League Two,Hartlepool,Min:150 Max:10000,2000,0,0,45,true,false,
-Ion,63,Bronze,Common,RW,Romania,SUPERLIGA,Farul Constanța,Min:150 Max:10000,--NA--,0,0,45,true,false,
-Herzenbruch,63,Bronze,Common,CB,Germany,3. Liga,Rot-Weiss Essen,Min:150 Max:10000,300,0,0,7,true,false,
-Kim Han Gil,62,Bronze,Common,LM,Korea Republic,K League 1,Gimcheon Sangmu,Min:150 Max:10000,--NA--,0,0,45,true,false,
-Ovelar,62,Bronze,Special,RM,Paraguay,Libertadores,Cerro Porteño,Min:150 Max:10000,--NA--,0,0,7,true,false,
-Kolskogen,62,Bronze,Common,CB,Norway,Eliteserien,FK Jerv,Min:150 Max:10000,--NA--,0,0,7,true,false,
-Sotiriou,62,Bronze,Common,LM,Cyprus,EFL League Two,Leyton Orient,Min:150 Max:10000,3700,0,0,7,true,false,
-Şimşir,62,Bronze,Common,LW,Turkey,3F Superliga,FC Midtjylland,Min:150 Max:5100,700,0,0,7,true,false,
-Bowery,61,Bronze,Common,ST,England,EFL League Two,Mansfield Town,Min:150 Max:10000,250,0,0,45,true,false,
-Acton,61,Bronze,Common,GK,Australia,A-League,Melb. Victory,Min:150 Max:10000,400,0,0,7,true,false,
-Magnússon,61,Bronze,Special,ST,Iceland,3F Superliga,Lyngby BK,Min:1000 Max:10000,--NA--,0,0,7,true,false,
-Park Byung Hyun,60,Bronze,Common,CB,Korea Republic,K League 1,Daegu FC,Min:150 Max:10000,--NA--,0,0,45,true,false,
-Karakuş,60,Bronze,Common,GK,Turkey,Süper Lig,Adana Demirspor,Min:150 Max:10000,700,0,0,45,true,false,
-Corrado,60,Bronze,Special,LB,Italy,Serie BKT,Ternana,Min:150 Max:5100,--NA--,0,0,7,true,false,
-Suljic,60,Bronze,Common,CB,Sweden,Allsvenskan,Helsingborgs IF,Min:150 Max:10000,250,0,0,7,true,false,
-Larade,60,Bronze,Special,CB,France,1A Pro League,Cercle Brugge,Min:150 Max:10000,--NA--,0,0,7,true,false,
-Qin Sheng,60,Bronze,Special,CB,China PR,CSL,Shanghai Shenhua,Min:150 Max:5100,--NA--,0,0,7,true,false,
-Fenger,60,Bronze,Common,ST,Denmark,Allsvenskan,Mjällby AIF,Min:150 Max:5100,2300,0,0,7,true,false,
-Ruschke,59,Bronze,Common,LB,Germany,Bundesliga 2,Hansa Rostock,Min:150 Max:10000,350,0,0,45,true,false,
-Magee,58,Bronze,Common,CAM,Jamaica,1A Pro League,KAS Eupen,Min:150 Max:10000,3500,0,0,45,true,false,
-Harries,58,Bronze,Common,CB,Wales,EFL League Two,Swindon Town,Min:150 Max:10000,3000,0,0,7,true,false,
-Rowe,57,Bronze,Common,CB,England,EFL League Two,Sutton United,Min:150 Max:10000,500,0,0,45,true,false,
-Sargeant,57,Bronze,Common,GK,England,EFL League Two,Leyton Orient,Min:150 Max:10000,550,0,0,45,true,false,
-Long,57,Bronze,Common,GK,Scotland,EFL League One,Lincoln City,Min:150 Max:10000,400,0,0,7,true,false,
-Singh,56,Bronze,Common,RM,India,Hero ISL,Mumbai City FC,Min:150 Max:10000,1400,0,0,45,true,false,
-Dhot,52,Bronze,Common,RB,India,Hero ISL,Chennaiyin FC,Min:150 Max:10000,250,0,0,45,true,false,
-Guinan,52,Bronze,Common,ST,England,EFL League One,Cheltenham Town,Min:150 Max:10000,--NA--,0,0,7,true,false,
-Shabong,51,Bronze,Common,CDM,India,Hero ISL,ATK Mohun Bagan,Min:150 Max:10000,450,0,0,45,true,false,
-Hnamte,51,Bronze,Common,LW,India,Hero ISL,ATK Mohun Bagan,Min:150 Max:10000,300,0,0,45,true,false,
-Wiles-Richards,50,Bronze,Common,GK,England,EFL Championship,Bristol City,Min:150 Max:10000,--NA--,0,0,7,true,false,
+﻿"Name","Rating","Rarity","Preferred Position","Nation","League","Team","Price Limits","Last Sale Price","Discard Value","Contract","Untradeable","Loans","DefinitionId","IsDuplicate","IsInActive11","ExternalPrice"
+"Alisson","98","Special","GK","Brazil","Premier League","Liverpool","Min:12000 Max:160000","0","0","7","true","false","84098911","false","false","42500"
+"Zidane","97","Special","CAM","France","Icons","ICON","Min:55500 Max:1000000","0","0","7","true","true","50333045","false","false","254000"
+"Roberto Carlos","97","Special","LB","Brazil","Icons","ICON","Min:10000 Max:100000","0","0","23","true","true","67347294","false","false","348400"
+"ter Stegen","94","Special","GK","Germany","LaLiga Santander","FC Barcelona","Min:11500 Max:47500","0","0","7","true","false","67301312","false","false","13000"
+"Zanetti","93","Special","RB","Argentina","Icons","ICON","Min:11500 Max:170000","0","0","7","true","false","50571165","false","false","95000"
+"Clauss","93","Special","RWB","France","Ligue 1 Uber Eats","OM","Min:11500 Max:45000","0","0","7","true","false","117679605","false","false","11750"
+"Fernando Hierro","92","Special","LB","Spain","Icons","ICON","Min:11250 Max:45000","0","0","7","true","true","67270704","false","false","11500"
+"Icardi","92","Special","ST","Argentina","Süper Lig","Galatasaray","Min:11250 Max:37500","0","0","7","true","false","151196343","false","false","11500"
+"Orsolini","92","Special","RB","Italy","Serie A TIM","Bologna","Min:11250 Max:32500","0","0","7","true","false","117674068","false","false","11500"
+"Kolo Muani","92","Special","ST","France","Bundesliga","Frankfurt","Min:11250 Max:40000","0","0","7","true","false","100900975","true","false","11500"
+"João Mário","92","Special","RM","Portugal","Liga Portugal","SL Benfica","Min:11250 Max:37500","0","0","7","true","false","117653326","false","false","11500"
+"Lahm","92","Special","RB","Germany","Icons","ICON","Min:11250 Max:37500","0","0","7","true","false","50453587","false","false","11500"
+"Tadić","92","Special","CF","Serbia","Eredivisie","Ajax","Min:11250 Max:30000","0","0","7","true","false","117639946","false","false","11500"
+"Mbappé","91","Rare","ST","France","Ligue 1 Uber Eats","Paris SG","Min:10500 Max:65000","0","0","1","true","true","231747","false","false","33000"
+"Casemiro","91","Special","CM","Brazil","Premier League","Manchester Utd","--NA--","0","0","7","true","true","100863441","false","false","500000"
+"Lewandowski","91","Rare","ST","Poland","LaLiga Santander","FC Barcelona","Min:10500 Max:37500","0","0","7","true","false","188545","false","false","18500"
+"Otamendi","91","Special","CB","Argentina","Liga Portugal","SL Benfica","Min:11250 Max:35000","0","0","7","true","false","84078446","false","false","11500"
+"Saliba","90","FANTASY FUT","CB","France","Premier League","Arsenal","--NA--","0","0","6","true","false","100907011","false","true","15750"
+"Gabriel Strefezza","90","Special","RW","Brazil","Serie A TIM","Lecce","Min:11000 Max:37500","0","0","7","true","false","50567597","false","false","11250"
+"André","90","Special","CDM","France","Ligue 1 Uber Eats","LOSC Lille","Min:11000 Max:37500","0","0","7","true","false","50522322","false","false","11250"
+"Ndiaye","90","Special","CM","Senegal","Süper Lig","Adana Demirspor","Min:11000 Max:37500","0","0","7","true","false","50552648","false","false","11250"
+"Giles","90","Special","LB","England","EFL Championship","Middlesbrough","Min:11000 Max:32500","0","0","7","true","false","50575256","false","false","11250"
+"Son","89","Rare","LW","Korea Republic","Premier League","Spurs","Min:9100 Max:25000","0","0","3","true","true","200104","false","false","16500"
+"Kane","89","Rare","ST","England","Premier League","Spurs","--NA--","0","0","3","true","false","202126","false","false","20250"
+"Diogo Costa","89","Special","GK","Portugal","Liga Portugal","FC Porto","Min:11000 Max:42500","0","0","7","true","true","84120657","false","false","20000"
+"Oblak","89","Rare","GK","Slovenia","LaLiga Santander","Atlético de Madrid","Min:9100 Max:30000","0","0","7","true","false","200389","false","false","13000"
+"Fouzair","89","Special","RW","Morocco","ROSHN Saudi League","Al Raed","Min:11000 Max:37500","0","0","7","true","false","50572174","true","false","11250"
+"Dudek","89","Special","GK","Poland","Premier League","HERO","Min:11000 Max:40000","0","0","7","true","false","50376545","false","false","11250"
+"Modrić","88","Rare","CM","Croatia","LaLiga Santander","Real Madrid","--NA--","0","0","16","true","false","177003","false","true","20750"
+"Al Owairan","88","Special","ST","Saudi Arabia","ROSHN Saudi League","HERO","--NA--","0","0","22","true","false","50598342","false","true","43500"
+"Rúben Dias","88","Rare","CB","Portugal","Premier League","Manchester City","--NA--","0","0","7","true","false","239818","false","false","24000"
+"Benteke","88","FANTASY FUT","ST","Belgium","MLS","D.C. United","Min:10750 Max:30000","0","10736","7","false","false","67292975","false","false","13500"
+"ter Stegen","88","Rare","GK","Germany","LaLiga Santander","FC Barcelona","Min:6100 Max:20000","0","0","3","true","false","192448","false","false","20000"
+"Fagioli","88","Special","CM","Italy","Serie A TIM","Juventus","Min:10750 Max:30000","0","0","7","true","false","50592471","false","false","13000"
+"Alexander-Arnold","87","Rare","RB","England","Premier League","Liverpool","Min:5100 Max:20000","0","0","1","true","true","231281","false","false","6300"
+"Kaká","87","Special","CAM","Brazil","Icons","ICON","--NA--","0","0","10","true","true","247074","false","false","-- NA --"
+"Lloris","87","Rare","GK","France","Premier League","Spurs","--NA--","0","0","21","true","false","167948","false","true","16000"
+"Koulibaly","87","Rare","CB","Senegal","Premier League","Chelsea","--NA--","0","0","4","true","false","201024","false","false","7800"
+"Sócrates","87","Special","CAM","Brazil","Icons","ICON","Min:65500 Max:150000","0","0","0","true","true","242517","false","false","141000"
+"Fekir","87","Special","CAM","France","LaLiga Santander","Real Betis","Min:10750 Max:32500","0","0","7","true","true","50548242","false","false","-- NA --"
+"Essien","87","Special","CDM","Ghana","Icons","ICON","Min:65500 Max:170000","0","0","7","true","true","247307","false","false","66000"
+"Müller","87","Rare","CAM","Germany","Bundesliga","FC Bayern München","Min:5100 Max:27500","0","0","7","true","false","189596","false","false","6000"
+"Zambo Anguissa","87","UCL Road to the Knockouts","CDM","Cameroon","Serie A TIM","Napoli FC","Min:10750 Max:30000","0","0","7","true","false","50558884","false","false","12750"
+"Maignan","87","Rare","GK","France","Serie A TIM","Milan","Min:5100 Max:16000","0","0","7","true","false","215698","false","false","6800"
+"Willock","87","Special","CM","England","Premier League","Newcastle Utd","Min:10750 Max:30000","0","0","7","true","false","50568977","false","false","15500"
+"Rodri","87","Rare","CDM","Spain","Premier League","Manchester City","Min:5100 Max:20000","0","0","7","true","false","231866","false","false","6700"
+"Pessina","87","Special","CAM","Italy","Serie A TIM","Monza","Min:10750 Max:30000","0","0","7","true","false","50571261","false","false","11000"
+"Tchouaméni","86","Special","CDM","France","LaLiga Santander","Real Madrid","--NA--","0","0","35","true","false","50573285","false","true","15250"
+"Smith Rowe","86","Special","CAM","England","Premier League","Arsenal","--NA--","0","0","5","true","false","50571921","false","true","15000"
+"Dybala","86","Rare","CF","Argentina","Serie A TIM","Roma FC","--NA--","0","0","7","true","false","211110","false","false","9400"
+"Hernández","86","Special","LB","France","Serie A TIM","Milan","--NA--","0","0","7","true","false","84118736","false","false","30000"
+"Govou","86","Special","ST","France","Ligue 1 Uber Eats","HERO","Min:10500 Max:30000","0","0","3","true","true","40898","false","false","15000"
+"Donovan","86","Special","CF","United States","MLS","HERO","Min:10500 Max:30000","0","0","7","true","true","7743","false","false","23000"
+"Vinícius Jr.","86","Rare","LW","Brazil","LaLiga Santander","Real Madrid","Min:3600 Max:27500","0","0","7","true","true","238794","false","false","16500"
+"Immobile","86","Rare","ST","Italy","Serie A TIM","Latium","Min:3600 Max:11000","0","0","10","true","true","192387","false","false","4900"
+"Lukaku","86","Rare","ST","Belgium","Serie A TIM","Inter","Min:3600 Max:11000","0","3500","7","false","false","192505","false","false","5500"
+"Vinícius Jr.","86","Rare","LW","Brazil","LaLiga Santander","Real Madrid","Min:3600 Max:27500","0","0","7","true","false","238794","false","false","16500"
+"Brozović","86","Rare","CDM","Croatia","Serie A TIM","Inter","Min:3600 Max:12000","0","0","7","true","false","216352","false","false","4900"
+"Fernández","86","Special","RM","Chile","Libertadores","IDV","Min:1000 Max:10000","0","0","7","true","false","50561766","false","false","0"
+"Raphinha","86","UCL Road to the Knockouts","RW","Brazil","LaLiga Santander","FC Barcelona","Min:10500 Max:30000","0","0","7","true","false","50565067","false","false","30000"
+"Mendy","86","Rare","GK","Senegal","Premier League","Chelsea","Min:3600 Max:12000","0","0","7","true","false","234642","false","false","4500"
+"Laporte","86","Rare","CB","Spain","Premier League","Manchester City","Min:3600 Max:11000","0","0","7","true","false","212218","false","false","5200"
+"Sissoko","86","Special","CDM","France","Ligue 1 Uber Eats","FC Nantes","Min:10500 Max:30000","0","0","7","true","false","50515042","false","false","13000"
+"Fábio","86","Special","RB","Brazil","Ligue 1 Uber Eats","FC Nantes","Min:10500 Max:32500","0","0","7","true","false","50521328","false","false","20250"
+"Fofana","86","Special","CB","Ivory Coast","Ligue 1 Uber Eats","RC Lens","Min:10500 Max:30000","0","0","7","true","false","84102400","false","false","13750"
+"Ikoné","86","Special","RW","France","Serie A TIM","Fiorentina","Min:10500 Max:30000","0","0","7","true","false","50566260","false","false","10750"
+"Alexandre Pato","86","Special","ST","Brazil","MLS","Orlando City","Min:10500 Max:37500","0","0","7","true","false","50511823","false","false","13750"
+"Mahrez","86","Rare","RW","Algeria","Premier League","Manchester City","Min:3600 Max:11000","0","0","7","true","false","204485","false","false","-- NA --"
+"Trapp","86","Rare","GK","Germany","Bundesliga","Frankfurt","Min:3600 Max:11000","0","0","7","true","false","188943","false","false","4700"
+"Thiago Silva","86","Rare","CB","Brazil","Premier League","Chelsea","Min:3600 Max:11000","0","0","7","true","false","164240","false","false","5900"
+"Lee Dong Jun","85","Special","RM","Korea Republic","Bundesliga","Hertha Berlin","Min:5000 Max:10000","0","0","7","true","false","84129141","false","false","0"
+"Gyasi","85","Special","RW","Ghana","Serie A TIM","Spezia","Min:5000 Max:10000","0","0","7","true","false","50552139","false","false","0"
+"Fekir","85","Rare","CAM","France","LaLiga Santander","Real Betis","Min:2100 Max:10000","0","0","7","true","false","216594","false","false","4800"
+"Acuña","85","Rare","LB","Argentina","LaLiga Santander","Sevilla FC","Min:2100 Max:16000","0","0","7","true","false","224334","true","false","4300"
+"Diogo Jota","85","Rare","CF","Portugal","Premier League","Liverpool","Min:2100 Max:11000","0","0","7","true","false","224458","false","false","3700"
+"Süle","85","Rare","CB","Germany","Bundesliga","Borussia Dortmund","Min:2100 Max:10000","0","0","7","true","false","212190","false","false","3800"
+"Iago Aspas","85","Rare","ST","Spain","LaLiga Santander","RC Celta","Min:2100 Max:10000","0","0","7","true","false","192629","false","false","3100"
+"Buchanan","85","Special","RM","Canada","1A Pro League","Club Brugge","Min:100 Max:10000","0","0","7","true","false","67355664","false","false","0"
+"Gerard Moreno","85","Rare","ST","Spain","LaLiga Santander","Villarreal CF","Min:2100 Max:10000","0","0","7","true","false","208093","false","false","3200"
+"Gulácsi","85","Rare","GK","Hungary","Bundesliga","RB Leipzig","Min:2100 Max:10000","0","0","7","true","false","185122","false","false","3500"
+"Tuta","85","UCL ROAD TO THE FINAL","CB","Brazil","Bundesliga","Frankfurt","Min:10500 Max:30000","0","0","7","true","false","50578830","false","false","10750"
+"James","84","Rare","RB","England","Premier League","Chelsea","--NA--","9400","1000","9","false","false","238074","false","true","2200"
+"Ødegaard","84","Rare","CAM","Norway","Premier League","Arsenal","--NA--","2400","1000","16","false","false","222665","false","false","2300"
+"Grealish","84","Rare","CAM","England","Premier League","Manchester City","--NA--","0","0","4","true","false","206517","false","false","6400"
+"Savić","84","Rare","CB","Montenegro","LaLiga Santander","Atlético de Madrid","--NA--","0","0","7","true","false","204639","false","false","2000"
+"Havertz","84","Rare","CAM","Germany","Premier League","Chelsea","Min:1100 Max:10000","0","0","5","true","true","235790","false","false","3000"
+"Grealish","84","Rare","LW","England","Premier League","Manchester City","Min:1100 Max:10000","0","0","9","true","true","206517","false","false","6400"
+"Çalhanoğlu","84","Rare","CM","Turkey","Serie A TIM","Inter","Min:1100 Max:10000","0","1000","7","false","false","208128","false","false","2700"
+"Diaby","84","Rare","RM","France","Bundesliga","Leverkusen","Min:1100 Max:10000","2900","1000","7","false","false","241852","false","false","9000"
+"Perišić","84","Rare","LM","Croatia","Premier League","Spurs","Min:1100 Max:10000","0","0","7","true","false","181458","false","false","2000"
+"Berardi","84","Rare","RM","Italy","Serie A TIM","Sassuolo","Min:1100 Max:10000","0","0","7","true","false","210935","false","false","2100"
+"Bonucci","84","Rare","CB","Italy","Serie A TIM","Juventus","Min:1100 Max:10000","0","0","7","true","false","184344","false","false","2200"
+"Tadić","84","Rare","LW","Serbia","Eredivisie","Ajax","Min:1100 Max:10000","0","0","7","true","false","199434","false","false","6900"
+"de Vrij","84","Rare","CB","Netherlands","Serie A TIM","Inter","Min:1100 Max:10000","0","0","7","true","false","198176","false","false","1900"
+"Rafael Leão","84","Rare","LW","Portugal","Serie A TIM","Milan","Min:1100 Max:16000","0","0","7","true","false","241721","false","false","13250"
+"Bounou","84","Rare","GK","Morocco","LaLiga Santander","Sevilla FC","Min:1100 Max:10000","0","0","7","true","false","209981","false","false","1900"
+"Mount","84","Rare","CAM","England","Premier League","Chelsea","Min:1100 Max:10000","0","0","7","true","false","233064","false","false","2500"
+"Muniain","84","Rare","LM","Spain","LaLiga Santander","Athletic Club","Min:1100 Max:10000","0","0","7","true","false","189575","false","false","2200"
+"Carvajal","84","Rare","RB","Spain","LaLiga Santander","Real Madrid","Min:1100 Max:10000","0","0","7","true","false","204963","false","false","10000"
+"Tonali","84","Rare","CDM","Italy","Serie A TIM","Milan","Min:1100 Max:10000","0","0","7","true","false","241096","false","false","8600"
+"Bellingham","84","Rare","CM","England","Bundesliga","Borussia Dortmund","Min:1100 Max:15000","0","0","7","true","false","252371","false","false","13000"
+"Gómez","84","Rare","CAM","Argentina","LaLiga Santander","Sevilla FC","Min:1100 Max:10000","0","0","7","true","false","143076","false","false","2600"
+"Hazard","84","Rare","LW","Belgium","LaLiga Santander","Real Madrid","Min:1100 Max:14000","0","0","7","true","false","183277","false","false","2400"
+"Partey","84","Rare","CDM","Ghana","Premier League","Arsenal","Min:1100 Max:10000","0","0","7","true","false","209989","false","false","2500"
+"Matip","84","Rare","CB","Cameroon","Premier League","Liverpool","Min:1100 Max:10000","0","0","7","true","false","197061","false","false","1900"
+"João Félix","84","Rare","CF","Portugal","Premier League","Chelsea","Min:1100 Max:10000","0","0","7","true","false","100905740","false","false","10000"
+"Kovačić","84","Rare","CM","Croatia","Premier League","Chelsea","Min:1100 Max:10000","0","0","7","true","false","207410","false","false","1900"
+"Handanovič","84","Rare","GK","Slovenia","Serie A TIM","Inter","Min:1100 Max:10000","0","0","7","true","false","162835","false","false","2000"
+"Kamada","83","Special","CAM","Japan","Bundesliga","Frankfurt","Min:10250 Max:37500","0","0","7","true","false","50564378","false","false","11500"
+"Correa","83","Rare","ST","Argentina","LaLiga Santander","Atlético de Madrid","Min:850 Max:10000","1900","750","12","false","false","214997","false","false","2500"
+"Pau Torres","83","Rare","CB","Spain","LaLiga Santander","Villarreal CF","--NA--","0","0","16","true","false","241464","false","true","1300"
+"Lemar","83","Rare","CM","France","LaLiga Santander","Atlético de Madrid","--NA--","0","0","16","true","false","213565","false","true","1400"
+"Gabriel Jesus","83","Rare","ST","Brazil","Premier League","Arsenal","--NA--","1600","750","18","false","false","230666","false","true","7000"
+"Diego Carlos","83","Rare","CB","Brazil","Premier League","Aston Villa","--NA--","0","0","5","true","false","219693","false","false","3900"
+"Stones","83","Rare","CB","England","Premier League","Manchester City","--NA--","0","0","5","true","false","203574","false","false","1300"
+"Yeray","83","Special","CB","Spain","LaLiga Santander","Athletic Club","Min:10250 Max:47500","0","0","7","true","true","50559598","false","false","15000"
+"Unai Simón","83","Rare","GK","Spain","LaLiga Santander","Athletic Club","Min:800 Max:10000","0","0","7","true","true","230869","false","false","1500"
+"Carlos Soler","83","Rare","CM","Spain","Ligue 1 Uber Eats","Paris SG","Min:850 Max:10000","0","0","7","true","true","50565801","false","false","1300"
+"Laimer","83","Rare","CDM","Austria","Bundesliga","RB Leipzig","Min:850 Max:10000","0","0","7","true","true","225375","false","false","2500"
+"Piqué","83","Rare","CB","Spain","LaLiga Santander","FC Barcelona","Min:850 Max:10000","0","750","7","false","false","152729","false","false","10000"
+"Giménez","83","Rare","CB","Uruguay","LaLiga Santander","Atlético de Madrid","Min:850 Max:10000","0","750","7","false","false","216460","false","false","1300"
+"Carlos Soler","83","Rare","CM","Spain","Ligue 1 Uber Eats","Paris SG","Min:850 Max:10000","0","0","7","true","false","50565801","false","false","1300"
+"Araujo","83","Rare","CB","Uruguay","LaLiga Santander","FC Barcelona","Min:850 Max:10000","0","0","7","true","false","253163","false","false","1300"
+"Roberto Firmino","83","Rare","CF","Brazil","Premier League","Liverpool","Min:850 Max:10000","0","0","7","true","false","201942","false","false","1500"
+"Zapata","83","Rare","ST","Colombia","Serie A TIM","Bergamo Calcio","Min:800 Max:10000","0","0","7","true","false","215333","false","false","1500"
+"David Silva","83","Rare","CAM","Spain","LaLiga Santander","Real Sociedad","Min:800 Max:10000","0","0","7","true","false","168542","false","false","1300"
+"Baumann","83","Rare","GK","Germany","Bundesliga","TSG Hoffenheim","Min:800 Max:10000","0","0","7","true","false","193698","false","false","1400"
+"Angeliño","83","Rare","LWB","Spain","Bundesliga","TSG Hoffenheim","Min:800 Max:10000","0","0","7","true","false","220651","false","false","1400"
+"Rúben Neves","83","Rare","CM","Portugal","Premier League","Wolves","Min:800 Max:10000","0","0","7","true","false","224293","false","false","9200"
+"Ricardo Pereira","83","Rare","RB","Portugal","Premier League","Leicester City","Min:800 Max:10000","0","0","7","true","false","210243","false","false","900"
+"Gakpo","83","Rare","LW","Netherlands","Eredivisie","PSV","Min:850 Max:10000","0","0","7","true","false","242516","false","false","10000"
+"Højbjerg","83","Rare","CDM","Denmark","Premier League","Spurs","Min:800 Max:10000","0","0","7","true","false","213648","false","false","1300"
+"Ayew","83","Special","RW","Ghana","Premier League","Crystal Palace","Min:1000 Max:10000","0","0","7","true","false","100861052","false","false","0"
+"Ziyech","83","Rare","RW","Morocco","Premier League","Chelsea","Min:800 Max:10000","0","0","7","true","false","208670","false","false","1100"
+"Gakpo","83","Rare","LW","Netherlands","Premier League","Liverpool","Min:850 Max:10000","0","0","7","true","false","168014676","false","false","1400"
+"Koke","83","Rare","CM","Spain","LaLiga Santander","Atlético de Madrid","Min:850 Max:10000","0","0","7","true","false","193747","false","false","1400"
+"Werner","82","Rare","ST","Germany","Bundesliga","RB Leipzig","Min:700 Max:10000","2000","580","3","false","false","212188","false","false","1200"
+"Tah","82","Rare","CB","Germany","Bundesliga","Leverkusen","Min:700 Max:10000","0","0","4","true","true","213331","false","false","1000"
+"Ramsdale","82","Rare","GK","England","Premier League","Arsenal","Min:700 Max:10000","2600","580","29","false","false","233934","false","false","1000"
+"Schlotterbeck","82","Rare","CB","Germany","Bundesliga","Borussia Dortmund","Min:700 Max:10000","0","580","18","false","false","247819","false","false","9900"
+"Coates","82","Rare","CB","Uruguay","Liga Portugal","Sporting CP","Min:700 Max:10000","0","580","7","false","false","197655","false","false","1200"
+"Álex Remiro","82","Rare","GK","Spain","LaLiga Santander","Real Sociedad","Min:700 Max:10000","0","580","7","false","false","227127","false","false","950"
+"Coutinho","82","Rare","CAM","Brazil","Premier League","Aston Villa","Min:700 Max:10000","0","580","7","false","false","189242","false","false","2200"
+"Zaha","82","Rare","LW","Ivory Coast","Premier League","Crystal Palace","Min:700 Max:10000","0","580","7","false","false","198717","false","false","10000"
+"Danjuma","82","Rare","LM","Netherlands","Premier League","Spurs","Min:700 Max:10000","0","580","7","false","false","100899572","false","false","1500"
+"Gosens","82","Rare","LWB","Germany","Serie A TIM","Inter","Min:700 Max:10000","0","0","7","true","false","223697","false","false","950"
+"Orban","82","Common","CB","Hungary","Bundesliga","RB Leipzig","Min:350 Max:10000","0","0","7","true","false","204638","false","false","1000"
+"Gayà","82","Rare","LB","Spain","LaLiga Santander","Valencia CF","Min:700 Max:10000","0","0","7","true","false","211688","false","false","950"
+"Iñigo Martínez","82","Rare","CB","Spain","LaLiga Santander","Athletic Club","Min:700 Max:10000","0","0","7","true","false","204525","false","false","1000"
+"Saka","82","Rare","RM","England","Premier League","Arsenal","Min:700 Max:10000","0","0","7","true","false","246669","false","false","10000"
+"Tah","82","Rare","CB","Germany","Bundesliga","Leverkusen","Min:700 Max:10000","0","0","7","true","false","213331","false","false","1000"
+"Isco","82","Rare","CAM","Spain","LaLiga Santander","Sevilla FC","Min:700 Max:10000","0","0","7","true","false","197781","false","false","-- NA --"
+"David Soria","82","Rare","GK","Spain","LaLiga Santander","Getafe CF","Min:700 Max:10000","0","0","7","true","false","223952","false","false","1100"
+"Gabriel Paulista","82","Rare","CB","Brazil","LaLiga Santander","Valencia CF","Min:700 Max:10000","0","0","7","true","false","201305","false","false","1000"
+"Rulli","82","Rare","GK","Argentina","LaLiga Santander","Villarreal CF","Min:700 Max:10000","0","0","7","true","false","215316","false","false","10000"
+"Payet","82","Rare","CAM","France","Ligue 1 Uber Eats","OM","Min:700 Max:10000","0","0","7","true","false","177388","false","false","1100"
+"Wirtz","82","Rare","CAM","Germany","Bundesliga","Leverkusen","Min:700 Max:10000","0","0","7","true","false","256630","false","false","1300"
+"Lopes","82","Rare","GK","Portugal","Ligue 1 Uber Eats","OL","Min:700 Max:10000","0","0","7","true","false","199482","false","false","950"
+"Muriel","82","Rare","ST","Colombia","Serie A TIM","Bergamo Calcio","Min:700 Max:10000","0","0","7","true","false","199110","false","false","1000"
+"O'Nien","82","Special","CDM","England","EFL Championship","Sunderland","Min:11000 Max:95000","0","0","7","true","false","50547348","false","false","0"
+"Anderson Talisca","82","Rare","CF","Brazil","ROSHN Saudi League","Al Nassr","Min:700 Max:10000","0","0","7","true","false","212523","false","false","6000"
+"André Silva","82","Rare","ST","Portugal","Bundesliga","RB Leipzig","Min:700 Max:10000","0","0","7","true","false","228941","false","false","1000"
+"Grimaldo","82","Rare","LB","Spain","Liga Portugal","SL Benfica","Min:700 Max:10000","0","0","7","true","false","210035","false","false","8500"
+"Lucas Paquetá","82","Rare","CAM","Brazil","Premier League","West Ham","Min:700 Max:10000","0","0","7","true","false","50565575","false","false","3000"
+"Christensen","82","Rare","CB","Denmark","LaLiga Santander","FC Barcelona","Min:700 Max:10000","0","0","7","true","false","213661","false","false","950"
+"Fabiański","82","Rare","GK","Poland","Premier League","West Ham","Min:700 Max:10000","0","0","7","true","false","164835","false","false","1000"
+"Otávio","82","Rare","RM","Portugal","Liga Portugal","FC Porto","Min:700 Max:10000","0","0","7","true","false","210411","false","false","900"
+"Núñez","82","Rare","ST","Uruguay","Premier League","Liverpool","Min:700 Max:10000","0","0","7","true","false","253072","false","false","1200"
+"Dani Olmo","82","Rare","CAM","Spain","Bundesliga","RB Leipzig","Min:700 Max:10000","0","0","7","true","false","244260","false","false","1000"
+"Abraham","82","Rare","ST","England","Serie A TIM","Roma FC","Min:700 Max:10000","0","0","7","true","false","231352","false","false","900"
+"Gordon","82","Special","LM","England","Premier League","Newcastle Utd","Min:5000 Max:150000","0","0","7","true","false","50574612","false","false","0"
+"Pickford","82","Common","GK","England","Premier League","Everton","Min:350 Max:10000","0","0","7","true","false","204935","false","false","2000"
+"Arnautović","82","Rare","ST","Austria","Serie A TIM","Bologna","Min:700 Max:10000","0","0","7","true","false","184200","false","false","1300"
+"Tierney","81","Rare","LB","Scotland","Premier League","Arsenal","--NA--","1000","575","16","false","false","226491","false","true","3000"
+"Pepe","81","Rare","CB","Portugal","Liga Portugal","FC Porto","Min:650 Max:10000","0","575","7","false","false","120533","false","false","800"
+"José Sá","81","Rare","GK","Portugal","Premier League","Wolves","Min:650 Max:10000","0","575","6","false","false","212442","false","false","900"
+"Ndicka","81","Rare","CB","France","Bundesliga","Frankfurt","Min:650 Max:10000","1200","575","3","false","false","236403","false","false","950"
+"Vertonghen","81","Rare","CB","Belgium","1A Pro League","RSC Anderlecht","Min:650 Max:10000","0","575","7","false","false","50504519","false","false","800"
+"Gabriel","81","Common","CB","Brazil","Premier League","Arsenal","Min:350 Max:10000","0","288","7","false","false","232580","false","false","600"
+"Areola","81","Rare","GK","France","Premier League","West Ham","Min:650 Max:10000","0","0","13","true","false","193105","false","false","800"
+"Le Normand","81","Common","CB","France","LaLiga Santander","Real Sociedad","Min:350 Max:10000","0","0","7","true","false","233486","false","false","800"
+"Zambo Anguissa","81","Rare","CDM","Cameroon","Serie A TIM","Napoli FC","Min:1100 Max:20000","0","0","7","true","false","227236","false","false","1200"
+"Žulj","81","Special","CAM","Austria","Ö. Bundesliga","LASK","Min:9900 Max:35000","0","0","7","true","false","50532938","false","false","13750"
+"Pope","81","Rare","GK","England","Premier League","Newcastle Utd","Min:650 Max:10000","0","0","7","true","false","203841","false","false","950"
+"Pašalić","81","Rare","CAM","Croatia","Serie A TIM","Bergamo Calcio","Min:650 Max:10000","0","0","7","true","false","223273","false","false","750"
+"Fofana","81","Rare","CM","Ivory Coast","Ligue 1 Uber Eats","RC Lens","Min:650 Max:10000","0","0","7","true","false","216320","false","false","5000"
+"Konaté","81","Rare","CB","France","Premier League","Liverpool","Min:650 Max:10000","0","0","7","true","false","237678","false","false","1200"
+"Tapsoba","81","Rare","CB","Burkina Faso","Bundesliga","Leverkusen","Min:650 Max:10000","0","0","7","true","false","247263","false","false","750"
+"Ricardo Horta","81","Rare","CF","Portugal","Liga Portugal","SC Braga","Min:650 Max:10000","0","0","7","true","false","213516","false","false","750"
+"Andrich","81","Rare","CDM","Germany","Bundesliga","Leverkusen","Min:650 Max:10000","0","0","7","true","false","212242","false","false","850"
+"Demirbay","81","Rare","CM","Germany","Bundesliga","Leverkusen","Min:650 Max:10000","0","0","7","true","false","211748","false","false","850"
+"Tagliafico","81","Rare","LB","Argentina","Ligue 1 Uber Eats","OL","Min:650 Max:10000","0","0","7","true","false","211256","false","false","850"
+"Phillips","81","Rare","CDM","England","Premier League","Manchester City","Min:650 Max:10000","0","0","7","true","false","224081","false","false","1400"
+"Neto","81","Rare","GK","Brazil","Premier League","AFC Bournemouth","Min:650 Max:10000","0","0","7","true","false","194404","false","false","750"
+"Lobotka","81","Rare","CM","Slovakia","Serie A TIM","Napoli FC","Min:650 Max:10000","0","0","7","true","false","216435","false","false","800"
+"Savanier","81","Rare","CAM","France","Ligue 1 Uber Eats","Montpellier","Min:650 Max:10000","0","0","7","true","false","205686","false","false","900"
+"Akanji","81","Rare","CB","Switzerland","Premier League","Manchester City","Min:650 Max:10000","0","0","7","true","false","50560885","false","false","1100"
+"Upamecano","81","Rare","CB","France","Bundesliga","FC Bayern München","Min:650 Max:10000","0","0","7","true","false","229558","false","false","1000"
+"Musso","81","Rare","GK","Argentina","Serie A TIM","Bergamo Calcio","Min:650 Max:10000","0","0","7","true","false","214979","false","false","700"
+"Rafael Tolói","81","Rare","CB","Italy","Serie A TIM","Bergamo Calcio","Min:650 Max:10000","0","0","7","true","false","187598","false","false","800"
+"Lucas Vázquez","81","Rare","RB","Spain","LaLiga Santander","Real Madrid","Min:650 Max:10000","0","0","7","true","false","208618","false","false","950"
+"Barák","81","Rare","CF","Czech Republic","Serie A TIM","Fiorentina","Min:650 Max:10000","0","0","7","true","false","50568439","false","false","800"
+"Marc Bartra","81","Rare","CB","Spain","Süper Lig","Trabzonspor","Min:650 Max:10000","0","0","7","true","false","198141","false","false","800"
+"Raum","81","Rare","LWB","Germany","Bundesliga","RB Leipzig","Min:650 Max:10000","0","0","7","true","false","236703","false","false","800"
+"Pedro Porro","81","Rare","RWB","Spain","Liga Portugal","Sporting CP","Min:650 Max:10000","0","0","7","true","false","243576","false","false","5600"
+"Hofmann","81","Rare","CAM","Germany","Bundesliga","M'gladbach","Min:650 Max:10000","0","0","7","true","false","210324","false","false","800"
+"Tolisso","81","Rare","CM","France","Ligue 1 Uber Eats","OL","Min:650 Max:10000","0","0","7","true","false","219683","false","false","850"
+"Musiala","81","Rare","CM","Germany","Bundesliga","FC Bayern München","Min:650 Max:10000","0","0","7","true","false","256790","false","false","6900"
+"Keïta","81","Rare","CM","Guinea","Premier League","Liverpool","Min:650 Max:10000","0","0","7","true","false","220971","false","false","1100"
+"Martínez","81","Rare","CB","Argentina","Premier League","Manchester Utd","Min:650 Max:10000","0","0","7","true","false","239301","false","false","900"
+"Frimpong","80","Rare","RB","Netherlands","Bundesliga","Leverkusen","Min:650 Max:10000","1100","570","19","false","false","253149","false","false","8000"
+"Morata","80","Rare","ST","Spain","LaLiga Santander","Atlético de Madrid","Min:650 Max:10000","0","570","7","false","false","201153","false","false","700"
+"Çakır","80","Rare","GK","Turkey","Süper Lig","Trabzonspor","Min:650 Max:10000","0","570","7","false","false","226300","false","false","700"
+"Álvarez","80","Rare","CDM","Mexico","Eredivisie","Ajax","Min:650 Max:10000","0","570","7","false","false","235844","false","false","700"
+"Consigli","80","Common","GK","Italy","Serie A TIM","Sassuolo","Min:350 Max:10000","0","284","7","false","false","163489","false","false","650"
+"Capoue","80","Common","CM","France","LaLiga Santander","Villarreal CF","Min:350 Max:10000","0","284","7","false","false","178213","false","false","600"
+"Vanaken","80","Common","CM","Belgium","1A Pro League","Club Brugge","Min:350 Max:10000","0","284","7","false","false","200155","false","false","750"
+"Arnold","80","Common","CDM","Germany","Bundesliga","VfL Wolfsburg","Min:350 Max:10000","0","0","7","true","false","206511","false","false","600"
+"José Fonte","80","Common","CB","Portugal","Ligue 1 Uber Eats","LOSC Lille","Min:350 Max:10000","0","0","7","true","false","171791","false","false","750"
+"Isak","80","Rare","ST","Sweden","Premier League","Newcastle Utd","Min:650 Max:10000","0","0","7","true","false","50565379","false","false","750"
+"Ospina","80","Rare","GK","Colombia","ROSHN Saudi League","Al Nassr","Min:650 Max:10000","0","0","7","true","false","176550","false","false","700"
+"Edgar Badia","80","Common","GK","Spain","LaLiga Santander","Elche CF","Min:350 Max:10000","0","0","7","true","false","204234","false","false","600"
+"Mignolet","80","Rare","GK","Belgium","1A Pro League","Club Brugge","Min:650 Max:10000","0","0","7","true","false","173426","false","false","700"
+"Benítez","80","Rare","GK","Argentina","Eredivisie","PSV","Min:650 Max:10000","0","0","7","true","false","215223","false","false","700"
+"Wijnaldum","80","Rare","CM","Netherlands","Serie A TIM","Roma FC","Min:650 Max:10000","0","0","7","true","false","181291","false","false","800"
+"Ortega","80","Rare","GK","Germany","Premier League","Manchester City","Min:650 Max:10000","0","0","7","true","false","200159","false","false","1200"
+"Hateboer","80","Rare","RWB","Netherlands","Serie A TIM","Bergamo Calcio","Min:650 Max:10000","0","0","7","true","false","220093","false","false","700"
+"Clauss","80","Rare","RWB","France","Ligue 1 Uber Eats","OM","Min:650 Max:10000","0","0","7","true","false","239093","false","false","850"
+"Dahoud","80","Common","CM","Germany","Bundesliga","Borussia Dortmund","Min:350 Max:10000","0","0","7","true","false","218339","false","false","650"
+"Lafont","80","Rare","GK","France","Ligue 1 Uber Eats","FC Nantes","Min:650 Max:10000","0","0","7","true","false","231691","false","false","700"
+"Timber","80","Rare","CB","Netherlands","Eredivisie","Ajax","Min:650 Max:10000","0","0","7","true","false","251805","false","false","800"
+"Buendía","80","Common","RM","Argentina","Premier League","Aston Villa","Min:350 Max:10000","0","0","7","true","false","226162","false","false","900"
+"Calabria","80","Rare","RB","Italy","Serie A TIM","Milan","Min:650 Max:10000","0","0","7","true","false","228881","false","false","700"
+"Karsdorp","80","Rare","RWB","Netherlands","Serie A TIM","Roma FC","Min:650 Max:10000","0","0","7","true","false","222558","false","false","700"
+"Aguerd","80","Rare","CB","Morocco","Premier League","West Ham","Min:650 Max:10000","0","0","7","true","false","244749","false","false","800"
+"Baku","80","Rare","RM","Germany","Bundesliga","VfL Wolfsburg","Min:650 Max:10000","0","0","7","true","false","240709","false","false","700"
+"Sabitzer","80","Rare","CM","Austria","Bundesliga","FC Bayern München","Min:650 Max:10000","0","0","7","true","false","204923","false","false","3200"
+"Günter","80","Rare","LB","Germany","Bundesliga","SC Freiburg","Min:650 Max:10000","0","0","7","true","false","209846","false","false","800"
+"Guendouzi","80","Rare","CM","France","Ligue 1 Uber Eats","OM","Min:650 Max:11000","0","0","7","true","false","236496","false","false","800"
+"Hazard","80","Rare","LM","Belgium","Bundesliga","Borussia Dortmund","Min:650 Max:10000","0","0","7","true","false","203486","false","false","4900"
+"Darmian","80","Common","RWB","Italy","Serie A TIM","Inter","Min:350 Max:10000","0","0","7","true","false","184392","false","false","650"
+"Jonathan Viera","80","Rare","CAM","Spain","LaLiga SmartBank","UD Las Palmas","Min:650 Max:10000","0","0","7","true","false","198164","false","false","700"
+"Malen","79","Rare","ST","Netherlands","Bundesliga","Borussia Dortmund","Min:650 Max:10000","0","560","4","false","false","231447","false","false","750"
+"Szoboszlai","79","Rare","CAM","Hungary","Bundesliga","RB Leipzig","Min:650 Max:10000","0","560","7","false","false","236772","false","false","700"
+"Diogo Costa","79","Common","GK","Portugal","Liga Portugal","FC Porto","Min:350 Max:10000","0","280","7","false","false","234577","false","false","600"
+"Tarkowski","79","Common","CB","England","Premier League","Everton","Min:350 Max:10000","0","280","7","false","false","202695","false","false","600"
+"Weghorst","79","Common","ST","Netherlands","Süper Lig","Beşiktaş","Min:350 Max:10000","0","280","7","false","false","223689","false","false","6100"
+"Estupiñán","79","Common","LB","Ecuador","Premier League","Brighton","Min:350 Max:10000","0","280","7","false","false","237942","false","false","600"
+"Sels","79","Common","GK","Belgium","Ligue 1 Uber Eats","Strasbourg","Min:350 Max:10000","0","280","7","false","false","199641","false","false","600"
+"Montiel","79","Rare","RB","Argentina","LaLiga Santander","Sevilla FC","Min:650 Max:10000","0","0","3","true","false","231340","false","false","700"
+"Pedro","79","Common","LW","Spain","Serie A TIM","Latium","Min:350 Max:10000","0","0","7","true","false","189505","false","false","600"
+"Milik","79","Common","ST","Poland","Serie A TIM","Juventus","Min:350 Max:10000","0","0","7","true","false","50536823","false","false","700"
+"Zaccagni","79","Common","LW","Italy","Serie A TIM","Latium","Min:350 Max:10000","0","0","7","true","false","220502","false","false","600"
+"Kökçü","79","Common","CM","Turkey","Eredivisie","Feyenoord","Min:350 Max:10000","0","0","7","true","false","243245","false","false","600"
+"Ismaily","79","Rare","LB","Brazil","Ligue 1 Uber Eats","LOSC Lille","Min:650 Max:10000","0","0","7","true","false","201119","false","false","700"
+"Xhaka","79","Common","CDM","Switzerland","Premier League","Arsenal","Min:350 Max:10000","0","0","7","true","false","199503","false","false","600"
+"Özcan","79","Rare","CDM","Turkey","Bundesliga","Borussia Dortmund","Min:650 Max:10000","0","0","7","true","false","235407","false","false","700"
+"Kim Min Jae","79","Rare","CB","Korea Republic","Serie A TIM","Napoli FC","Min:650 Max:10000","0","0","7","true","false","237086","false","false","5700"
+"Dia","79","Common","ST","Senegal","Serie A TIM","Salernitana","Min:350 Max:10000","0","0","7","true","false","246242","false","false","600"
+"Stanciu","79","Rare","CM","Romania","CSL","Wuhan 3 Towns","Min:650 Max:10000","0","0","7","true","false","212207","false","false","700"
+"Luis Milla","79","Rare","CDM","Spain","LaLiga Santander","Getafe CF","Min:650 Max:10000","0","0","7","true","false","242201","false","false","700"
+"Reinildo","79","Common","LB","Mozambique","LaLiga Santander","Atlético de Madrid","Min:350 Max:10000","0","0","7","true","false","236045","false","false","600"
+"Bellarabi","79","Rare","RM","Germany","Bundesliga","Leverkusen","Min:650 Max:10000","0","0","7","true","false","202857","false","false","700"
+"Gouiri","79","Rare","ST","France","Ligue 1 Uber Eats","Stade Rennais FC","Min:650 Max:10000","0","0","7","true","false","50572401","false","false","700"
+"Matheus Reis","79","Rare","CB","Brazil","Liga Portugal","Sporting CP","Min:650 Max:10000","0","0","7","true","false","230625","false","false","700"
+"Doucouré","79","Common","CM","Mali","Premier League","Everton","Min:350 Max:10000","0","0","7","true","false","208135","false","false","600"
+"Gudelj","79","Common","CDM","Serbia","LaLiga Santander","Sevilla FC","Min:350 Max:10000","0","0","7","true","false","193198","false","false","600"
+"Marcão","79","Rare","CB","Brazil","LaLiga Santander","Sevilla FC","Min:650 Max:10000","0","0","7","true","false","234426","false","false","750"
+"Rakitskyi","79","Rare","CB","Ukraine","Süper Lig","Adana Demirspor","Min:650 Max:10000","0","0","7","true","false","195861","false","false","5000"
+"David Neres","79","Rare","RW","Brazil","Liga Portugal","SL Benfica","Min:650 Max:10000","0","0","7","true","false","236632","false","false","700"
+"Lazzari","79","Rare","RB","Italy","Serie A TIM","Latium","Min:650 Max:10000","0","0","7","true","false","235374","false","false","700"
+"Fofana","79","Rare","CB","France","Premier League","Chelsea","Min:650 Max:10000","0","0","7","true","false","50580343","false","false","700"
+"Golovin","79","Rare","LM","Russia","Ligue 1 Uber Eats","AS Monaco","Min:650 Max:10000","0","0","7","true","false","225663","false","false","700"
+"Ávila","79","Rare","ST","Argentina","LaLiga Santander","CA Osasuna","Min:650 Max:10000","0","0","7","true","false","228520","false","false","700"
+"João Mário","79","Common","CM","Portugal","Liga Portugal","SL Benfica","Min:350 Max:10000","0","0","7","true","false","212814","false","false","7900"
+"Diego López","79","Common","GK","Spain","LaLiga Santander","Rayo Vallecano","Min:350 Max:10000","0","0","7","true","false","146748","false","false","600"
+"Marchesín","79","Common","GK","Argentina","LaLiga Santander","RC Celta","Min:350 Max:10000","0","0","7","true","false","201095","false","false","600"
+"Pablo Fornals","79","Common","CAM","Spain","Premier League","West Ham","Min:350 Max:10000","0","0","7","true","false","226456","false","false","900"
+"Guaita","79","Common","GK","Spain","Premier League","Crystal Palace","Min:350 Max:10000","0","0","7","true","false","189690","false","false","600"
+"Mandanda","79","Common","GK","France","Ligue 1 Uber Eats","Stade Rennais FC","Min:350 Max:10000","0","0","7","true","false","163705","false","false","600"
+"Gabriel Martinelli","78","Rare","LM","Brazil","Premier League","Arsenal","Min:650 Max:10000","0","545","18","false","false","251566","false","false","1000"
+"Simakan","78","Rare","CB","France","Bundesliga","RB Leipzig","Min:650 Max:10000","0","545","26","false","false","243854","false","false","700"
+"Lopez","78","Common","CM","France","Serie A TIM","Sassuolo","Min:350 Max:10000","0","277","7","false","false","224030","false","false","550"
+"Sosa","78","Common","LB","Croatia","Bundesliga","VfB Stuttgart","Min:350 Max:10000","0","277","3","false","false","243388","false","false","550"
+"Nübel","78","Common","GK","Germany","Ligue 1 Uber Eats","AS Monaco","Min:350 Max:10000","0","277","3","false","false","223885","false","false","700"
+"Senesi","78","Common","CB","Argentina","Premier League","AFC Bournemouth","Min:350 Max:10000","0","277","7","false","false","236506","false","false","550"
+"Lingard","78","Common","CAM","England","Premier League","Nott'm Forest","Min:350 Max:10000","0","277","7","false","false","207494","false","false","550"
+"Baumgartner","78","Common","CAM","Austria","Bundesliga","TSG Hoffenheim","Min:350 Max:10000","0","277","7","false","false","242187","false","false","550"
+"Molina","78","Common","RWB","Argentina","LaLiga Santander","Atlético de Madrid","Min:350 Max:10000","0","277","7","false","false","233084","false","false","3000"
+"Odriozola","78","Common","RB","Spain","LaLiga Santander","Real Madrid","Min:350 Max:10000","0","277","7","false","false","234035","false","false","1000"
+"Willian José","78","Common","ST","Brazil","LaLiga Santander","Real Betis","Min:350 Max:10000","0","0","7","true","false","195093","false","false","600"
+"Rosario","78","Common","CDM","Netherlands","Ligue 1 Uber Eats","OGC Nice","Min:350 Max:10000","0","0","7","true","false","235134","false","false","600"
+"Dimarco","78","Common","LWB","Italy","Serie A TIM","Inter","Min:350 Max:10000","0","0","7","true","false","226268","false","false","550"
+"Gollini","78","Common","GK","Italy","Serie A TIM","Fiorentina","Min:350 Max:10000","0","0","7","true","false","211515","false","false","1800"
+"Driussi","78","Common","CAM","Argentina","MLS","Austin FC","Min:350 Max:10000","0","0","7","true","false","221125","false","false","1000"
+"Douglas Luiz","78","Common","CDM","Brazil","Premier League","Aston Villa","Min:350 Max:10000","0","0","7","true","false","236499","false","false","600"
+"Pérez","78","Special","CDM","Argentina","Libertadores","River Plate","Min:650 Max:10000","0","0","7","true","false","196432","false","false","700"
+"Martínez","78","Rare","ST","Venezuela","MLS","Atlanta United","Min:650 Max:10000","0","0","7","true","false","207877","false","false","6900"
+"Portu","78","Rare","RM","Spain","LaLiga Santander","Getafe CF","Min:650 Max:10000","0","0","7","true","false","205070","false","false","700"
+"Ruidíaz","78","Rare","ST","Peru","MLS","Sounders FC","Min:650 Max:10000","0","0","7","true","false","204538","false","false","700"
+"Luiz Araújo","78","Common","RM","Brazil","MLS","Atlanta United","Min:350 Max:10000","0","0","7","true","false","234128","false","false","550"
+"Holeš","78","Rare","CDM","Czech Republic","Česká Liga","Slavia Praha","Min:650 Max:10000","0","0","7","true","false","251116","false","false","700"
+"Ighalo","78","Common","ST","Nigeria","ROSHN Saudi League","Al Hilal","Min:350 Max:10000","0","0","7","true","false","185195","false","false","4800"
+"Watkins","78","Rare","ST","England","Premier League","Aston Villa","Min:650 Max:10000","0","0","7","true","false","221697","false","false","700"
+"Romarinho","78","Rare","CF","Brazil","ROSHN Saudi League","Al Ittihad","Min:650 Max:10000","0","0","7","true","false","209440","false","false","700"
+"Aidoo","78","Rare","CB","Ghana","LaLiga Santander","RC Celta","Min:650 Max:10000","0","0","7","true","false","230021","false","false","700"
+"Pereyra","78","Rare","CM","Argentina","Serie A TIM","Udinese","Min:650 Max:10000","0","0","7","true","false","193061","false","false","700"
+"Fernando","78","Common","CDM","Brazil","Süper Lig","Antalyaspor","Min:350 Max:10000","0","0","7","true","false","202642","false","false","550"
+"Brahim","78","Rare","CAM","Spain","Serie A TIM","Milan","Min:650 Max:10000","0","0","7","true","false","231410","false","false","700"
+"Guilbert","78","Common","RWB","France","Premier League","Aston Villa","Min:350 Max:10000","0","0","7","true","false","227222","false","false","10000"
+"Caputo","78","Rare","ST","Italy","Serie A TIM","Sampdoria","Min:650 Max:10000","0","0","7","true","false","189053","false","false","9300"
+"Carrillo","78","Common","RW","Peru","ROSHN Saudi League","Al Hilal","Min:350 Max:10000","0","0","7","true","false","203299","false","false","550"
+"Bamford","78","Common","ST","England","Premier League","Leeds United","Min:350 Max:10000","0","0","7","true","false","206534","false","false","600"
+"Niakhaté","78","Rare","CB","France","Premier League","Nott'm Forest","Min:650 Max:10000","0","0","7","true","false","225859","false","false","10000"
+"Almirón","78","Rare","RM","Paraguay","Premier League","Newcastle Utd","Min:650 Max:10000","0","0","7","true","false","230977","false","false","700"
+"Toko Ekambi","78","Rare","LM","Cameroon","Ligue 1 Uber Eats","OL","Min:650 Max:10000","0","0","7","true","false","224069","false","false","6300"
+"Mavropanos","78","Rare","CB","Greece","Bundesliga","VfB Stuttgart","Min:650 Max:10000","0","0","7","true","false","242000","false","false","700"
+"Ito","78","Rare","RW","Japan","Ligue 1 Uber Eats","Stade de Reims","Min:650 Max:10000","0","0","7","true","false","232905","false","false","700"
+"Faraoni","78","Common","RWB","Italy","Serie A TIM","Hellas Verona","Min:350 Max:10000","0","0","7","true","false","195272","false","false","600"
+"Kalajdžić","78","Common","ST","Austria","Premier League","Wolves","Min:350 Max:10000","0","0","7","true","false","50571549","false","false","550"
+"Rode","78","Common","CDM","Germany","Bundesliga","Frankfurt","Min:350 Max:10000","0","0","7","true","false","200215","false","false","600"
+"Audero","78","Common","GK","Italy","Serie A TIM","Sampdoria","Min:350 Max:10000","0","0","7","true","false","228413","false","false","600"
+"Pedro Neto","78","Common","LW","Portugal","Premier League","Wolves","Min:350 Max:10000","0","0","7","true","false","238616","false","false","600"
+"Walker-Peters","78","Common","RB","England","Premier League","Southampton","Min:350 Max:10000","0","0","7","true","false","227927","false","false","600"
+"Lookman","77","Rare","LM","England","Serie A TIM","Bergamo Calcio","Min:650 Max:10000","0","545","7","false","false","230899","false","false","-- NA --"
+"Casco","77","Special","LB","Argentina","Libertadores","River Plate","Min:650 Max:10000","0","545","7","false","false","215071","false","false","700"
+"Barrow","77","Common","CF","Gambia","Serie A TIM","Bologna","Min:350 Max:10000","0","273","7","false","false","242374","false","false","600"
+"Lainer","77","Common","RB","Austria","Bundesliga","M'gladbach","Min:350 Max:10000","0","273","7","false","false","223724","false","false","600"
+"Kritsyuk","77","Common","GK","Russia","Liga Portugal","Gil Vicente","Min:350 Max:10000","0","273","7","false","false","213150","false","false","550"
+"Iago","77","Common","LWB","Brazil","Bundesliga","FC Augsburg","Min:350 Max:10000","0","273","7","false","false","251182","false","false","550"
+"Miguel Veloso","77","Common","CM","Portugal","Serie A TIM","Hellas Verona","Min:350 Max:10000","0","0","7","true","false","178007","false","false","550"
+"Kadeřábek","77","Common","RWB","Czech Republic","Bundesliga","TSG Hoffenheim","Min:350 Max:10000","0","0","7","true","false","203605","false","false","550"
+"Boga","77","Common","LW","Ivory Coast","Serie A TIM","Bergamo Calcio","Min:350 Max:10000","0","0","7","true","false","224422","false","false","600"
+"Aguilar","77","Common","RB","France","Ligue 1 Uber Eats","AS Monaco","Min:350 Max:10000","0","0","7","true","false","223597","false","false","600"
+"Unai Vencedor","77","Common","CM","Spain","LaLiga Santander","Athletic Club","Min:350 Max:10000","0","0","7","true","false","247328","false","false","600"
+"Bou","77","Common","ST","Argentina","MLS","New England","Min:350 Max:10000","0","0","7","true","false","188955","false","false","600"
+"Koné","77","Common","CM","France","Bundesliga","M'gladbach","Min:350 Max:10000","0","0","7","true","false","250723","false","false","550"
+"Pezzella","77","Common","CB","Argentina","LaLiga Santander","Real Betis","Min:350 Max:10000","0","0","7","true","false","193601","false","false","600"
+"Boyé","77","Common","ST","Argentina","LaLiga Santander","Elche CF","Min:350 Max:10000","0","0","7","true","false","222041","false","false","600"
+"Oxlade-Chamberlain","77","Rare","CM","England","Premier League","Liverpool","Min:650 Max:10000","0","0","7","true","false","198784","false","false","850"
+"Vitolo","77","Common","LM","Spain","LaLiga SmartBank","UD Las Palmas","Min:350 Max:10000","0","0","7","true","false","199715","false","false","600"
+"Diallo","77","Common","ST","Senegal","Ligue 1 Uber Eats","Strasbourg","Min:350 Max:10000","0","0","7","true","false","225293","false","false","600"
+"El Shaarawy","77","Common","LW","Italy","Serie A TIM","Roma FC","Min:350 Max:10000","0","0","7","true","false","190813","false","false","550"
+"Demme","77","Common","CDM","Germany","Serie A TIM","Napoli FC","Min:350 Max:10000","0","0","7","true","false","202325","false","false","600"
+"Geertruida","77","Common","RB","Netherlands","Eredivisie","Feyenoord","Min:350 Max:10000","0","0","7","true","false","241187","false","false","3500"
+"Castellanos","77","Common","ST","Argentina","LaLiga Santander","Girona FC","Min:350 Max:10000","0","0","7","true","false","237712","false","false","600"
+"Madueke","77","Common","RW","England","Eredivisie","PSV","Min:350 Max:10000","0","0","7","true","false","254796","false","false","10000"
+"Rodríguez","77","Special","ST","Argentina","Libertadores","Colón","Min:650 Max:10000","0","0","7","true","false","192906","false","false","3000"
+"Hložek","77","Common","CAM","Czech Republic","Bundesliga","Leverkusen","Min:350 Max:10000","0","0","7","true","false","246618","false","false","600"
+"Al Dawsari","77","Rare","LW","Saudi Arabia","ROSHN Saudi League","Al Hilal","Min:650 Max:10000","0","0","7","true","false","210602","false","false","700"
+"Svensson","77","Rare","RB","Norway","Süper Lig","Adana Demirspor","Min:650 Max:10000","0","0","7","true","false","198657","false","false","700"
+"Rosier","77","Rare","RB","France","Süper Lig","Beşiktaş","Min:650 Max:10000","0","0","7","true","false","234730","false","false","700"
+"David López","77","Common","CDM","Spain","LaLiga Santander","Girona FC","Min:350 Max:10000","0","0","7","true","false","201505","false","false","600"
+"Badiashile","77","Common","CB","France","Ligue 1 Uber Eats","AS Monaco","Min:350 Max:10000","0","0","7","true","false","242578","false","false","7500"
+"Toney","77","Common","ST","England","Premier League","Brentford","Min:350 Max:10000","0","0","7","true","false","212228","false","false","10000"
+"Jovetić","77","Common","ST","Montenegro","Bundesliga","Hertha Berlin","Min:350 Max:10000","0","0","7","true","false","181820","false","false","600"
+"Wolf","77","Common","RM","Germany","Bundesliga","Borussia Dortmund","Min:350 Max:10000","0","0","7","true","false","224425","false","false","550"
+"Bryan Gil","77","Common","LM","Spain","Premier League","Spurs","Min:350 Max:10000","0","0","7","true","false","246785","false","false","-- NA --"
+"Lazović","77","Common","LM","Serbia","Serie A TIM","Hellas Verona","Min:350 Max:10000","0","0","7","true","false","212127","false","false","650"
+"Godín","77","Special","CB","Uruguay","Libertadores","Vélez Sarsfield","Min:650 Max:10000","0","0","7","true","false","182493","false","false","8000"
+"Kristensen","77","Rare","RB","Denmark","Premier League","Leeds United","Min:650 Max:10000","0","0","7","true","false","233301","false","false","700"
+"James","77","Rare","RM","Wales","Premier League","Fulham","Min:650 Max:10000","0","0","7","true","false","50563752","false","false","700"
+"Brais Méndez","77","Common","RM","Spain","LaLiga Santander","Real Sociedad","Min:350 Max:10000","0","0","7","true","false","235944","false","false","600"
+"Arthur Cabral","77","Common","ST","Brazil","Serie A TIM","Fiorentina","Min:350 Max:10000","0","0","7","true","false","246186","false","false","600"
+"Teze","77","Rare","CB","Netherlands","Eredivisie","PSV","Min:650 Max:10000","0","0","7","true","false","245211","false","false","700"
+"Bruno Viana","77","Common","CB","Brazil","CSL","Wuhan FC","Min:350 Max:10000","0","0","7","true","false","234226","false","false","10000"
+"Disasi","77","Common","CB","France","Ligue 1 Uber Eats","AS Monaco","Min:350 Max:10000","0","0","7","true","false","229942","false","false","650"
+"Midtsjø","77","Common","CM","Norway","Süper Lig","Galatasaray","Min:350 Max:10000","0","0","7","true","false","198658","false","false","550"
+"Frattesi","77","Common","CM","Italy","Serie A TIM","Sassuolo","Min:350 Max:10000","0","0","7","true","false","239807","false","false","600"
+"Isla","76","Special","RB","Chile","Sudamericana","Uni. Católica","Min:550 Max:4900","0","540","7","false","false","50519448","false","false","0"
+"Coleman","76","Common","RB","Republic of Ireland","Premier League","Everton","Min:350 Max:10000","0","270","7","false","false","180216","false","false","600"
+"Winks","76","Common","CM","England","Serie A TIM","Sampdoria","Min:350 Max:10000","0","270","7","false","false","50554048","false","false","550"
+"Amiri","76","Common","CAM","Germany","Bundesliga","Leverkusen","Min:350 Max:10000","0","270","7","false","false","225309","false","false","550"
+"Kenedy","76","Common","LM","Brazil","LaLiga Santander","R. Valladolid CF","Min:350 Max:10000","0","270","7","false","false","50547287","false","false","600"
+"Prömel","76","Common","CM","Germany","Bundesliga","TSG Hoffenheim","Min:350 Max:10000","0","270","7","false","false","228595","false","false","550"
+"Igor","76","Common","CB","Brazil","Serie A TIM","Fiorentina","Min:350 Max:10000","0","270","7","false","false","241585","false","false","600"
+"Wilson","76","Common","RM","Wales","Premier League","Fulham","Min:350 Max:10000","0","270","7","false","false","220710","false","false","600"
+"Idrissi","76","Common","LW","Morocco","Eredivisie","Feyenoord","Min:350 Max:10000","0","270","7","false","false","228747","false","false","600"
+"Solomon","76","Common","LM","Israel","Premier League","Fulham","Min:350 Max:10000","0","270","7","false","false","246791","false","false","600"
+"Luís Neto","76","Common","CB","Portugal","Liga Portugal","Sporting CP","Min:350 Max:10000","0","270","7","false","false","204341","false","false","550"
+"Seferović","76","Common","ST","Switzerland","Süper Lig","Galatasaray","Min:350 Max:10000","0","270","7","false","false","193408","false","false","7000"
+"Webster","76","Common","CB","England","Premier League","Brighton","Min:350 Max:10000","0","270","7","false","false","207616","false","false","550"
+"Lukeba","76","Common","CB","France","Ligue 1 Uber Eats","OL","Min:350 Max:10000","0","270","7","false","false","262138","false","false","550"
+"Mauro Júnior","76","Common","RB","Brazil","Eredivisie","PSV","Min:350 Max:10000","0","270","7","false","false","241509","false","false","600"
+"Cataldi","76","Common","CDM","Italy","Serie A TIM","Latium","Min:350 Max:10000","0","270","7","false","false","211361","false","false","550"
+"Steffen","76","Common","LM","Switzerland","CSSL ","FC Lugano","Min:350 Max:10000","0","270","7","false","false","50542185","false","false","600"
+"Medina","76","Rare","CB","Argentina","Ligue 1 Uber Eats","RC Lens","Min:650 Max:10000","0","0","7","true","false","236804","false","false","5400"
+"Mooy","76","Common","CM","Australia","cinch Prem","Celtic","Min:350 Max:10000","0","0","7","true","false","194958","false","false","600"
+"López","76","Special","ST","Uruguay","LPF","Central Córdoba","Min:9300 Max:45000","0","0","7","true","false","50578476","false","false","-- NA --"
+"Skorupski","76","Common","GK","Poland","Serie A TIM","Bologna","Min:350 Max:10000","0","0","7","true","false","189908","false","false","550"
+"Gueye","76","Common","CDM","Senegal","Ligue 1 Uber Eats","OM","Min:350 Max:10000","0","0","7","true","false","241707","false","false","9400"
+"Martínez","76","Common","RM","Argentina","ROSHN Saudi League","Al Nassr","Min:350 Max:10000","0","0","7","true","false","226377","false","false","850"
+"Gonalons","76","Common","CDM","France","Ligue 1 Uber Eats","Clermont Foot 63","Min:350 Max:10000","0","0","7","true","false","193116","false","false","550"
+"Perraud","76","Common","LB","France","Premier League","Southampton","Min:350 Max:10000","0","0","7","true","false","231318","false","false","550"
+"Henry","76","Common","ST","France","Serie A TIM","Hellas Verona","Min:350 Max:10000","0","0","7","true","false","231835","false","false","550"
+"Óscar Gil","76","Common","RB","Spain","LaLiga Santander","RCD Espanyol","Min:350 Max:10000","0","0","7","true","false","246284","false","false","600"
+"Skov Olsen","76","Common","RM","Denmark","1A Pro League","Club Brugge","Min:350 Max:10000","0","0","7","true","false","240017","false","false","600"
+"Kakuta","76","Common","CAM","DR Congo","Ligue 2 BKT","Amiens SC","Min:350 Max:10000","0","0","7","true","false","50517845","false","false","600"
+"Borja","76","Special","ST","Colombia","Libertadores","River Plate","Min:650 Max:10000","0","0","7","true","false","219862","false","false","700"
+"Zampedri","76","Special","ST","Argentina","Libertadores","Uni. Católica","Min:650 Max:10000","0","0","7","true","false","232670","false","false","3100"
+"Cummings","76","Special","ST","Australia","A-League","Central Coast","Min:9300 Max:47500","0","0","7","true","false","50551596","false","false","-- NA --"
+"Maier","76","Common","CM","Germany","Bundesliga","FC Augsburg","Min:350 Max:10000","0","0","7","true","false","237629","false","false","550"
+"Evander","76","Common","CM","Brazil","3F Superliga","FC Midtjylland","Min:350 Max:10000","0","0","7","true","false","234505","false","false","-- NA --"
+"Gómez Andrade","76","Common","CB","Colombia","MLS","Sounders FC","Min:350 Max:10000","0","0","7","true","false","224396","false","false","600"
+"Forster","76","Common","GK","England","Premier League","Spurs","Min:350 Max:10000","0","0","7","true","false","172203","false","false","550"
+"Stach","76","Rare","CM","Germany","Bundesliga","1. FSV Mainz 05","Min:650 Max:10000","0","0","7","true","false","257191","false","false","700"
+"Ander Guevara","76","Common","CM","Spain","LaLiga Santander","Real Sociedad","Min:350 Max:10000","0","0","7","true","false","240458","false","false","550"
+"Isla","76","Special","RB","Chile","Libertadores","Uni. Católica","Min:650 Max:10000","0","0","7","true","false","187800","false","false","10000"
+"Singo","76","Common","RWB","Ivory Coast","Serie A TIM","Torino","Min:350 Max:10000","0","0","7","true","false","252802","false","false","550"
+"Amartey","76","Common","CB","Ghana","Premier League","Leicester City","Min:350 Max:10000","0","0","7","true","false","212883","false","false","600"
+"Wind","76","Common","ST","Denmark","Bundesliga","VfL Wolfsburg","Min:350 Max:10000","0","0","7","true","false","241522","false","false","550"
+"Meling","76","Common","LB","Norway","Ligue 1 Uber Eats","Stade Rennais FC","Min:350 Max:10000","0","0","7","true","false","219466","false","false","550"
+"Rossi","76","Common","LM","Uruguay","Süper Lig","Fenerbahçe","Min:350 Max:10000","0","0","7","true","false","241907","false","false","600"
+"Morelos","76","Common","ST","Colombia","cinch Prem","Rangers","Min:350 Max:10000","0","0","7","true","false","221714","false","false","550"
+"Buyalskyi","76","Common","CM","Ukraine","Ukrayina Liha","Dynamo Kyiv","Min:350 Max:10000","0","0","7","true","false","244373","false","false","550"
+"Cuéllar","76","Common","CDM","Colombia","ROSHN Saudi League","Al Hilal","Min:350 Max:10000","0","0","7","true","false","214009","false","false","550"
+"Mykolenko","76","Common","LB","Ukraine","Premier League","Everton","Min:350 Max:10000","0","0","7","true","false","244380","false","false","600"
+"Fabra","76","Special","LB","Colombia","Libertadores","Boca Juniors","Min:650 Max:10000","0","0","7","true","false","214040","false","false","700"
+"Adams","76","Rare","CDM","United States","Premier League","Leeds United","Min:650 Max:10000","0","0","7","true","false","232999","false","false","700"
+"Fernández","76","Special","CM","Argentina","Libertadores","Boca Juniors","Min:650 Max:10000","0","0","7","true","false","211269","false","false","700"
+"Falk","76","Rare","CM","Denmark","3F Superliga","F.C. København","Min:650 Max:10000","0","0","7","true","false","201303","false","false","700"
+"Adrià Pedrosa","76","Rare","LB","Spain","LaLiga Santander","RCD Espanyol","Min:650 Max:10000","0","0","7","true","false","246113","false","false","700"
+"Żurkowski","76","Rare","CM","Poland","Serie A TIM","Fiorentina","Min:650 Max:10000","0","0","7","true","false","239732","false","false","9900"
+"Almada","76","Rare","CAM","Argentina","MLS","Atlanta United","Min:650 Max:10000","0","0","7","true","false","245371","false","false","2000"
+"Kudus","76","Rare","CAM","Ghana","Eredivisie","Ajax","Min:650 Max:10000","0","0","7","true","false","245155","false","false","8000"
+"Aliendro","76","Special","CM","Argentina","Libertadores","River Plate","Min:650 Max:10000","0","0","7","true","false","233029","false","false","700"
+"Edouard","76","Rare","ST","France","Premier League","Crystal Palace","Min:650 Max:10000","0","0","7","true","false","233866","false","false","700"
+"Philipp","76","Common","CF","Germany","Bundesliga","VfL Wolfsburg","Min:350 Max:10000","0","0","7","true","false","216497","false","false","6000"
+"João Victor","76","Common","CB","Brazil","Liga Portugal","SL Benfica","Min:350 Max:10000","0","0","7","true","false","258861","false","false","3500"
+"Puertas","76","Common","RM","Spain","LaLiga SmartBank","Granada CF","Min:350 Max:10000","0","0","7","true","false","213577","false","false","550"
+"Vivian","76","Common","CB","Spain","LaLiga Santander","Athletic Club","Min:350 Max:10000","0","0","7","true","false","248550","false","false","600"
+"Zimmerman","76","Common","CB","United States","MLS","Nashville SC","Min:350 Max:10000","0","0","7","true","false","212591","false","false","600"
+"Sviatchenko","76","Common","CB","Denmark","3F Superliga","FC Midtjylland","Min:350 Max:10000","0","0","7","true","false","199745","false","false","9800"
+"Dennis","76","Rare","ST","Nigeria","Premier League","Nott'm Forest","Min:650 Max:10000","0","0","7","true","false","239015","false","false","700"
+"Kohr","76","Rare","CDM","Germany","Bundesliga","1. FSV Mainz 05","Min:650 Max:10000","0","0","7","true","false","212212","false","false","700"
+"Pineda","76","Common","LM","Mexico","Hellas Liga","AEK Athens","Min:350 Max:10000","0","0","7","true","false","224574","false","false","550"
+"Fraser","76","Common","RM","Scotland","Premier League","Newcastle Utd","Min:350 Max:10000","0","0","7","true","false","207807","false","false","600"
+"Bare","76","Rare","CDM","Albania","LaLiga Santander","RCD Espanyol","Min:650 Max:10000","0","0","7","true","false","237184","false","false","700"
+"Roger","76","Common","ST","Spain","LaLiga Santander","Cádiz CF","Min:300 Max:5000","0","0","7","true","false","50539380","false","false","600"
+"Seferović","76","Common","ST","Switzerland","LaLiga Santander","RC Celta","Min:300 Max:5000","0","0","7","true","false","67302272","false","false","600"
+"Gagliardini","76","Common","CDM","Italy","Serie A TIM","Inter","Min:350 Max:10000","0","0","7","true","false","212153","false","false","600"
+"Philipp","76","Common","CF","Germany","Bundesliga","SV Werder Bremen","Min:300 Max:5000","0","0","7","true","false","50548145","false","false","550"
+"Solanke","75","Common","ST","England","Premier League","AFC Bournemouth","Min:300 Max:10000","0","0","45","true","false","225539","false","false","550"
+"Chambers","75","Common","CB","England","Premier League","Aston Villa","Min:300 Max:10000","0","0","45","true","false","205989","false","false","550"
+"Brownhill","75","Common","CM","England","EFL Championship","Burnley","Min:300 Max:10000","0","0","45","true","false","220659","false","false","1000"
+"Aribo","75","Rare","CM","Nigeria","Premier League","Southampton","Min:600 Max:10000","0","535","7","false","false","231044","false","false","700"
+"Rojas","75","Special","RB","Paraguay","Libertadores","River Plate","Min:600 Max:10000","0","535","7","false","false","246914","false","false","650"
+"Cullen","75","Common","CDM","Republic of Ireland","EFL Championship","Burnley","Min:300 Max:10000","0","266","7","false","false","228151","false","false","550"
+"Doku","75","Common","RM","Belgium","Ligue 1 Uber Eats","Stade Rennais FC","Min:300 Max:10000","0","266","3","false","false","246420","false","false","600"
+"Chardonnet","75","Common","CB","France","Ligue 1 Uber Eats","Stade Brestois 29","Min:300 Max:10000","0","266","7","false","false","215410","false","false","550"
+"Goldson","75","Common","CB","England","cinch Prem","Rangers","Min:300 Max:10000","0","266","7","false","false","199580","false","false","600"
+"Lemina","75","Common","CM","Gabon","Ligue 1 Uber Eats","OGC Nice","Min:300 Max:10000","0","266","7","false","false","212811","false","false","1300"
+"Rony Lopes","75","Common","RW","Portugal","Ligue 1 Uber Eats","ESTAC Troyes","Min:300 Max:10000","0","266","7","false","false","212692","false","false","550"
+"Pol Lirola","75","Common","RB","Spain","LaLiga Santander","Elche CF","Min:300 Max:10000","0","266","7","false","false","235875","false","false","600"
+"Fellaini","75","Common","CM","Belgium","CSL","Shandong Taishan","Min:300 Max:10000","0","266","7","false","false","176944","false","false","550"
+"Wanyama","75","Common","CDM","Kenya","MLS","CF Montréal","Min:300 Max:10000","0","266","7","false","false","188942","false","false","550"
+"Lallana","75","Common","CM","England","Premier League","Brighton","Min:300 Max:10000","0","266","7","false","false","180819","false","false","600"
+"Murillo","75","Common","CB","Colombia","Serie A TIM","Sampdoria","Min:300 Max:10000","0","266","7","false","false","201377","false","false","600"
+"Balanta","75","Common","CDM","Colombia","1A Pro League","Club Brugge","Min:300 Max:10000","0","266","7","false","false","213899","false","false","9000"
+"Kike García","75","Common","ST","Spain","LaLiga Santander","CA Osasuna","Min:300 Max:10000","0","266","7","false","false","192678","false","false","550"
+"Ducksch","75","Common","ST","Germany","Bundesliga","SV Werder Bremen","Min:300 Max:10000","0","266","7","false","false","197031","false","false","550"
+"Brignoli","75","Common","GK","Italy","Hellas Liga","Panathinaikos","Min:300 Max:10000","0","266","7","false","false","210358","false","false","550"
+"Ayling","75","Common","RB","England","Premier League","Leeds United","Min:300 Max:10000","0","266","7","false","false","186156","false","false","750"
+"Luiz Gustavo","75","Common","CDM","Brazil","ROSHN Saudi League","Al Nassr","Min:300 Max:10000","0","266","7","false","false","185221","false","false","550"
+"Shomurodov","75","Common","ST","Uzbekistan","Serie A TIM","Spezia","Min:300 Max:5000","0","266","7","false","false","84126044","false","false","550"
+"Bašić","75","Common","CM","Croatia","Serie A TIM","Latium","Min:300 Max:10000","0","266","7","false","false","245275","false","false","550"
+"Ayew","75","Common","RW","Ghana","Premier League","Crystal Palace","Min:300 Max:10000","0","266","7","false","false","197756","false","false","600"
+"Muñoz","75","Common","RB","Colombia","1A Pro League","KRC Genk","Min:300 Max:10000","0","266","7","false","false","237646","false","false","2300"
+"Muriqi","75","Common","ST","Kosovo","LaLiga Santander","RCD Mallorca","Min:300 Max:10000","0","266","7","false","false","223710","false","false","550"
+"Schwolow","75","Common","GK","Germany","Bundesliga","FC Schalke 04","Min:300 Max:10000","0","266","7","false","false","202789","false","false","600"
+"Ward","75","Common","GK","Wales","Premier League","Leicester City","Min:300 Max:10000","0","266","7","false","false","207998","false","false","600"
+"Bushchan","75","Common","GK","Ukraine","Ukrayina Liha","Dynamo Kyiv","Min:300 Max:10000","0","266","7","false","false","244385","false","false","600"
+"Kamara","75","Common","LB","Ivory Coast","EFL Championship","Watford","Min:300 Max:10000","0","266","7","false","false","220421","false","false","550"
+"Fran Navarro","75","Common","ST","Spain","Liga Portugal","Gil Vicente","Min:300 Max:10000","0","0","7","true","false","247138","false","false","600"
+"Barboza","75","Special","CB","Argentina","Libertadores","Libertad","Min:600 Max:10000","0","0","7","true","false","229749","false","false","650"
+"Ajer","75","Common","CB","Norway","Premier League","Brentford","Min:300 Max:10000","0","0","7","true","false","224258","false","false","600"
+"Sosa","75","Special","GK","Uruguay","Sudamericana","Independiente","Min:300 Max:10000","0","0","7","true","false","205409","false","false","5600"
+"March","75","Common","LWB","England","Premier League","Brighton","Min:300 Max:10000","0","0","7","true","false","206594","false","false","550"
+"Escudero","75","Common","LB","Spain","LaLiga Santander","R. Valladolid CF","Min:300 Max:10000","0","0","7","true","false","192679","false","false","600"
+"Luthe","75","Common","GK","Germany","Bundesliga 2","Kaiserslautern","Min:300 Max:10000","0","0","7","true","false","192665","false","false","550"
+"Zainadine","75","Common","CB","Mozambique","Liga Portugal","Marítimo","Min:300 Max:10000","0","0","7","true","false","217235","false","false","550"
+"Cesinha","75","Common","LW","Brazil","K League 1","Daegu FC","Min:300 Max:10000","0","0","7","true","false","225733","false","false","550"
+"Rodák","75","Common","GK","Slovakia","Premier League","Fulham","Min:300 Max:10000","0","0","7","true","false","222951","false","false","550"
+"Atal","75","Common","RB","Algeria","Ligue 1 Uber Eats","OGC Nice","Min:300 Max:10000","0","0","7","true","false","240754","false","false","550"
+"Edu Expósito","75","Common","CAM","Spain","LaLiga Santander","RCD Espanyol","Min:300 Max:10000","0","0","7","true","false","229862","false","false","650"
+"Gregoritsch","75","Common","ST","Austria","Bundesliga","SC Freiburg","Min:300 Max:10000","0","0","7","true","false","199439","false","false","600"
+"Wallace","75","Common","CAM","England","EFL Championship","West Brom","Min:300 Max:10000","0","0","7","true","false","205970","false","false","600"
+"André Gomes","75","Common","CM","Portugal","Ligue 1 Uber Eats","LOSC Lille","Min:300 Max:10000","0","0","7","true","false","50543223","false","false","600"
+"Balliu","75","Common","RB","Albania","LaLiga Santander","Rayo Vallecano","Min:300 Max:10000","0","0","7","true","false","203581","false","false","600"
+"Gutiérrez","75","Special","ST","Colombia","Libertadores","Deportivo Cali","Min:600 Max:10000","0","0","7","true","false","196150","false","false","10000"
+"Giannetti","75","Special","CB","Argentina","Libertadores","Vélez Sarsfield","Min:600 Max:10000","0","0","7","true","false","215147","false","false","6000"
+"Janson","75","Special","LW","Argentina","Libertadores","Vélez Sarsfield","Min:600 Max:10000","0","0","7","true","false","215202","false","false","3600"
+"Godoy","75","Special","RB","Argentina","Libertadores","Estudiantes","Min:600 Max:10000","0","0","7","true","false","228415","false","false","-- NA --"
+"Sarr","75","Common","CB","France","Ligue 1 Uber Eats","AS Monaco","Min:300 Max:10000","0","0","7","true","false","50567102","false","false","600"
+"Aguado","75","Common","CM","Spain","LaLiga Santander","R. Valladolid CF","Min:300 Max:10000","0","0","7","true","false","242336","false","false","600"
+"Larsen","75","Common","RB","Denmark","Süper Lig","Trabzonspor","Min:300 Max:10000","0","0","7","true","false","193133","false","false","600"
+"Höfler","75","Common","CDM","Germany","Bundesliga","SC Freiburg","Min:300 Max:10000","0","0","7","true","false","199897","false","false","550"
+"Burián","75","Special","GK","Uruguay","Libertadores","Vélez Sarsfield","Min:600 Max:10000","0","0","7","true","false","176526","false","false","9800"
+"De Laet","75","Common","RB","Belgium","1A Pro League","Royal Antwerp FC","Min:300 Max:10000","0","0","7","true","false","175932","false","false","550"
+"Seiwald","75","Common","CM","Austria","Ö. Bundesliga","RB Salzburg","Min:300 Max:10000","0","0","7","true","false","257876","false","false","550"
+"Lucero","75","Special","ST","Argentina","Libertadores","Colo-Colo","Min:600 Max:10000","0","0","7","true","false","223248","false","false","3500"
+"Sornoza","75","Special","CAM","Ecuador","Libertadores","IDV","Min:600 Max:10000","0","0","7","true","false","220739","false","false","650"
+"Davies","75","Common","CM","England","Premier League","Everton","Min:300 Max:10000","0","0","7","true","false","230005","false","false","600"
+"Al Faraj","75","Common","CM","Saudi Arabia","ROSHN Saudi League","Al Hilal","Min:300 Max:10000","0","0","7","true","false","191269","false","false","600"
+"Eggestein","75","Common","CDM","Germany","Bundesliga","SC Freiburg","Min:300 Max:10000","0","0","7","true","false","226168","false","false","550"
+"Gonçalo Ramos","75","Common","ST","Portugal","Liga Portugal","SL Benfica","Min:300 Max:10000","0","0","7","true","false","256903","false","false","3100"
+"Bou","75","Special","ST","Argentina","Libertadores","Vélez Sarsfield","Min:600 Max:10000","0","0","7","true","false","224510","false","false","10000"
+"Lingr","75","Common","CAM","Czech Republic","Česká Liga","Slavia Praha","Min:300 Max:10000","0","0","7","true","false","258208","false","false","550"
+"Hotto","75","Common","LW","Namibia","South African FL","Orlando Pirates","Min:300 Max:10000","0","0","7","true","false","216682","false","false","600"
+"Foulquier","75","Common","RB","France","LaLiga Santander","Valencia CF","Min:300 Max:10000","0","0","7","true","false","203177","false","false","600"
+"Burrai","75","Special","GK","Argentina","Sudamericana","Barcelona SC","Min:300 Max:10000","0","0","7","true","false","215048","false","false","1900"
+"Nakamba","75","Common","CDM","Zimbabwe","Premier League","Aston Villa","Min:300 Max:10000","0","0","7","true","false","222994","false","false","8300"
+"Lorch","75","Common","RW","South Africa","South African FL","Orlando Pirates","Min:300 Max:10000","0","0","7","true","false","229128","false","false","600"
+"Carles Pérez","75","Common","RW","Spain","LaLiga Santander","RC Celta","Min:300 Max:10000","0","0","7","true","false","240654","false","false","600"
+"Provod","75","Rare","CM","Czech Republic","Česká Liga","Slavia Praha","Min:600 Max:10000","0","0","7","true","false","253727","false","false","750"
+"Kamara","75","Rare","CM","Finland","cinch Prem","Rangers","Min:600 Max:10000","0","0","7","true","false","213654","false","false","800"
+"Martínez","75","Special","CB","Paraguay","Libertadores","River Plate","Min:600 Max:10000","0","0","7","true","false","241569","false","false","650"
+"Pizzini","75","Special","RM","Argentina","Libertadores","Talleres","Min:600 Max:10000","0","0","7","true","false","214971","false","false","4500"
+"Samu Sáiz","75","Rare","ST","Spain","LaLiga Santander","Girona FC","Min:600 Max:10000","0","0","7","true","false","198143","false","false","2500"
+"Sulemana","75","Common","LW","Ghana","Ligue 1 Uber Eats","Stade Rennais FC","Min:300 Max:10000","0","0","7","true","false","256035","false","false","8500"
+"Iván Alejo","75","Common","RM","Spain","LaLiga Santander","Cádiz CF","Min:300 Max:10000","0","0","7","true","false","231280","false","false","600"
+"Furuhashi","75","Rare","ST","Japan","cinch Prem","Celtic","Min:600 Max:10000","0","0","7","true","false","245538","false","false","700"
+"João Paulo","75","Common","CM","Brazil","MLS","Sounders FC","Min:300 Max:10000","0","0","7","true","false","205953","false","false","600"
+"Martins Indi","75","Common","CB","Netherlands","Eredivisie","AZ","Min:300 Max:10000","0","0","7","true","false","199550","false","false","600"
+"Teuma","75","Common","CM","Malta","1A Pro League","R. Union St.-G.","Min:300 Max:10000","0","0","7","true","false","244309","false","false","600"
+"Masuaku","75","Common","LB","DR Congo","Süper Lig","Beşiktaş","Min:300 Max:10000","0","0","7","true","false","212491","false","false","600"
+"Lamptey","75","Common","RWB","Ghana","Premier League","Brighton","Min:300 Max:10000","0","0","7","true","false","242418","false","false","600"
+"Nsame","75","Common","ST","Cameroon","CSSL ","BSC Young Boys","Min:300 Max:10000","0","0","7","true","false","240240","false","false","550"
+"Danso","75","Common","CB","Austria","Ligue 1 Uber Eats","RC Lens","Min:300 Max:10000","0","0","7","true","false","237985","false","false","550"
+"Cristaldo","75","Common","CAM","Argentina","LPF","Huracán","Min:300 Max:10000","0","0","7","true","false","223097","false","false","-- NA --"
+"King","75","Common","ST","Norway","Süper Lig","Fenerbahçe","Min:300 Max:10000","0","0","7","true","false","185422","false","false","550"
+"Pinnock","75","Common","CB","Jamaica","Premier League","Brentford","Min:300 Max:10000","0","0","7","true","false","238717","false","false","600"
+"Junior Firpo","75","Common","LB","Spain","Premier League","Leeds United","Min:300 Max:10000","0","0","7","true","false","241184","false","false","600"
+"Boadu","75","Rare","ST","Netherlands","Ligue 1 Uber Eats","AS Monaco","Min:600 Max:10000","0","0","7","true","false","239956","false","false","750"
+"McCarthy","75","Common","GK","England","Premier League","Southampton","Min:300 Max:10000","0","0","7","true","false","189324","false","false","550"
+"Hause","75","Common","CB","England","EFL Championship","Watford","Min:300 Max:10000","0","0","7","true","false","210635","false","false","600"
+"Dorley","75","Common","LB","Liberia","Česká Liga","Slavia Praha","Min:300 Max:10000","0","0","7","true","false","254909","false","false","600"
+"Liénard","75","Common","LWB","France","Ligue 1 Uber Eats","Strasbourg","Min:300 Max:10000","0","0","7","true","false","235042","false","false","600"
+"Hauche","75","Special","RW","Argentina","Sudamericana","Racing Club","Min:300 Max:10000","0","0","7","true","false","203872","false","false","3600"
+"Fran García","75","Common","LB","Spain","LaLiga Santander","Rayo Vallecano","Min:300 Max:10000","0","0","7","true","false","246606","false","false","550"
+"Billing","75","Common","CM","Denmark","Premier League","AFC Bournemouth","Min:300 Max:10000","0","0","7","true","false","220714","false","false","550"
+"Ramsey","75","Rare","CM","England","Premier League","Aston Villa","Min:600 Max:10000","0","0","7","true","false","246923","false","false","900"
+"Sallói","73","Rare","LW","Hungary","MLS","Sporting KC","Min:300 Max:10000","0","256","7","false","false","232148","false","false","1500"
+"Manu Vallejo","73","Rare","ST","Spain","LaLiga Santander","Girona FC","Min:300 Max:10000","0","0","7","true","false","50573334","false","false","10000"
+"Rouault","72","Common","CB","France","Ligue 1 Uber Eats","Toulouse FC","Min:150 Max:10000","0","108","7","false","false","252512","false","false","1200"
+"Walcott","72","Common","RM","England","Premier League","Southampton","Min:150 Max:10000","0","0","7","true","false","164859","false","false","3500"
+"Andersen","71","Common","CM","Denmark","Serie BKT","Venezia","Min:150 Max:10000","0","0","7","true","false","237840","false","false","700"
+"Tagawa","70","Rare","ST","Japan","Liga Portugal","Santa Clara","Min:250 Max:10000","0","0","7","true","false","238345","false","false","1000"
+"Gerard Valentín","70","Rare","RM","Spain","LaLiga SmartBank","SD Huesca","Min:250 Max:10000","0","0","7","true","false","229654","false","false","550"
+"Coucke","69","Common","GK","Belgium","1A Pro League","KV Mechelen","Min:150 Max:10000","0","104","7","false","false","234903","false","false","900"
+"Hoppe","69","Common","ST","United States","cinch Prem","Hibernian","Min:150 Max:5000","0","104","7","false","false","67368615","false","false","600"
+"Yuri Ribeiro","69","Common","LB","Portugal","PKO Ekstraklasa","Legia Warszawa","Min:150 Max:10000","0","104","7","false","false","237211","false","false","1200"
+"Tuiloma","69","Common","CB","New Zealand","MLS","Charlotte FC","Min:150 Max:5000","0","0","7","true","false","50552534","false","false","950"
+"Kerr","69","Rare","CB","Scotland","EFL Championship","Wigan Athletic","Min:250 Max:10000","0","0","7","true","false","225589","false","false","2000"
+"Ramírez","68","Special","ST","Argentina","Sudamericana","Gimnasia","Min:150 Max:5000","0","102","7","false","false","50559859","false","false","0"
+"Watmore","68","Common","ST","England","EFL Championship","Millwall","Min:150 Max:5000","0","102","7","false","false","50547916","false","false","650"
+"Reyes","67","Common","CB","Colombia","MLS","Red Bulls","Min:150 Max:10000","0","101","7","false","false","246048","false","false","600"
+"McGuinness","67","Common","CB","Republic of Ireland","EFL Championship","Cardiff City","Min:150 Max:5000","0","101","7","false","false","50580053","false","false","700"
+"Daubin","66","Common","CDM","France","Ligue 2 BKT","SM Caen","Min:150 Max:10000","0","0","7","true","false","234173","false","false","1000"
+"Batty","65","Common","CM","England","EFL League One","Fleetwood Town","Min:150 Max:10000","0","0","45","true","false","236043","false","false","900"
+"Hylton","65","Common","ST","England","EFL League Two","Northampton","Min:150 Max:10000","0","0","45","true","false","182617","false","false","900"
+"Doyle","65","Common","ST","Republic of Ireland","SSE Airtricity PD","St. Pats","Min:150 Max:10000","0","98","7","false","false","187761","false","false","1000"
+"Pijnaker","65","Common","CB","New Zealand","SSE Airtricity PD","Sligo Rovers","Min:150 Max:10000","0","98","7","false","false","254143","false","false","700"
+"Cicerelli","65","Common","LW","Italy","Serie BKT","Reggina","Min:150 Max:10000","0","98","7","false","false","241165","false","false","10000"
+"Clare","65","Common","CB","England","EFL League One","Charlton Ath","Min:150 Max:10000","0","0","7","true","false","233315","false","false","-- NA --"
+"Nygren","65","Common","ST","Sweden","3F Superliga","FC Nordsjælland","Min:150 Max:10000","0","0","7","true","false","243646","false","false","2000"
+"Featherstone","63","Common","CDM","England","EFL League Two","Hartlepool","Min:150 Max:10000","0","0","45","true","false","183720","false","false","-- NA --"
+"Cooke","63","Common","CAM","England","EFL League Two","Hartlepool","Min:150 Max:10000","0","0","45","true","false","223599","false","false","1000"
+"Ion","63","Common","RW","Romania","SUPERLIGA","Farul Constanța","Min:150 Max:10000","0","0","45","true","false","251071","false","false","-- NA --"
+"Herzenbruch","63","Common","CB","Germany","3. Liga","Rot-Weiss Essen","Min:150 Max:10000","0","0","7","true","false","240002","false","false","-- NA --"
+"Kim Han Gil","62","Common","LM","Korea Republic","K League 1","Gimcheon Sangmu","Min:150 Max:10000","0","0","45","true","false","237977","false","false","-- NA --"
+"Ovelar","62","Special","RM","Paraguay","Libertadores","Cerro Porteño","Min:150 Max:10000","0","0","7","true","false","262057","false","false","-- NA --"
+"Kolskogen","62","Common","CB","Norway","Eliteserien","FK Jerv","Min:150 Max:10000","0","0","7","true","false","255445","false","false","-- NA --"
+"Sotiriou","62","Common","LM","Cyprus","EFL League Two","Leyton Orient","Min:150 Max:10000","0","0","7","true","false","250812","false","false","-- NA --"
+"Şimşir","62","Common","LW","Turkey","3F Superliga","FC Midtjylland","Min:150 Max:5100","0","0","7","true","false","67365797","false","false","700"
+"Bowery","61","Common","ST","England","EFL League Two","Mansfield Town","Min:150 Max:10000","0","0","45","true","false","190239","false","false","250"
+"Acton","61","Common","GK","Australia","A-League","Melb. Victory","Min:150 Max:10000","0","0","7","true","false","209895","false","false","700"
+"Magnússon","61","Special","ST","Iceland","3F Superliga","Lyngby BK","Min:1000 Max:10000","0","0","7","true","false","50601048","false","false","0"
+"Park Byung Hyun","60","Common","CB","Korea Republic","K League 1","Daegu FC","Min:150 Max:10000","0","0","45","true","false","234322","false","false","-- NA --"
+"Karakuş","60","Common","GK","Turkey","Süper Lig","Adana Demirspor","Min:150 Max:10000","0","0","45","true","false","236252","false","false","1800"
+"Corrado","60","Special","LB","Italy","Serie BKT","Ternana","Min:150 Max:5100","0","0","7","true","false","50601779","false","false","0"
+"Suljic","60","Common","CB","Sweden","Allsvenskan","Helsingborgs IF","Min:150 Max:10000","0","0","7","true","false","232837","false","false","600"
+"Larade","60","Special","CB","France","1A Pro League","Cercle Brugge","Min:150 Max:10000","0","0","7","true","false","67379512","false","false","0"
+"Qin Sheng","60","Special","CB","China PR","CSL","Shanghai Shenhua","Min:150 Max:5100","0","0","7","true","false","50513742","false","false","0"
+"Fenger","60","Common","ST","Denmark","Allsvenskan","Mjällby AIF","Min:150 Max:5100","0","0","7","true","false","67365663","false","false","400"
+"Ruschke","59","Common","LB","Germany","Bundesliga 2","Hansa Rostock","Min:150 Max:10000","0","0","45","true","false","270110","false","false","800"
+"Magee","58","Common","CAM","Jamaica","1A Pro League","KAS Eupen","Min:150 Max:10000","0","0","45","true","false","253412","false","false","-- NA --"
+"Harries","58","Common","CB","Wales","EFL League Two","Swindon Town","Min:150 Max:10000","0","0","7","true","false","228637","false","false","400"
+"Rowe","57","Common","CB","England","EFL League Two","Sutton United","Min:150 Max:10000","0","0","45","true","false","262364","false","false","-- NA --"
+"Sargeant","57","Common","GK","England","EFL League Two","Leyton Orient","Min:150 Max:10000","0","0","45","true","false","228582","false","false","550"
+"Long","57","Common","GK","Scotland","EFL League One","Lincoln City","Min:150 Max:10000","0","0","7","true","false","258056","false","false","400"
+"Singh","56","Common","RM","India","Hero ISL","Mumbai City FC","Min:150 Max:10000","0","0","45","true","false","259727","false","false","2000"
+"Dhot","52","Common","RB","India","Hero ISL","Chennaiyin FC","Min:150 Max:10000","0","0","45","true","false","248286","false","false","-- NA --"
+"Guinan","52","Common","ST","England","EFL League One","Cheltenham Town","Min:150 Max:10000","0","0","7","true","false","271115","false","false","-- NA --"
+"Shabong","51","Common","CDM","India","Hero ISL","ATK Mohun Bagan","Min:150 Max:10000","0","0","45","true","false","266720","false","false","450"
+"Hnamte","51","Common","LW","India","Hero ISL","ATK Mohun Bagan","Min:150 Max:10000","0","0","45","true","false","265454","false","false","-- NA --"
+"Wiles-Richards","50","Common","GK","England","EFL Championship","Bristol City","Min:150 Max:10000","0","0","7","true","false","263340","false","false","-- NA --"

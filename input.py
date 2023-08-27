@@ -6,31 +6,36 @@ NUM_PLAYERS = 11
 
 FIX_PLAYERS  = 0 # FIX_PLAYERS = 1 => players will be picked based on the formation and 0 otherwise.
 
+# Set only one of the below to True and the others to False if duplicates are to be prioritized.
+USE_ALL_DUPLICATES = False
+USE_AT_LEAST_HALF_DUPLICATES = False
+USE_AT_LEAST_ONE_DUPLICATE = False
+
 CLUB = [["Real Madrid", "Arsenal"], ["FC Bayern"]]
 NUM_CLUB = [3, 2]  # Total players from i^th list >= NUM_CLUB[i]
 
 MAX_NUM_CLUB = 2  # Same Club Count: Max X
 MIN_NUM_CLUB = 2  # Same Club Count: Min X
-NUM_UNIQUE_CLUB = 5  # Clubs: Max / Min (default) / Exactly X
+NUM_UNIQUE_CLUB = [5, "Max"]  # Clubs: Max / Min / Exactly X
 
 LEAGUE = [["Premier League", "LaLiga Santander"]]
 NUM_LEAGUE = [11]  # Total players from i^th list >= NUM_LEAGUE[i]
 
 MAX_NUM_LEAGUE = 4  # Same League Count: Max X
 MIN_NUM_LEAGUE = 4  # Same League Count: Min X
-NUM_UNIQUE_LEAGUE = 4  # Leagues: Max / Min (default) / Exactly X
+NUM_UNIQUE_LEAGUE = [4, "Min"]  # Leagues: Max / Min / Exactly X
 
 COUNTRY = [["England", "Spain"], ["Germany"]]
 NUM_COUNTRY = [2, 1] # Total players from i^th list >= NUM_COUNTRY[i]
 
 MAX_NUM_COUNTRY = 5  # Same Nation Count: Max X
 MIN_NUM_COUNTRY = 5  # Same Nation Count: Min X
-NUM_UNIQUE_COUNTRY = 0  # Nations: Max / Min (default) / Exactly X
+NUM_UNIQUE_COUNTRY = [1, "Exactly"]  # Nations: Max / Min / Exactly X
 
 RARITY_1 = [['Gold', 'TOTW']]
 NUM_RARITY_1 = [1]  # This is for cases like "Gold IF: Min X (0/X)"
 
-RARITY_2 = ["RARE", "Gold"]
+RARITY_2 = ["Rare", "Gold"]
 NUM_RARITY_2 = [11, 11]   # Total players from i^th Rarity >= NUM_RARITY_2[i]
 
 SQUAD_RATING = 81 # Squad Rating: Min XX
