@@ -482,9 +482,9 @@ def prioritize_duplicates(df, model, player):
     duplicates = [player[j] for j in dup_idxes]
     dup_expr = cp_model.LinearExpr.Sum(duplicates)
     if input.USE_ALL_DUPLICATES:
-        model.Add(dup_expr == len(dup_idxes))
+        model.Add(dup_expr == min(input.NUM_PLAYERS, len(dup_idxes)))
     elif input.USE_AT_LEAST_HALF_DUPLICATES:
-        model.Add(2 * dup_expr >= len(dup_idxes))
+        model.Add(2 * dup_expr >= min(input.NUM_PLAYERS, len(dup_idxes)))
     elif input.USE_AT_LEAST_ONE_DUPLICATE:
         model.Add(dup_expr >= 1)
     return model
