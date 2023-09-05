@@ -44,5 +44,7 @@ if __name__ == "__main__":
     if final_players:
         df_out = df.iloc[final_players]
         print(f"Total Chemistry: {df_out['Chemistry'].sum()}")
+        squad_rating = input.calc_squad_rating(df_out["Rating"].tolist())
+        print(f"Squad Rating: {squad_rating}")
         print(f"Total Cost: {df_out['Cost'].sum()}")
         df_out.to_excel("output.xlsx", index = False)

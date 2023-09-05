@@ -92,4 +92,11 @@ status_dict = {
     4: "OPTIMAL: An optimal feasible solution has been found."
 }
 
+def calc_squad_rating(rating):
+    '''https://www.reddit.com/r/EASportsFC/comments/5osq7k/new_overall_rating_figured_out'''
+    rat_sum = sum(rating)
+    avg_rat = rat_sum / 11
+    excess = sum(max(rat - avg_rat, 0) for rat in rating)
+    return round(rat_sum + excess) // 11
+
 LOG_RUNTIME = True
