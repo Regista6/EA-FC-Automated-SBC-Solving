@@ -95,8 +95,8 @@ status_dict = {
 def calc_squad_rating(rating):
     '''https://www.reddit.com/r/EASportsFC/comments/5osq7k/new_overall_rating_figured_out'''
     rat_sum = sum(rating)
-    avg_rat = rat_sum / 11
+    avg_rat = rat_sum / NUM_PLAYERS
     excess = sum(max(rat - avg_rat, 0) for rat in rating)
-    return round(rat_sum + excess) // 11
+    return round(rat_sum + excess) // NUM_PLAYERS
 
 LOG_RUNTIME = True
