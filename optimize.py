@@ -309,15 +309,16 @@ def create_chemistry_constraint(df, model, chem, z_club, z_league, z_nation, pla
 
     league_bucket = [[0, 2], [3, 4], [5, 7], [8, input.NUM_PLAYERS]]
 
+    icons_expr = players_grouped["Club"].get(club_dict.get("ICON", -1), [])
+
     for j in range(num_league):
         t_expr = players_grouped["League"].get(j, [])
+        t_expr += icons_expr # In EA FC 24, Icons add 1 chem to every league in the squad.
         # We need players from j^th league whose position is there in the input formation.
         # Since only such players would contribute towards chemistry.
         t_expr_1 = list(set(t_expr) & set(pos_expr))
         expr = []
         for i, p in enumerate(t_expr_1):
-            if df.at[m_idx[p], "Club"] == "ICON":
-                continue
             t_var = model.NewBoolVar(f"t_var_l{i}")
             model.AddMultiplicationEquality(t_var, p, m_pos[p])
             if df.at[m_idx[p], "Club"] == "HERO":  # Heroes contribute 2x to league chem.
@@ -527,34 +528,34 @@ def SBC(df):
 
     '''Club'''
     # model = create_club_constraint(df, model, player, map_idx, players_grouped, num_cnts)
-    model = create_max_club_constraint(df, model, player, map_idx, players_grouped, num_cnts)
+    # model = create_max_club_constraint(df, model, player, map_idx, players_grouped, num_cnts)
     # model = create_min_club_constraint(df, model, player, map_idx, players_grouped, num_cnts)
     # model = create_unique_club_constraint(df, model, player, club, map_idx, players_grouped, num_cnts)
     '''Club'''
 
     '''League'''
     # model = create_league_constraint(df, model, player, map_idx, players_grouped, num_cnts)
-    # model = create_max_league_constraint(df, model, player, map_idx, players_grouped, num_cnts)
+    model = create_max_league_constraint(df, model, player, map_idx, players_grouped, num_cnts)
     # model = create_min_league_constraint(df, model, player, map_idx, players_grouped, num_cnts)
     model = create_unique_league_constraint(df, model, player, league, map_idx, players_grouped, num_cnts)
     '''League'''
 
     '''Country'''
     # model = create_country_constraint(df, model, player, map_idx, players_grouped, num_cnts)
-    # model = create_max_country_constraint(df, model, player, map_idx, players_grouped, num_cnts)
-    model = create_min_country_constraint(df, model, player, map_idx, players_grouped, num_cnts)
-    # model = create_unique_country_constraint(df, model, player, country, map_idx, players_grouped, num_cnts)
+    model = create_max_country_constraint(df, model, player, map_idx, players_grouped, num_cnts)
+    # model = create_min_country_constraint(df, model, player, map_idx, players_grouped, num_cnts)
+    model = create_unique_country_constraint(df, model, player, country, map_idx, players_grouped, num_cnts)
     '''Country'''
 
     '''Rarity'''
     # model = create_rarity_1_constraint(df, model, player, map_idx, players_grouped, num_cnts)
-    model = create_rarity_2_constraint(df, model, player, map_idx, players_grouped, num_cnts)
+    # model = create_rarity_2_constraint(df, model, player, map_idx, players_grouped, num_cnts)
     '''Rarity'''
 
     '''Squad Rating'''
     # model = create_squad_rating_constraint_1(df, model, player, map_idx, players_grouped, num_cnts)
     # model = create_squad_rating_constraint_2(df, model, player, map_idx, players_grouped, num_cnts)
-    # model = create_squad_rating_constraint_3(df, model, player, map_idx, players_grouped, num_cnts)
+    model = create_squad_rating_constraint_3(df, model, player, map_idx, players_grouped, num_cnts)
     '''Squad Rating'''
 
     '''Min Overall'''

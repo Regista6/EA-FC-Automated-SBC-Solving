@@ -1,10 +1,14 @@
 '''INPUTS'''
 
-FORMATION = "3-4-3"
+FORMATION = "4-2-2-2"
 
 NUM_PLAYERS = 11
 
 FIX_PLAYERS  = 0 # FIX_PLAYERS = 1 => players will be picked based on the formation and 0 otherwise.
+
+# Set only one of the below to True and the other to False. Both can't be False.
+USE_PREFERRED_POSITION = False
+USE_ALTERNATE_POSITIONS = True
 
 # Set only one of the below to True and the others to False if duplicates are to be prioritized.
 USE_ALL_DUPLICATES = False
@@ -23,27 +27,27 @@ NUM_LEAGUE = [11]  # Total players from i^th list >= NUM_LEAGUE[i]
 
 MAX_NUM_LEAGUE = 4  # Same League Count: Max X
 MIN_NUM_LEAGUE = 4  # Same League Count: Min X
-NUM_UNIQUE_LEAGUE = [4, "Min"]  # Leagues: Max / Min / Exactly X
+NUM_UNIQUE_LEAGUE = [4, "Exactly"]  # Leagues: Max / Min / Exactly X
 
 COUNTRY = [["England", "Spain"], ["Germany"]]
 NUM_COUNTRY = [2, 1] # Total players from i^th list >= NUM_COUNTRY[i]
 
-MAX_NUM_COUNTRY = 5  # Same Nation Count: Max X
+MAX_NUM_COUNTRY = 3  # Same Nation Count: Max X
 MIN_NUM_COUNTRY = 5  # Same Nation Count: Min X
-NUM_UNIQUE_COUNTRY = [1, "Exactly"]  # Nations: Max / Min / Exactly X
+NUM_UNIQUE_COUNTRY = [5, "Exactly"]  # Nations: Max / Min / Exactly X
 
 RARITY_1 = [['Gold', 'TOTW']]
 NUM_RARITY_1 = [1]  # This is for cases like "Gold IF: Min X (0/X)"
 
-RARITY_2 = ["Rare", "Gold"]
-NUM_RARITY_2 = [11, 11]   # Total players from i^th Rarity >= NUM_RARITY_2[i]
+RARITY_2 = ["Rare", "Gold", "Bronze"]
+NUM_RARITY_2 = [0, 0, 11]   # Total players from i^th Rarity >= NUM_RARITY_2[i]
 
-SQUAD_RATING = 81 # Squad Rating: Min XX
+SQUAD_RATING = 80 # Squad Rating: Min XX
 
 MIN_OVERALL = [83]
 NUM_MIN_OVERALL = [1]  # Minimum OVR of XX : Min X
 
-CHEMISTRY = 24  # Squad Total Chemistry Points: Min X
+CHEMISTRY = 25  # Squad Total Chemistry Points: Min X
                 # If there is no constraint on total chemistry, then set this to 0.
 
 CHEM_PER_PLAYER = 0  # Chemistry Points Per Player: Min X
@@ -60,6 +64,7 @@ formation_dict = {
     "4-1-2-1-2": ["GK", "LB", "CB", "CB", "RB", "CDM", "LM", "CAM", "RM", "ST", "ST"],
     "4-1-2-1-2[2]": ["GK", "LB", "CB", "CB", "RB", "CDM", "CM", "CAM", "CM", "ST", "ST"],
     "4-1-4-1": ["GK", "LB", "CB", "CB", "RB", "CDM", "LM", "CM", "CM", "RM", "ST"],
+    "4-2-1-3": ["GK", "LB", "CB", "CB", "RB", "CDM", "CDM", "CAM", "LW", "ST", "RW"],
     "4-2-3-1": ["GK", "LB", "CB", "CB", "RB", "CDM", "CDM", "CAM", "CAM", "CAM", "ST"],
     "4-2-3-1[2]": ["GK", "LB", "CB", "CB", "RB", "CDM", "CDM", "CAM", "LM", "ST", "RM"],
     "4-2-2-2": ["GK", "LB", "CB", "CB", "RB", "CDM", "CDM", "CAM", "CAM", "ST", "ST"],

@@ -20,29 +20,39 @@ def preprocess_data_1(df: pd.DataFrame):
 # So duplicates can be prioritized now if needed.
 def preprocess_data_2(df: pd.DataFrame):
     df = df.drop(['Price Limits', 'Last Sale Price', 'Discard Value', 'Contract', 'DefinitionId'], axis = 1)
-    df = df.rename(columns={'Nation': 'Country', 'Team' : 'Club', 'Preferred Position': 'Position', 'ExternalPrice': 'Cost'})
+    df = df.rename(columns={'Nation': 'Country', 'Team' : 'Club', 'ExternalPrice': 'Cost'})
     df["Color"] = df["Rating"].apply(lambda x: 'Bronze' if x < 65 else ('Silver' if 65 <= x <= 74 else 'Gold'))
     df.insert(2, 'Color', df.pop('Color'))
     df = df[df["Untradeable"] == True]
     df = df[df["IsInActive11"] != True]
     df = df[df["Loans"] == False]
     df = df[df["Cost"] != '-- NA --']
-    df = df[df["Cost"] != '0']
+    df = df[(df["Cost"] != '0') & (df["Cost"] != 0)]
     # Note: The filter on rating is especially useful when there is only a single constraint like Squad Rating: Min XX.
     # Otherwise, the search space is too large and this overwhelms the solver (very slow in improving the bound).
     # df = df[(df["Rating"] >= input.SQUAD_RATING - 3) & (df["Rating"] <= input.SQUAD_RATING + 3)]
+    if input.USE_PREFERRED_POSITION:
+        df = df.rename(columns={'Preferred Position': 'Position'})
+        df.insert(4, 'Position', df.pop('Position'))
+    elif input.USE_ALTERNATE_POSITIONS:
+        df = df.drop(['Preferred Position'], axis = 1)
+        df = df.rename(columns={'Alternate Positions': 'Position'})
+        df.insert(4, 'Position', df.pop('Position'))
+        df['Position'] = df['Position'].str.split(',')
+        df = df.explode('Position') # Creating separate entries of a particular player for each alternate position.
     df = df.reset_index(drop = True).astype({'Rating': 'int32', 'Cost': 'int32'})
     return df
 
 if __name__ == "__main__":
-    dataset = "Catamarca FC.csv"
+    dataset = "Real_Madrid_FC_24.csv"
     df = pd.read_csv(dataset, index_col = False)
     # df = preprocess_data_1(df)
     df = preprocess_data_2(df)
-    # df.to_excel("club_preprocessed.xlsx", index = False)
+    # df.to_excel("Club_Pre_Processed.xlsx", index = False) # This could be used to fix certain players and optimize the rest.
     final_players = optimize.SBC(df)
     if final_players:
         df_out = df.iloc[final_players]
+        df_out.insert(5, 'Is_Pos', df_out.pop('Is_Pos'))
         print(f"Total Chemistry: {df_out['Chemistry'].sum()}")
         squad_rating = input.calc_squad_rating(df_out["Rating"].tolist())
         print(f"Squad Rating: {squad_rating}")
