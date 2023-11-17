@@ -4,7 +4,13 @@ FORMATION = "4-2-2-2"
 
 NUM_PLAYERS = 11
 
-FIX_PLAYERS  = 0 # FIX_PLAYERS = 1 => players will be picked based on the formation and 0 otherwise.
+PLAYERS_IN_POSITION = False # PLAYERS_IN_POSITION = True => No player will be out of position and False implies otherwise.
+
+# This can be used to fix specific players and optimize the rest.
+# First, obtain the pre-processed dataset, and then select the rows (players) that need to be fixed.
+# Note: Subtract 2 from the row numbers in Excel. For example, FIX_PLAYERS = [0, 7] implies that
+# players in the 2nd and 9th rows in the pre-processed dataset need to be fixed.
+FIX_PLAYERS = []
 
 # Set only one of the below to True and the other to False. Both can't be False.
 USE_PREFERRED_POSITION = False
@@ -18,28 +24,28 @@ USE_AT_LEAST_ONE_DUPLICATE = False
 CLUB = [["Real Madrid", "Arsenal"], ["FC Bayern"]]
 NUM_CLUB = [3, 2]  # Total players from i^th list >= NUM_CLUB[i]
 
-MAX_NUM_CLUB = 2  # Same Club Count: Max X
-MIN_NUM_CLUB = 2  # Same Club Count: Min X
+MAX_NUM_CLUB = 2  # Same Club Count: Max X / Max X Players from the Same Club
+MIN_NUM_CLUB = 2  # Same Club Count: Min X / Min X Players from the Same Club
 NUM_UNIQUE_CLUB = [5, "Max"]  # Clubs: Max / Min / Exactly X
 
 LEAGUE = [["Premier League", "LaLiga Santander"]]
 NUM_LEAGUE = [11]  # Total players from i^th list >= NUM_LEAGUE[i]
 
-MAX_NUM_LEAGUE = 4  # Same League Count: Max X
-MIN_NUM_LEAGUE = 4  # Same League Count: Min X
+MAX_NUM_LEAGUE = 4  # Same League Count: Max X / Max X Players from the Same League
+MIN_NUM_LEAGUE = 4  # Same League Count: Min X / Min X Players from the Same League
 NUM_UNIQUE_LEAGUE = [4, "Exactly"]  # Leagues: Max / Min / Exactly X
 
 COUNTRY = [["England", "Spain"], ["Germany"]]
 NUM_COUNTRY = [2, 1] # Total players from i^th list >= NUM_COUNTRY[i]
 
-MAX_NUM_COUNTRY = 3  # Same Nation Count: Max X
-MIN_NUM_COUNTRY = 5  # Same Nation Count: Min X
+MAX_NUM_COUNTRY = 3  # Same Nation Count: Max X / Max X Players from the Same Nation
+MIN_NUM_COUNTRY = 5  # Same Nation Count: Min X / Min X Players from the Same Nation
 NUM_UNIQUE_COUNTRY = [5, "Exactly"]  # Nations: Max / Min / Exactly X
 
 RARITY_1 = [['Gold', 'TOTW']]
 NUM_RARITY_1 = [1]  # This is for cases like "Gold IF: Min X (0/X)"
 
-RARITY_2 = ["Rare", "Gold", "Bronze"]
+RARITY_2 = ["Rare", "Gold", "Bronze"] # [Rare, Common, TOTW, Gold, Silver, Bronze ... etc]
 NUM_RARITY_2 = [0, 0, 11]   # Total players from i^th Rarity >= NUM_RARITY_2[i]
 
 SQUAD_RATING = 80 # Squad Rating: Min XX

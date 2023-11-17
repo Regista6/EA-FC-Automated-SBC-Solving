@@ -89,7 +89,7 @@ def create_basic_constraints(df, model, player, map_idx, players_grouped, num_cn
         model.Add(cp_model.LinearExpr.Sum(expr) <= 1)
 
     # Formation constraint
-    if input.FIX_PLAYERS == 1:
+    if input.PLAYERS_IN_POSITION == True:
         formation_list = input.formation_dict[input.FORMATION]
         cnt = {}
         for pos in formation_list:
@@ -142,7 +142,7 @@ def create_rarity_1_constraint(df, model, player, map_idx, players_grouped, num_
 
 @runtime
 def create_rarity_2_constraint(df, model, player, map_idx, players_grouped, num_cnts):
-    '''[Rare, Non Rare, TOTW, gold, silver, bronze ... etc] (>=).'''
+    '''[Rare, Common, TOTW, Gold, Silver, Bronze ... etc] (>=).'''
     for i, rarity in enumerate(input.RARITY_2):
         col = "Rarity"
         # Change according to dataset.
@@ -247,7 +247,7 @@ def create_chemistry_constraint(df, model, chem, z_club, z_league, z_nation, pla
         m_pos[player[i]] = pos[i]
         m_idx[player[i]] = i
         if p_pos in formation_list:
-            if input.FIX_PLAYERS == 1:
+            if input.PLAYERS_IN_POSITION == True:
                 model.Add(pos[i] == 1)
             if df.at[i, "Club"] in ["ICON", "HERO"]:
                 model.Add(chem[i] == 3)
@@ -281,7 +281,7 @@ def create_chemistry_constraint(df, model, chem, z_club, z_league, z_nation, pla
                 continue
         t_expr = players_grouped["Position"].get(pos_dict[Pos], [])
         pos_expr += t_expr
-        if input.FIX_PLAYERS == 0:
+        if input.PLAYERS_IN_POSITION == False:
             play_pos = [model.NewBoolVar(f"play_pos{Pos}{i}") for i in range(len(t_expr))]
             [model.AddMultiplicationEquality(play_pos[i], p, m_pos[p]) for i, p in enumerate(t_expr)]
             model.Add(cp_model.LinearExpr.Sum(play_pos) <= formation_list.count(Pos))
@@ -359,7 +359,7 @@ def create_chemistry_constraint(df, model, chem, z_club, z_league, z_nation, pla
 
 @runtime
 def create_max_club_constraint(df, model, player, map_idx, players_grouped, num_cnts):
-    '''Same Club Count: Max X (<=)'''
+    '''Same Club Count: Max X / Max X Players from the Same Club (<=)'''
     num_clubs = num_cnts[1]
     for i in range(num_clubs):
         expr = players_grouped["Club"].get(i, [])
@@ -368,7 +368,7 @@ def create_max_club_constraint(df, model, player, map_idx, players_grouped, num_
 
 @runtime
 def create_max_league_constraint(df, model, player, map_idx, players_grouped, num_cnts):
-    '''Same League Count: Max X (<=)'''
+    '''Same League Count: Max X / Max X Players from the Same League (<=)'''
     num_league = num_cnts[2]
     for i in range(num_league):
         expr = players_grouped["League"].get(i, [])
@@ -377,7 +377,7 @@ def create_max_league_constraint(df, model, player, map_idx, players_grouped, nu
 
 @runtime
 def create_max_country_constraint(df, model, player, map_idx, players_grouped, num_cnts):
-    '''Same Nation Count: Max X (<=)'''
+    '''Same Nation Count: Max X / Max X Players from the Same Nation (<=)'''
     num_country = num_cnts[3]
     for i in range(num_country):
         expr = players_grouped["Country"].get(i, [])
@@ -386,7 +386,7 @@ def create_max_country_constraint(df, model, player, map_idx, players_grouped, n
 
 @runtime
 def create_min_club_constraint(df, model, player, map_idx, players_grouped, num_cnts):
-    '''Same Club Count: Min X (>=)'''
+    '''Same Club Count: Min X / Min X Players from the Same Club (>=)'''
     num_clubs = num_cnts[1]
     B_C = [model.NewBoolVar(f"B_C{i}") for i in range(num_clubs)]
     for i in range(num_clubs):
@@ -398,7 +398,7 @@ def create_min_club_constraint(df, model, player, map_idx, players_grouped, num_
 
 @runtime
 def create_min_league_constraint(df, model, player, map_idx, players_grouped, num_cnts):
-    '''Same League Count: Min X (>=)'''
+    '''Same League Count: Min X / Min X Players from the Same League (>=)'''
     num_league = num_cnts[2]
     B_L = [model.NewBoolVar(f"B_L{i}") for i in range(num_league)]
     for i in range(num_league):
@@ -410,7 +410,7 @@ def create_min_league_constraint(df, model, player, map_idx, players_grouped, nu
 
 @runtime
 def create_min_country_constraint(df, model, player, map_idx, players_grouped, num_cnts):
-    '''Same Nation Count: Min X (>=)'''
+    '''Same Nation Count: Min X / Min X Players from the Same Nation (>=)'''
     num_country = num_cnts[3]
     B_N = [model.NewBoolVar(f"B_N{i}") for i in range(num_country)]
     for i in range(num_country):
@@ -488,6 +488,15 @@ def prioritize_duplicates(df, model, player):
         model.Add(2 * dup_expr >= min(input.NUM_PLAYERS, len(dup_idxes)))
     elif input.USE_AT_LEAST_ONE_DUPLICATE:
         model.Add(dup_expr >= 1)
+    return model
+
+@runtime
+def fix_players(df, model, player):
+    '''Fix specific players and optimize the rest'''
+    if not input.FIX_PLAYERS:
+        return model
+    for idx in input.FIX_PLAYERS:
+        model.Add(player[idx] == 1)
     return model
 
 @runtime
@@ -570,6 +579,9 @@ def SBC(df):
     '''If there is no constraint on total chemistry, simply set input.CHEMISTRY = 0'''
     model, pos, chem_expr = create_chemistry_constraint(df, model, chem, z_club, z_league, z_nation, player, players_grouped, num_cnts, map_idx, b_c, b_l, b_n)
 
+    '''Fix specific players and optimize the rest'''
+    model = fix_players(df, model, player)
+
     '''Set objective based on player cost'''
     model = set_objective(df, model, player)
 
@@ -605,7 +617,7 @@ def SBC(df):
     final_players = []
     if status == 2 or status == 4: # Feasible or Optimal
         df['Chemistry'] = 0
-        df['Is_Pos'] = 0 # Is_Pos = 1 => player should be in their position.
+        df['Is_Pos'] = 0 # Is_Pos = 1 => Player should be placed in their respective position.
         for i in range(num_cnts[0]):
             if solver.Value(player[i]) == 1:
                 final_players.append(i)

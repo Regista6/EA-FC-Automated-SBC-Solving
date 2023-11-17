@@ -23,6 +23,7 @@ def preprocess_data_2(df: pd.DataFrame):
     df = df.rename(columns={'Nation': 'Country', 'Team' : 'Club', 'ExternalPrice': 'Cost'})
     df["Color"] = df["Rating"].apply(lambda x: 'Bronze' if x < 65 else ('Silver' if 65 <= x <= 74 else 'Gold'))
     df.insert(2, 'Color', df.pop('Color'))
+    # df = df[df["Color"] != "Gold"] # Can be used for constraints like Player Quality: Max Silver.
     df = df[df["Untradeable"] == True]
     df = df[df["IsInActive11"] != True]
     df = df[df["Loans"] == False]

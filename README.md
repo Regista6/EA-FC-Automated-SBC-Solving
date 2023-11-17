@@ -17,7 +17,7 @@ The inputs to the different constraints can be found in the `input.py` file.
 
 The constraints used in the program are created in the `optimize.py` file and the optimization problem is solved using [Google CP-SAT solver](https://developers.google.com/optimization/cp/cp_solver).
 
-The program implements most of the common constraints (`L530-566` in `optimize.py`). Feel free to comment out the constraints that are not required.
+The program implements most of the common constraints (`L539-575` in `optimize.py`). Feel free to comment out the constraints that are not required.
 
 Currently the inputs are set to solve [this](https://www.futbin.com/squad-building-challenges/ALL/38/fiendish) SBC challenge. The final list of players is written into the file `output.xlsx`.
 
@@ -27,7 +27,7 @@ To execute the program, simply run `py main.py` after installing the required de
 
 Run `pip3 install -r requirements.txt` to install the required dependencies.
 
-- [Google OR-Tools v9.7](https://github.com/google/or-tools)
+- [Google OR-Tools v9.8](https://github.com/google/or-tools)
 
 - Python 3.9
 
