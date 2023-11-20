@@ -28,7 +28,8 @@ def preprocess_data_2(df: pd.DataFrame):
     df = df[df["IsInActive11"] != True]
     df = df[df["Loans"] == False]
     df = df[df["Cost"] != '-- NA --']
-    df = df[(df["Cost"] != '0') & (df["Cost"] != 0)]
+    df = df[df["Cost"] != '0']
+    df = df[df["Cost"] != 0]
     # Note: The filter on rating is especially useful when there is only a single constraint like Squad Rating: Min XX.
     # Otherwise, the search space is too large and this overwhelms the solver (very slow in improving the bound).
     # df = df[(df["Rating"] >= input.SQUAD_RATING - 3) & (df["Rating"] <= input.SQUAD_RATING + 3)]

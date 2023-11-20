@@ -501,9 +501,22 @@ def fix_players(df, model, player):
 
 @runtime
 def set_objective(df, model, player):
-    '''Set objective (minimize) based on cost'''
+    '''Set objective based on player cost.
+    The default behaviour of the solver is to minimize the overall cost.
+    '''
     cost = df["Cost"].tolist()
-    model.Minimize(cp_model.LinearExpr.WeightedSum(player, cost))
+    if input.MINIMIZE_MAX_COST:
+        print("**MINIMIZE_MAX_COST**")
+        max_cost = model.NewIntVar(0, df["Cost"].max(), "max_cost")
+        play_cost = [player[i] * cost[i] for i in range(len(cost))]
+        model.AddMaxEquality(max_cost, play_cost)
+        model.Minimize(max_cost)
+    elif input.MAXIMIZE_TOTAL_COST:
+        print("**MAXIMIZE_TOTAL_COST**")
+        model.Maximize(cp_model.LinearExpr.WeightedSum(player, cost))
+    else:
+        print("**MINIMIZE_TOTAL_COST**")
+        model.Minimize(cp_model.LinearExpr.WeightedSum(player, cost))
     return model
 
 def get_dict(df, col):

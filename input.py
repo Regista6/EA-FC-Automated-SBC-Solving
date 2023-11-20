@@ -12,6 +12,12 @@ PLAYERS_IN_POSITION = False # PLAYERS_IN_POSITION = True => No player will be ou
 # players in the 2nd and 9th rows in the pre-processed dataset need to be fixed.
 FIX_PLAYERS = []
 
+# Change the nature of the objective.
+# By default, the solver tries to minimize the overall cost.
+# Set only one of the below to True to change the objective type.
+MINIMIZE_MAX_COST = False # This minimizes the max cost within a solution. This is worth a try but not that effective.
+MAXIMIZE_TOTAL_COST = False # Could be used for building a good team.
+
 # Set only one of the below to True and the other to False. Both can't be False.
 USE_PREFERRED_POSITION = False
 USE_ALTERNATE_POSITIONS = True
