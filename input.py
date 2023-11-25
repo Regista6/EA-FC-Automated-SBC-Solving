@@ -7,10 +7,12 @@ NUM_PLAYERS = 11
 PLAYERS_IN_POSITION = False # PLAYERS_IN_POSITION = True => No player will be out of position and False implies otherwise.
 
 # This can be used to fix specific players and optimize the rest.
-# First, obtain the pre-processed dataset, and then select the rows (players) that need to be fixed.
-# Note: Subtract 2 from the row numbers in Excel. For example, FIX_PLAYERS = [0, 7] implies that
-# players in the 2nd and 9th rows in the pre-processed dataset need to be fixed.
+# Find the Row_ID (starts from 2) of each player to be fixed 
+# from the club dataset and plug that in.
 FIX_PLAYERS = []
+
+# Filter out specific players using Row_ID.
+REMOVE_PLAYERS = []
 
 # Change the nature of the objective.
 # By default, the solver tries to minimize the overall cost.

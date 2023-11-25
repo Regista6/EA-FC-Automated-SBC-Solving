@@ -33,6 +33,9 @@ def preprocess_data_2(df: pd.DataFrame):
     # Note: The filter on rating is especially useful when there is only a single constraint like Squad Rating: Min XX.
     # Otherwise, the search space is too large and this overwhelms the solver (very slow in improving the bound).
     # df = df[(df["Rating"] >= input.SQUAD_RATING - 3) & (df["Rating"] <= input.SQUAD_RATING + 3)]
+    if input.REMOVE_PLAYERS:
+        input.REMOVE_PLAYERS = [(idx - 2) for idx in input.REMOVE_PLAYERS if (idx - 2) in df.index]
+        df.drop(input.REMOVE_PLAYERS, inplace=True)
     if input.USE_PREFERRED_POSITION:
         df = df.rename(columns={'Preferred Position': 'Position'})
         df.insert(4, 'Position', df.pop('Position'))
@@ -42,6 +45,7 @@ def preprocess_data_2(df: pd.DataFrame):
         df.insert(4, 'Position', df.pop('Position'))
         df['Position'] = df['Position'].str.split(',')
         df = df.explode('Position') # Creating separate entries of a particular player for each alternate position.
+    df['Original_Idx'] = df.index
     df = df.reset_index(drop = True).astype({'Rating': 'int32', 'Cost': 'int32'})
     return df
 
@@ -50,13 +54,15 @@ if __name__ == "__main__":
     df = pd.read_csv(dataset, index_col = False)
     # df = preprocess_data_1(df)
     df = preprocess_data_2(df)
-    # df.to_excel("Club_Pre_Processed.xlsx", index = False) # This could be used to fix certain players and optimize the rest.
+    # df.to_excel("Club_Pre_Processed.xlsx", index = False)
     final_players = optimize.SBC(df)
     if final_players:
-        df_out = df.iloc[final_players]
+        df_out = df.iloc[final_players].copy()
         df_out.insert(5, 'Is_Pos', df_out.pop('Is_Pos'))
         print(f"Total Chemistry: {df_out['Chemistry'].sum()}")
         squad_rating = input.calc_squad_rating(df_out["Rating"].tolist())
         print(f"Squad Rating: {squad_rating}")
         print(f"Total Cost: {df_out['Cost'].sum()}")
+        df_out['Org_Row_ID'] = df_out['Original_Idx'] + 2
+        df_out.pop('Original_Idx')
         df_out.to_excel("output.xlsx", index = False)

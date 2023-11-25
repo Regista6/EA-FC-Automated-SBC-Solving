@@ -495,8 +495,19 @@ def fix_players(df, model, player):
     '''Fix specific players and optimize the rest'''
     if not input.FIX_PLAYERS:
         return model
+    missing_players = []
     for idx in input.FIX_PLAYERS:
-        model.Add(player[idx] == 1)
+        idxes = list(df[(df["Original_Idx"] == (idx - 2))].index)
+        if not idxes:
+            missing_players.append(idx)
+            continue
+        players_to_fix = [player[j] for j in idxes]
+        # Note: A selected player may play in multiple positions.
+        # Any one such version must be fixed. 
+        model.Add(cp_model.LinearExpr.Sum(players_to_fix) == 1) 
+    if missing_players:
+        print(f"**Couldn't fix the following players with Row_ID: {missing_players}**")
+        print(f"**They may have already been filtered out**")
     return model
 
 @runtime

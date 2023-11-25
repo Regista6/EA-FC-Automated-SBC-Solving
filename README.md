@@ -17,7 +17,7 @@ The inputs to the different constraints can be found in the `input.py` file.
 
 The constraints used in the program are created in the `optimize.py` file and the optimization problem is solved using [Google CP-SAT solver](https://developers.google.com/optimization/cp/cp_solver).
 
-The program implements most of the common constraints (`L552-588` in `optimize.py`). Feel free to comment out the constraints that are not required.
+The program implements most of the common constraints (`L563-599` in `optimize.py`). Feel free to comment out the constraints that are not required.
 
 Currently the inputs are set to solve [this](https://www.futbin.com/squad-building-challenges/ALL/38/fiendish) SBC challenge. The final list of players is written into the file `output.xlsx`.
 
