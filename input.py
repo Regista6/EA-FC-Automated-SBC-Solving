@@ -7,7 +7,7 @@ NUM_PLAYERS = 11
 PLAYERS_IN_POSITION = False # PLAYERS_IN_POSITION = True => No player will be out of position and False implies otherwise.
 
 # This can be used to fix specific players and optimize the rest.
-# Find the Row_ID (starts from 2) of each player to be fixed 
+# Find the Row_ID (starts from 2) of each player to be fixed
 # from the club dataset and plug that in.
 FIX_PLAYERS = []
 
@@ -28,6 +28,19 @@ USE_ALTERNATE_POSITIONS = True
 USE_ALL_DUPLICATES = False
 USE_AT_LEAST_HALF_DUPLICATES = False
 USE_AT_LEAST_ONE_DUPLICATE = False
+
+# Which cards should be considered Rare or Common?
+# Source: https://www.fut.gg/rarities/
+# Source: https://www.ea.com/en-gb/games/fifa/fifa-23/news/explaining-rarity-in-fifa-ultimate-team
+# Source: https://www.reddit.com/r/EASportsFC/comments/pajy29/how_do_ea_determine_wether_a_card_is_rare_or_none/
+# Note: Apparently, EA randomly assigns a card as Rare. I kind of forgot to factor in this fact.
+# Below is not a fool-proof solution, more so because most cards are listed as 'Special' in the club dataset :)
+# Keep adding things here, especially if you are customizing the 'Rarity' column by replacing 'Special'
+# with the actual Rarity, like say 'TOTW'.
+# Note: Everything else is considered a Common card.
+CONSIDER_AS_RARE = {'Rarity': ['Rare', 'UCL Road to the Knockouts'],
+                    'League': ['Libertadores'], 'Country': [], 'Club': ['ICON', 'HERO'],
+                    'Row_ID': []}
 
 CLUB = [["Real Madrid", "Arsenal"], ["FC Bayern"]]
 NUM_CLUB = [3, 2]  # Total players from i^th list >= NUM_CLUB[i]
@@ -53,8 +66,10 @@ NUM_UNIQUE_COUNTRY = [5, "Exactly"]  # Nations: Max / Min / Exactly X
 RARITY_1 = [['Gold', 'TOTW']]
 NUM_RARITY_1 = [1]  # This is for cases like "Gold IF: Min X (0/X)"
 
-RARITY_2 = ["Rare", "Gold", "Bronze"] # [Rare, Common, TOTW, Gold, Silver, Bronze ... etc]
-NUM_RARITY_2 = [0, 0, 11]   # Total players from i^th Rarity >= NUM_RARITY_2[i]
+# [Rare, Common, TOTW, Gold, Silver, Bronze ... etc]
+# Note: Unfortunately several cards like 'TOTW' are listed as 'Special'
+RARITY_2 = ["Rare", "Gold", "Bronze"]
+NUM_RARITY_2 = [0, 0, 11]  # Total players from i^th Rarity >= NUM_RARITY_2[i]
 
 SQUAD_RATING = 80 # Squad Rating: Min XX
 

@@ -143,12 +143,20 @@ def create_rarity_1_constraint(df, model, player, map_idx, players_grouped, num_
 @runtime
 def create_rarity_2_constraint(df, model, player, map_idx, players_grouped, num_cnts):
     '''[Rare, Common, TOTW, Gold, Silver, Bronze ... etc] (>=).'''
-    for i, rarity in enumerate(input.RARITY_2):
-        col = "Rarity"
-        # Change according to dataset.
-        if rarity in ["Gold", "Silver", "Bronze"]:
-            col = "Color"
-        expr = players_grouped[col].get(map_idx[col][rarity], [])
+    for i, rarity_type in enumerate(input.RARITY_2):
+        expr = []
+        if rarity_type in ["Gold", "Silver", "Bronze"]:
+            expr = players_grouped["Color"].get(map_idx["Color"].get(rarity_type, -1), [])
+        elif rarity_type == "Rare":
+            # Consider the following cards as Rare.
+            for col, rarity_list in input.CONSIDER_AS_RARE.items():
+                for rarity in rarity_list:
+                    if col == 'Row_ID':
+                        expr += player[int(rarity) - 2]
+                    else:
+                        expr += players_grouped[col].get(map_idx[col].get(rarity, -1), [])
+        else:
+            expr = players_grouped["Rarity"].get(map_idx["Rarity"].get(rarity_type, -1), [])
         model.Add(cp_model.LinearExpr.Sum(expr) >= input.NUM_RARITY_2[i])
     return model
 
@@ -503,8 +511,8 @@ def fix_players(df, model, player):
             continue
         players_to_fix = [player[j] for j in idxes]
         # Note: A selected player may play in multiple positions.
-        # Any one such version must be fixed. 
-        model.Add(cp_model.LinearExpr.Sum(players_to_fix) == 1) 
+        # Any one such version must be fixed.
+        model.Add(cp_model.LinearExpr.Sum(players_to_fix) == 1)
     if missing_players:
         print(f"**Couldn't fix the following players with Row_ID: {missing_players}**")
         print(f"**They may have already been filtered out**")
