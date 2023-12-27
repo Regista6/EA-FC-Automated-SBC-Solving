@@ -13,11 +13,13 @@ Update: I was able to import my club's dataset (`Catamarca FC_24.csv`) from [her
 
 Update 1: Thanks `fifagamer#1515` for your club dataset `Real_Madrid_FC_24.csv`.
 
+Update 2: v1.1.0.3 of the above extension to download club dataset now has detailed Rarity column. Also thanks `Frederik` for your club dataset `Frederik FC_24.csv`
+
 The inputs to the different constraints can be found in the `input.py` file.
 
 The constraints used in the program are created in the `optimize.py` file and the optimization problem is solved using [Google CP-SAT solver](https://developers.google.com/optimization/cp/cp_solver).
 
-The program implements most of the common constraints (`L571-607` in `optimize.py`). Feel free to comment out the constraints that are not required.
+The program implements most of the common constraints (`L577-611` in `optimize.py`). Feel free to comment out the constraints that are not required.
 
 Currently the inputs are set to solve [this](https://www.futbin.com/squad-building-challenges/ALL/38/fiendish) SBC challenge. The final list of players is written into the file `output.xlsx`.
 

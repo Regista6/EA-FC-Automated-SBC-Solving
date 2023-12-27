@@ -18,19 +18,22 @@ def preprocess_data_1(df: pd.DataFrame):
 # Preprocess the club dataset obtained from https://chrome.google.com/webstore/detail/fut-enhancer/boffdonfioidojlcpmfnkngipappmcoh.
 # Datset obtained from here has the extra columns [IsDuplicate, IsInActive11].
 # So duplicates can be prioritized now if needed.
+# Note: Please use >= v1.1.0.3 of the extension.
 def preprocess_data_2(df: pd.DataFrame):
     df = df.drop(['Price Limits', 'Last Sale Price', 'Discard Value', 'Contract', 'DefinitionId'], axis = 1)
     df = df.rename(columns={'Nation': 'Country', 'Team' : 'Club', 'ExternalPrice': 'Cost'})
     df["Color"] = df["Rating"].apply(lambda x: 'Bronze' if x < 65 else ('Silver' if 65 <= x <= 74 else 'Gold'))
     df.insert(2, 'Color', df.pop('Color'))
+    # df = df[df["Color"] == "Gold"] # Can be used for constraints like Player Quality: Only Gold.
     # df = df[df["Color"] != "Gold"] # Can be used for constraints like Player Quality: Max Silver.
     # df = df[df["Color"] != "Bronze"] # Can be used for constraints like Player Quality: Min Silver.
     df = df[df["Untradeable"] == True]
     df = df[df["IsInActive11"] != True]
     df = df[df["Loans"] == False]
-    df = df[df["Cost"] != '-- NA --']
-    df = df[df["Cost"] != '0']
+    # df = df[df["Cost"] != '-- NA --']
+    # df = df[df["Cost"] != '0']
     df = df[df["Cost"] != 0]
+    df['Rarity'] = df['Rarity'].replace('Team of the Week', 'TOTW')
     # Note: The filter on rating is especially useful when there is only a single constraint like Squad Rating: Min XX.
     # Otherwise, the search space is too large and this overwhelms the solver (very slow in improving the bound).
     # df = df[(df["Rating"] >= input.SQUAD_RATING - 3) & (df["Rating"] <= input.SQUAD_RATING + 3)]
@@ -51,7 +54,7 @@ def preprocess_data_2(df: pd.DataFrame):
     return df
 
 if __name__ == "__main__":
-    dataset = "Real_Madrid_FC_24.csv"
+    dataset = "Frederik FC_24.csv"
     df = pd.read_csv(dataset, index_col = False)
     # df = preprocess_data_1(df)
     df = preprocess_data_2(df)

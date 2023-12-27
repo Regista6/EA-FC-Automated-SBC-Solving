@@ -33,14 +33,12 @@ USE_AT_LEAST_ONE_DUPLICATE = False
 # Source: https://www.fut.gg/rarities/
 # Source: https://www.ea.com/en-gb/games/fifa/fifa-23/news/explaining-rarity-in-fifa-ultimate-team
 # Source: https://www.reddit.com/r/EASportsFC/comments/pajy29/how_do_ea_determine_wether_a_card_is_rare_or_none/
+# Source: https://www.reddit.com/r/EASportsFC/comments/16qfz75/psa_libertadores_cards_no_longer_count_as_rares/
 # Note: Apparently, EA randomly assigns a card as Rare. I kind of forgot to factor in this fact.
-# Below is not a fool-proof solution, more so because most cards are listed as 'Special' in the club dataset :)
-# Keep adding things here, especially if you are customizing the 'Rarity' column by replacing 'Special'
-# with the actual Rarity, like say 'TOTW'.
-# Note: Everything else is considered a Common card.
-CONSIDER_AS_RARE = {'Rarity': ['Rare', 'UCL Road to the Knockouts'],
-                    'League': ['Libertadores'], 'Country': [], 'Club': ['ICON', 'HERO'],
-                    'Row_ID': []}
+# Note: In v1.1.0.3 of the extension, the actual rarity of each card is now displayed in the club dataset.
+# Note: Everything else is considered as a Common card. Keep modifying this as it is incomplete and could also be wrong!
+CONSIDER_AS_RARE = ["Rare", "TOTW", "Icon", "UT Heroes", "Nike", "UCL Road to the Knockouts",
+                    "UEL Road to the Knockouts", "UWCL Road to the Knockouts", "UECL Road to the Knockouts"]
 
 CLUB = [["Real Madrid", "Arsenal"], ["FC Bayern"]]
 NUM_CLUB = [3, 2]  # Total players from i^th list >= NUM_CLUB[i]
@@ -64,12 +62,14 @@ MIN_NUM_COUNTRY = 5  # Same Nation Count: Min X / Min X Players from the Same Na
 NUM_UNIQUE_COUNTRY = [5, "Exactly"]  # Nations: Max / Min / Exactly X
 
 RARITY_1 = [['Gold', 'TOTW']]
-NUM_RARITY_1 = [1]  # This is for cases like "Gold IF: Min X (0/X)"
+NUM_RARITY_1 = [1]  # This is for cases like "Gold TOTW: Min X (0/X)"
 
 # [Rare, Common, TOTW, Gold, Silver, Bronze ... etc]
 # Note: Unfortunately several cards like 'TOTW' are listed as 'Special'
+# Note: This is fixed in v1.1.0.3 of the extension to download club datset!
+# Note: Actual Rarity of each card is now shown.
 RARITY_2 = ["Rare", "Gold", "Bronze"]
-NUM_RARITY_2 = [0, 0, 11]  # Total players from i^th Rarity >= NUM_RARITY_2[i]
+NUM_RARITY_2 = [0, 0, 11]  # Total players from i^th Rarity / Color >= NUM_RARITY_2[i]
 
 SQUAD_RATING = 80 # Squad Rating: Min XX
 

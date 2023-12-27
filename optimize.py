@@ -149,12 +149,13 @@ def create_rarity_2_constraint(df, model, player, map_idx, players_grouped, num_
             expr = players_grouped["Color"].get(map_idx["Color"].get(rarity_type, -1), [])
         elif rarity_type == "Rare":
             # Consider the following cards as Rare.
-            for col, rarity_list in input.CONSIDER_AS_RARE.items():
-                for rarity in rarity_list:
-                    if col == 'Row_ID':
-                        expr += player[int(rarity) - 2]
-                    else:
-                        expr += players_grouped[col].get(map_idx[col].get(rarity, -1), [])
+            for rarity in input.CONSIDER_AS_RARE:
+                expr += players_grouped["Rarity"].get(map_idx["Rarity"].get(rarity, -1), [])
+        elif rarity_type == "Common":
+            # Consider everthing other than the above as Common.
+            common_rarities = list(set(df["Rarity"].unique().tolist()) - set(input.CONSIDER_AS_RARE))
+            for rarity in common_rarities:
+                expr += players_grouped["Rarity"].get(map_idx["Rarity"].get(rarity, -1), [])
         else:
             expr = players_grouped["Rarity"].get(map_idx["Rarity"].get(rarity_type, -1), [])
         model.Add(cp_model.LinearExpr.Sum(expr) >= input.NUM_RARITY_2[i])
@@ -257,8 +258,10 @@ def create_chemistry_constraint(df, model, chem, z_club, z_league, z_nation, pla
         if p_pos in formation_list:
             if input.PLAYERS_IN_POSITION == True:
                 model.Add(pos[i] == 1)
-            if df.at[i, "Club"] in ["ICON", "HERO"]:
+            if df.at[i, "Rarity"] in ["Icon", "UT Heroes"]:
                 model.Add(chem[i] == 3)
+            elif df.at[i, "Rarity"] in ["Radioactive"]:
+                model.Add(chem[i] == 2)
             else:
                 sum_expr = z_club[club_dict[p_club]] + z_league[league_dict[p_league]] + z_nation[country_dict[p_nation]]
                 b = model.NewBoolVar(f"b{i}")
@@ -303,11 +306,14 @@ def create_chemistry_constraint(df, model, chem, z_club, z_league, z_nation, pla
         t_expr_1 = list(set(t_expr) & set(pos_expr))
         expr = []
         for i, p in enumerate(t_expr_1):
-            if df.at[m_idx[p], "Club"] in ["ICON", "HERO"]: # Heroes or Icons don't contribute to club chem.
+            if df.at[m_idx[p], "Rarity"] in ["Icon", "UT Heroes"]: # Heroes or Icons don't contribute to club chem.
                 continue
             t_var = model.NewBoolVar(f"t_var_c{i}")
             model.AddMultiplicationEquality(t_var, p, m_pos[p])
-            expr.append(t_var)
+            if df.at[m_idx[p], "Rarity"] == "Radioactive":  # Radioactive cards contribute 2x to club chem.
+                expr.append(2 * t_var)
+            else:
+                expr.append(t_var)
         sum_expr = cp_model.LinearExpr.Sum(expr)
         for idx in range(4):
             lb, ub = club_bucket[idx][0], club_bucket[idx][1]
@@ -317,7 +323,7 @@ def create_chemistry_constraint(df, model, chem, z_club, z_league, z_nation, pla
 
     league_bucket = [[0, 2], [3, 4], [5, 7], [8, input.NUM_PLAYERS]]
 
-    icons_expr = players_grouped["Club"].get(club_dict.get("ICON", -1), [])
+    icons_expr = players_grouped["Rarity"].get(map_idx["Rarity"].get("Icon", -1), [])
 
     for j in range(num_league):
         t_expr = players_grouped["League"].get(j, [])
@@ -329,7 +335,7 @@ def create_chemistry_constraint(df, model, chem, z_club, z_league, z_nation, pla
         for i, p in enumerate(t_expr_1):
             t_var = model.NewBoolVar(f"t_var_l{i}")
             model.AddMultiplicationEquality(t_var, p, m_pos[p])
-            if df.at[m_idx[p], "Club"] == "HERO":  # Heroes contribute 2x to league chem.
+            if df.at[m_idx[p], "Rarity"] in ["UT Heroes", "Radioactive"]:  # Heroes / Radioactive cards contribute 2x to league chem.
                 expr.append(2 * t_var)
             else:
                 expr.append(t_var)
@@ -351,7 +357,7 @@ def create_chemistry_constraint(df, model, chem, z_club, z_league, z_nation, pla
         for i, p in enumerate(t_expr_1):
             t_var = model.NewBoolVar(f"t_var_n{i}")
             model.AddMultiplicationEquality(t_var, p, m_pos[p])
-            if df.at[m_idx[p], "Club"] == "ICON": # Icons contribute 2x to country chem.
+            if df.at[m_idx[p], "Rarity"] in ["Icon", "Radioactive"]:  # Icons / Radioactive cards contribute 2x to country chem.
                 expr.append(2 * t_var)
             else:
                 expr.append(t_var)
@@ -594,8 +600,6 @@ def SBC(df):
     '''Rarity'''
 
     '''Squad Rating'''
-    # model = create_squad_rating_constraint_1(df, model, player, map_idx, players_grouped, num_cnts)
-    # model = create_squad_rating_constraint_2(df, model, player, map_idx, players_grouped, num_cnts)
     model = create_squad_rating_constraint_3(df, model, player, map_idx, players_grouped, num_cnts)
     '''Squad Rating'''
 
