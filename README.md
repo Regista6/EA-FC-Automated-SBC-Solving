@@ -1,31 +1,40 @@
 ## EA FC 24 Automated [SBC](https://fifauteam.com/fifa-23-sbc/) Solving ⚽ [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1KoP-8zvbeh_0IjOIlrTG-u1j_QPP5DNo?usp=sharing)
 
-### Notes
+### How does this work? 🚂
 
-The project utilizes a dataset of 10,000 players (`input.csv`) obtained from [FutDB](https://futdb.app)
-along with their respective prices, as the input source. The data has been also manually tinkered with to fill in some of the gaps.
+This project utilizes [integer programming](https://en.wikipedia.org/wiki/Integer_programming) to solve squad building challenges (SBCs). The optimization problem is solved using [Google CP-SAT solver](https://developers.google.com/optimization/cp/cp_solver). 
+This approach offers extensive customization capabilities, alongside the ability to determine solution optimality.
 
-`The goal is to obtain the squad with the minimum cost.`
+`The goal is to obtain the squad with the minimum total cost.`
 
-The dataset serves as a `proof-of-concept demonstration` of the system's functionality, however, it is ideal to have a real-time dataset that includes the entire club of the user along with the player prices. In other words, the program is only as good as the data.
+### How to use it? 🔧
 
-Update: I was able to import my club's dataset (`Catamarca FC_24.csv`) from [here](https://chrome.google.com/webstore/detail/fut-enhancer/boffdonfioidojlcpmfnkngipappmcoh).
+- To download the club dataset, use the [extension](https://chrome.google.com/webstore/detail/fut-enhancer/boffdonfioidojlcpmfnkngipappmcoh) (version >= 1.1.0.3).
 
-Update 1: Thanks `fifagamer#1515` for your club dataset `Real_Madrid_FC_24.csv`.
+- The inputs to the different constraints can be found in the `input.py`. Configure the appropriate inputs for each SBC constraint in `input.py` (`L43-77` and `L28-30`) and then navigate to `optimize.py (L577-611)` and uncomment the relevant line based on the SBC requirements. Also don't forget to set the `formation` in `input.py`!
 
-Update 2: v1.1.0.3 of the above extension to download club dataset now has detailed Rarity column. Also thanks `Frederik` for your club dataset `Frederik FC_24.csv`
+- For example, if the requirement is `Same League Count: Max 5` or `Max 5 Players from the Same League` then set `MAX_NUM_LEAGUE = 5` (`L53` in `input.py`) and then uncomment `model = create_max_league_constraint(df, model, player, map_idx, players_grouped, num_cnts)` (`L585` in `optimize.py`).
 
-The inputs to the different constraints can be found in the `input.py` file.
+- If the requirement is `Nations: Max 2` then set `NUM_UNIQUE_COUNTRY = [2, "Max"]` (`L62` in `input.py`) and then uncomment `model = create_unique_country_constraint(df, model, player, map_idx, players_grouped, num_cnts)` (`L594` in `optimize.py`).
 
-The constraints used in the program are created in the `optimize.py` file and the optimization problem is solved using [Google CP-SAT solver](https://developers.google.com/optimization/cp/cp_solver).
+- If you are prioritizing duplicates by setting (`L28-L30`) in `input.py` then `model = prioritize_duplicates(df, model, player)` in `optimize.py` (`L611`) should be uncommented.
 
-The program implements most of the common constraints (`L577-611` in `optimize.py`). Feel free to comment out the constraints that are not required.
+- If for instance, the SBC wants `at least 3 players from Real Madrid and Aresnal combined` and `at least 2 players from Bayern Munich`, then set 
+`CLUB = [["Real Madrid", "Arsenal"], ["FC Bayern"]]` and `NUM_CLUB = [3, 2]` (`L43-44` in `input.py`) and then uncomment `model = create_club_constraint(df, model, player, map_idx, players_grouped, num_cnts)` (`L577` in `optimize.py`).
 
-Currently the inputs are set to solve [this](https://www.futbin.com/squad-building-challenges/ALL/38/fiendish) SBC challenge. The final list of players is written into the file `output.xlsx`.
+- If the SBC requires at least `6 Rare` and `8 Gold` then set `RARITY_2 = ["Rare", "Gold"]`and `NUM_RARITY_2 = [6, 8]`and then uncomment `model = create_rarity_2_constraint(df, model, player, map_idx, players_grouped, num_cnts)` (`L599` in `optimize.py`).
 
-To execute the program, simply run `py main.py` after installing the required dependencies.
+- Constraints such as `Chemistry` (`optimize.py`, `L616`) or `FIX_PLAYERS` (`optimize.py`, `L619`) do not require explicit activation. If there is no need for `Chemistry`, set it to `0` in `input.py (L79)`. Similarly, if no players need fixing, leave `FIX_PLAYERS (L12)` empty in `input.py`.
 
-### Dependencies
+- The `objective` is set in `optimize.py` (`L622`). The nature of the `objective` can be changed in `input.py` (`L20-21`). Currently the objective is to `minimize` the `total cost`.
+
+- Additional parameters in `input.py` should be reviewed for more information.
+
+- In `main.py`, specify the name of the `club dataset` in `L57`. The dataset is preprocessed in `preprocess_data_2` within `main.py`. Additional filters can be added in a manner similar to the existing ones.
+
+- Currently the inputs are set to solve [this](https://www.futbin.com/squad-building-challenges/ALL/38/fiendish) SBC challenge. The final list of players is written into the file `output.xlsx`. To execute the program, simply run `py main.py` after installing the required dependencies.
+
+### Dependencies 🖥️
 
 Run `pip3 install -r requirements.txt` to install the required dependencies.
 
@@ -34,3 +43,21 @@ Run `pip3 install -r requirements.txt` to install the required dependencies.
 - Python 3.9
 
 - pandas and openpyxl
+
+### Acknowledgement 🙏
+
+Thank you `GregoryWullimann` for making the model creation process [insanely faster](https://github.com/Regista6/EA-FC-24-Automated-SBC-Solving/pull/3). 
+
+Thank you `Jacobi from EasySBC` for helping with the `squad_rating_constraint`.
+
+Thank you `GeekFiro` for testing the solver and providing valuable feedback and discussions.
+
+Thank you `fifagamer#1515` and `Frederik` for providing your club datasets (`Real_Madrid_FC_24.csv` and `Frederik FC_24.csv`) and your feedback.
+
+Thank you `ckalgos` for creating the extension to download club dataset.
+
+Thank you to everyone who have opened issues on the repo and provided their feedback.
+
+Thank you to all the folks who commented on the [reddit post](https://www.reddit.com/r/fut/comments/15hxy2p/open_source_sbc_solver/).
+
+Thank you [FutDB](https://futdb.app) for providing the API which allowed me to test the solver originally on 10k players (`input.csv`)
