@@ -1,4 +1,4 @@
-## EA FC 24 Automated [SBC](https://fifauteam.com/fifa-23-sbc/) Solving ⚽ [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1KoP-8zvbeh_0IjOIlrTG-u1j_QPP5DNo?usp=sharing)
+## EA FC 24 Automated [SBC](https://fifauteam.com/sbc-football-club-24/) Solving ⚽ [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1KoP-8zvbeh_0IjOIlrTG-u1j_QPP5DNo?usp=sharing)
 
 ### How does this work? 🚂
 
@@ -19,12 +19,12 @@ This approach offers extensive customization capabilities, alongside the ability
 
 - If you are prioritizing duplicates by setting (`L28-L30`) in `input.py` then `model = prioritize_duplicates(df, model, player)` in `optimize.py` (`L611`) should be uncommented.
 
-- If for instance, the SBC wants `at least 3 players from Real Madrid and Aresnal combined` and `at least 2 players from Bayern Munich`, then set 
+- If for instance, the SBC wants `at least 3 players from Real Madrid and Arsenal combined` and `at least 2 players from Bayern Munich`, then set 
 `CLUB = [["Real Madrid", "Arsenal"], ["FC Bayern"]]` and `NUM_CLUB = [3, 2]` (`L43-44` in `input.py`) and then uncomment `model = create_club_constraint(df, model, player, map_idx, players_grouped, num_cnts)` (`L577` in `optimize.py`).
 
-- If the SBC requires at least `6 Rare` and `8 Gold` then set `RARITY_2 = ["Rare", "Gold"]`and `NUM_RARITY_2 = [6, 8]`and then uncomment `model = create_rarity_2_constraint(df, model, player, map_idx, players_grouped, num_cnts)` (`L599` in `optimize.py`).
+- If the SBC requires at least `6 Rare` and `8 Gold` then set `RARITY_2 = ["Rare", "Gold"]`and `NUM_RARITY_2 = [6, 8]` in `input.py (L71-72)` and then uncomment `model = create_rarity_2_constraint(df, model, player, map_idx, players_grouped, num_cnts)` (`L599` in `optimize.py`).
 
-- Constraints such as `Chemistry` (`optimize.py`, `L616`) or `FIX_PLAYERS` (`optimize.py`, `L619`) do not require explicit activation. If there is no need for `Chemistry`, set it to `0` in `input.py (L79)`. Similarly, if no players need fixing, leave `FIX_PLAYERS (L12)` empty in `input.py`.
+- Constraints such as `Chemistry` (`optimize.py`, `L616`) or `FIX_PLAYERS` (`optimize.py`, `L619`) do not require explicit activation. If there is no need for `Chemistry`, set it to `0` in `input.py (L79)`. Similarly, if no players need fixing, leave `FIX_PLAYERS` empty in `input.py (L12)`.
 
 - The `objective` is set in `optimize.py` (`L622`). The nature of the `objective` can be changed in `input.py` (`L20-21`). Currently the objective is to `minimize` the `total cost`.
 
