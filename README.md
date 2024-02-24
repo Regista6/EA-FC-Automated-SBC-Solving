@@ -2,7 +2,7 @@
 
 ### How does this work? 🚂
 
-This project utilizes [integer programming](https://en.wikipedia.org/wiki/Integer_programming) to solve squad building challenges (SBCs). The optimization problem is solved using [Google CP-SAT solver](https://developers.google.com/optimization/cp/cp_solver). 
+This project utilizes [integer programming](https://en.wikipedia.org/wiki/Integer_programming) to solve squad building challenges (SBCs). The optimization problem is solved using [Google CP-SAT solver](https://developers.google.com/optimization/cp/cp_solver).
 This approach offers extensive customization capabilities, alongside the ability to determine solution optimality.
 
 `The goal is to obtain the squad with the minimum total cost.`
@@ -11,22 +11,22 @@ This approach offers extensive customization capabilities, alongside the ability
 
 - To download the club dataset, use the [extension](https://chrome.google.com/webstore/detail/fut-enhancer/boffdonfioidojlcpmfnkngipappmcoh) (version >= 1.1.0.3).
 
-- The inputs to the different constraints can be found in the `input.py`. Configure the appropriate inputs for each SBC constraint in `input.py` (`L43-77` and `L28-30`) and then navigate to `optimize.py (L577-611)` and uncomment the relevant line based on the SBC requirements. Also don't forget to set the `formation` in `input.py`!
+- The inputs to the different constraints can be found in the `input.py`. Configure the appropriate inputs for each SBC constraint in `input.py` (`L43-77` and `L28-30`) and then navigate to `optimize.py (L581-615)` and uncomment the relevant line based on the SBC requirements. Also don't forget to set the `formation` in `input.py`!
 
-- For example, if the requirement is `Same League Count: Max 5` or `Max 5 Players from the Same League` then set `MAX_NUM_LEAGUE = 5` (`L53` in `input.py`) and then uncomment `model = create_max_league_constraint(df, model, player, map_idx, players_grouped, num_cnts)` (`L585` in `optimize.py`).
+- For example, if the requirement is `Same League Count: Max 5` or `Max 5 Players from the Same League` then set `MAX_NUM_LEAGUE = 5` (`L53` in `input.py`) and then uncomment `model = create_max_league_constraint(df, model, player, map_idx, players_grouped, num_cnts)` (`L589` in `optimize.py`).
 
-- If the requirement is `Nations: Max 2` then set `NUM_UNIQUE_COUNTRY = [2, "Max"]` (`L62` in `input.py`) and then uncomment `model = create_unique_country_constraint(df, model, player, map_idx, players_grouped, num_cnts)` (`L594` in `optimize.py`).
+- If the requirement is `Nations: Max 2` then set `NUM_UNIQUE_COUNTRY = [2, "Max"]` (`L62` in `input.py`) and then uncomment `model = create_unique_country_constraint(df, model, player, map_idx, players_grouped, num_cnts)` (`L598` in `optimize.py`).
 
-- If you are prioritizing duplicates by setting (`L28-L30`) in `input.py` then `model = prioritize_duplicates(df, model, player)` in `optimize.py` (`L611`) should be uncommented.
+- If you are prioritizing duplicates by setting (`L28-L30`) in `input.py` then `model = prioritize_duplicates(df, model, player)` in `optimize.py` (`L615`) should be uncommented.
 
-- If for instance, the SBC wants `at least 3 players from Real Madrid and Arsenal combined` and `at least 2 players from Bayern Munich`, then set 
-`CLUB = [["Real Madrid", "Arsenal"], ["FC Bayern"]]` and `NUM_CLUB = [3, 2]` (`L43-44` in `input.py`) and then uncomment `model = create_club_constraint(df, model, player, map_idx, players_grouped, num_cnts)` (`L577` in `optimize.py`).
+- If for instance, the SBC wants `at least 3 players from Real Madrid and Arsenal combined` and `at least 2 players from Bayern Munich`, then set
+`CLUB = [["Real Madrid", "Arsenal"], ["FC Bayern"]]` and `NUM_CLUB = [3, 2]` (`L43-44` in `input.py`) and then uncomment `model = create_club_constraint(df, model, player, map_idx, players_grouped, num_cnts)` (`L581` in `optimize.py`).
 
-- If the SBC requires at least `6 Rare` and `8 Gold` then set `RARITY_2 = ["Rare", "Gold"]`and `NUM_RARITY_2 = [6, 8]` in `input.py (L71-72)` and then uncomment `model = create_rarity_2_constraint(df, model, player, map_idx, players_grouped, num_cnts)` (`L599` in `optimize.py`).
+- If the SBC requires at least `6 Rare` and `8 Gold` then set `RARITY_2 = ["Rare", "Gold"]`and `NUM_RARITY_2 = [6, 8]` in `input.py (L71-72)` and then uncomment `model = create_rarity_2_constraint(df, model, player, map_idx, players_grouped, num_cnts)` (`L603` in `optimize.py`).
 
-- Constraints such as `Chemistry` (`optimize.py`, `L616`) or `FIX_PLAYERS` (`optimize.py`, `L619`) do not require explicit activation. If there is no need for `Chemistry`, set it to `0` in `input.py (L79)`. Similarly, if no players need fixing, leave `FIX_PLAYERS` empty in `input.py (L12)`.
+- Constraints such as `Chemistry` (`optimize.py`, `L620`) or `FIX_PLAYERS` (`optimize.py`, `L623`) do not require explicit activation. If there is no need for `Chemistry`, set it to `0` in `input.py (L79)`. Similarly, if no players need fixing, leave `FIX_PLAYERS` empty in `input.py (L12)`.
 
-- The `objective` is set in `optimize.py` (`L622`). The nature of the `objective` can be changed in `input.py` (`L20-21`). Currently the objective is to `minimize` the `total cost`.
+- The `objective` is set in `optimize.py` (`L626`). The nature of the `objective` can be changed in `input.py` (`L20-21`). Currently the objective is to `minimize` the `total cost`.
 
 - Additional parameters in `input.py` should be reviewed for more information.
 
@@ -46,7 +46,7 @@ Run `pip3 install -r requirements.txt` to install the required dependencies.
 
 ### Acknowledgement 🙏
 
-Thank you `GregoryWullimann` for making the model creation process [insanely faster](https://github.com/Regista6/EA-FC-24-Automated-SBC-Solving/pull/3). 
+Thank you `GregoryWullimann` for making the model creation process [insanely faster](https://github.com/Regista6/EA-FC-24-Automated-SBC-Solving/pull/3).
 
 Thank you `Jacobi from EasySBC` for helping with the `squad_rating_constraint`.
 

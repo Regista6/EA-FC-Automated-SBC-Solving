@@ -30,8 +30,8 @@ def preprocess_data_2(df: pd.DataFrame):
     df = df[df["Untradeable"] == True]
     df = df[df["IsInActive11"] != True]
     df = df[df["Loans"] == False]
-    # df = df[df["Cost"] != '-- NA --']
-    # df = df[df["Cost"] != '0']
+    df = df[df["Cost"] != '-- NA --']
+    df = df[df["Cost"] != '0']
     df = df[df["Cost"] != 0]
     df['Rarity'] = df['Rarity'].replace('Team of the Week', 'TOTW')
     # Note: The filter on rating is especially useful when there is only a single constraint like Squad Rating: Min XX.
@@ -54,7 +54,7 @@ def preprocess_data_2(df: pd.DataFrame):
     return df
 
 if __name__ == "__main__":
-    dataset = "Frederik FC_24.csv"
+    dataset = "Catamarca FC_24.csv"
     df = pd.read_csv(dataset, index_col = False)
     # df = preprocess_data_1(df)
     df = preprocess_data_2(df)

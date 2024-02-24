@@ -260,7 +260,7 @@ def create_chemistry_constraint(df, model, chem, z_club, z_league, z_nation, pla
                 model.Add(pos[i] == 1)
             if df.at[i, "Rarity"] in ["Icon", "UT Heroes"]:
                 model.Add(chem[i] == 3)
-            elif df.at[i, "Rarity"] in ["Radioactive"]:
+            elif df.at[i, "Rarity"] in ["Radioactive", "FC Versus Ice", "FC Versus Fire"]:
                 model.Add(chem[i] == 2)
             else:
                 sum_expr = z_club[club_dict[p_club]] + z_league[league_dict[p_league]] + z_nation[country_dict[p_nation]]
@@ -310,8 +310,10 @@ def create_chemistry_constraint(df, model, chem, z_club, z_league, z_nation, pla
                 continue
             t_var = model.NewBoolVar(f"t_var_c{i}")
             model.AddMultiplicationEquality(t_var, p, m_pos[p])
-            if df.at[m_idx[p], "Rarity"] == "Radioactive":  # Radioactive cards contribute 2x to club chem.
+            if df.at[m_idx[p], "Rarity"] == "Radioactive": # Radioactive cards contribute 2x to club chem.
                 expr.append(2 * t_var)
+            elif df.at[m_idx[p], "Rarity"] == "FC Versus Ice": # Ice cards contribute 5x to club chem.
+                expr.append(5 * t_var)
             else:
                 expr.append(t_var)
         sum_expr = cp_model.LinearExpr.Sum(expr)
@@ -359,6 +361,8 @@ def create_chemistry_constraint(df, model, chem, z_club, z_league, z_nation, pla
             model.AddMultiplicationEquality(t_var, p, m_pos[p])
             if df.at[m_idx[p], "Rarity"] in ["Icon", "Radioactive"]:  # Icons / Radioactive cards contribute 2x to country chem.
                 expr.append(2 * t_var)
+            elif df.at[m_idx[p], "Rarity"] == "FC Versus Fire": # Fire cards contribute 5x to country chem.
+                expr.append(5 * t_var)
             else:
                 expr.append(t_var)
         sum_expr = cp_model.LinearExpr.Sum(expr)
