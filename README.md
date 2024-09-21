@@ -1,4 +1,4 @@
-## EA FC 24 Automated [SBC](https://fifauteam.com/sbc-football-club-24/) Solving ⚽ [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1KoP-8zvbeh_0IjOIlrTG-u1j_QPP5DNo?usp=sharing)
+## EA FC Automated [SBC](https://fifauteam.com/sbc-football-club-24/) Solving ⚽ [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1KoP-8zvbeh_0IjOIlrTG-u1j_QPP5DNo?usp=sharing)
 
 ### How does this work? 🚂
 
@@ -43,6 +43,14 @@ Run `pip3 install -r requirements.txt` to install the required dependencies.
 - Python 3.9
 
 - pandas and openpyxl
+
+### Other Interesting Open-Source SBC Solvers ⚙️
+
+- https://github.com/ThomasSteere/Auto-SBC
+
+- https://github.com/bartlomiej-niemiec/eafc-sbc-solver
+
+- https://github.com/kosciukiewicz/sbc-solver
 
 ### Acknowledgement 🙏
 
