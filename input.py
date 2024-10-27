@@ -1,6 +1,6 @@
 '''INPUTS'''
 
-FORMATION = "4-2-2-2"
+FORMATION = "4-4-2"
 
 NUM_PLAYERS = 11
 
@@ -43,7 +43,7 @@ CONSIDER_AS_RARE = ["Rare", "TOTW", "Icon", "UT Heroes", "Nike", "UCL Road to th
 CLUB = [["Real Madrid", "Arsenal"], ["FC Bayern"]]
 NUM_CLUB = [3, 2]  # Total players from i^th list >= NUM_CLUB[i]
 
-MAX_NUM_CLUB = 2  # Same Club Count: Max X / Max X Players from the Same Club
+MAX_NUM_CLUB = 5  # Same Club Count: Max X / Max X Players from the Same Club
 MIN_NUM_CLUB = 2  # Same Club Count: Min X / Min X Players from the Same Club
 NUM_UNIQUE_CLUB = [5, "Max"]  # Clubs: Max / Min / Exactly X
 
@@ -52,14 +52,14 @@ NUM_LEAGUE = [11]  # Total players from i^th list >= NUM_LEAGUE[i]
 
 MAX_NUM_LEAGUE = 4  # Same League Count: Max X / Max X Players from the Same League
 MIN_NUM_LEAGUE = 4  # Same League Count: Min X / Min X Players from the Same League
-NUM_UNIQUE_LEAGUE = [4, "Exactly"]  # Leagues: Max / Min / Exactly X
+NUM_UNIQUE_LEAGUE = [5, "Min"]  # Leagues: Max / Min / Exactly X
 
 COUNTRY = [["England", "Spain"], ["Germany"]]
 NUM_COUNTRY = [2, 1] # Total players from i^th list >= NUM_COUNTRY[i]
 
 MAX_NUM_COUNTRY = 3  # Same Nation Count: Max X / Max X Players from the Same Nation
 MIN_NUM_COUNTRY = 5  # Same Nation Count: Min X / Min X Players from the Same Nation
-NUM_UNIQUE_COUNTRY = [5, "Exactly"]  # Nations: Max / Min / Exactly X
+NUM_UNIQUE_COUNTRY = [5, "Min"]  # Nations: Max / Min / Exactly X
 
 RARITY_1 = [['Gold', 'TOTW']]
 NUM_RARITY_1 = [1]  # This is for cases like "Gold TOTW: Min X (0/X)"
@@ -68,15 +68,15 @@ NUM_RARITY_1 = [1]  # This is for cases like "Gold TOTW: Min X (0/X)"
 # Note: Unfortunately several cards like 'TOTW' are listed as 'Special'
 # Note: This is fixed in v1.1.0.3 of the extension to download club datset!
 # Note: Actual Rarity of each card is now shown.
-RARITY_2 = ["Rare", "Gold", "Bronze"]
-NUM_RARITY_2 = [0, 0, 11]  # Total players from i^th Rarity / Color >= NUM_RARITY_2[i]
+RARITY_2 = ["Rare"]
+NUM_RARITY_2 = [2]  # Total players from i^th Rarity / Color >= NUM_RARITY_2[i]
 
 SQUAD_RATING = 80 # Squad Rating: Min XX
 
 MIN_OVERALL = [83]
 NUM_MIN_OVERALL = [1]  # Minimum OVR of XX : Min X
 
-CHEMISTRY = 25  # Squad Total Chemistry Points: Min X
+CHEMISTRY = 31  # Squad Total Chemistry Points: Min X
                 # If there is no constraint on total chemistry, then set this to 0.
 
 CHEM_PER_PLAYER = 0  # Chemistry Points Per Player: Min X

@@ -32,7 +32,7 @@ This approach offers extensive customization capabilities, alongside the ability
 
 - In `main.py`, specify the name of the `club dataset` in `L57`. The dataset is preprocessed in `preprocess_data_2` within `main.py`. Additional filters can be added in a manner similar to the existing ones.
 
-- Currently the inputs are set to solve [this](https://www.futbin.com/squad-building-challenges/ALL/38/fiendish) SBC challenge. The final list of players is written into the file `output.xlsx`. To execute the program, simply run `py main.py` after installing the required dependencies.
+- Currently the inputs are set to solve [this](https://www.futbin.com/25/squad-building-challenge/ea/220/Total%20Rush%20Challenge%206) SBC challenge. The final list of players is written into the file `output.xlsx`. To execute the program, simply run `py main.py` after installing the required dependencies. Note: This seems to be a very hard SBC and so had to enable the filter on rating in `main.py (L41)`.
 
 ### Dependencies 🖥️
 
@@ -64,8 +64,10 @@ Thank you `fifagamer#1515` and `Frederik` for providing your club datasets (`Rea
 
 Thank you `ckalgos` for creating the extension to download club dataset.
 
+Thank you `drRobertDev` for providing the dataset `Fc25Players.csv`.
+
 Thank you to everyone who have opened issues on the repo and provided their feedback.
 
 Thank you to all the folks who commented on the [reddit post](https://www.reddit.com/r/fut/comments/15hxy2p/open_source_sbc_solver/).
 
-Thank you [FutDB](https://futdb.app) for providing the API which allowed me to test the solver originally on 10k players (`input.csv`)
+Thank you FutDB for providing the API which allowed me to test the solver originally on 10k players (`input.csv`)

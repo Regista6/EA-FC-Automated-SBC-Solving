@@ -579,28 +579,28 @@ def SBC(df):
 
     '''Club'''
     # model = create_club_constraint(df, model, player, map_idx, players_grouped, num_cnts)
-    # model = create_max_club_constraint(df, model, player, map_idx, players_grouped, num_cnts)
+    model = create_max_club_constraint(df, model, player, map_idx, players_grouped, num_cnts)
     # model = create_min_club_constraint(df, model, player, map_idx, players_grouped, num_cnts)
     # model = create_unique_club_constraint(df, model, player, club, map_idx, players_grouped, num_cnts)
     '''Club'''
 
     '''League'''
     # model = create_league_constraint(df, model, player, map_idx, players_grouped, num_cnts)
-    model = create_max_league_constraint(df, model, player, map_idx, players_grouped, num_cnts)
+    # model = create_max_league_constraint(df, model, player, map_idx, players_grouped, num_cnts)
     # model = create_min_league_constraint(df, model, player, map_idx, players_grouped, num_cnts)
     model = create_unique_league_constraint(df, model, player, league, map_idx, players_grouped, num_cnts)
     '''League'''
 
     '''Country'''
     # model = create_country_constraint(df, model, player, map_idx, players_grouped, num_cnts)
-    model = create_max_country_constraint(df, model, player, map_idx, players_grouped, num_cnts)
+    # model = create_max_country_constraint(df, model, player, map_idx, players_grouped, num_cnts)
     # model = create_min_country_constraint(df, model, player, map_idx, players_grouped, num_cnts)
     model = create_unique_country_constraint(df, model, player, country, map_idx, players_grouped, num_cnts)
     '''Country'''
 
     '''Rarity'''
     # model = create_rarity_1_constraint(df, model, player, map_idx, players_grouped, num_cnts)
-    # model = create_rarity_2_constraint(df, model, player, map_idx, players_grouped, num_cnts)
+    model = create_rarity_2_constraint(df, model, player, map_idx, players_grouped, num_cnts)
     '''Rarity'''
 
     '''Squad Rating'''
@@ -640,7 +640,7 @@ def SBC(df):
     # Specify the number of parallel workers (i.e. threads) to use during search.
     # This should usually be lower than your number of available cpus + hyperthread in your machine.
     # Setting this to 16 or 24 can help if the solver is slow in improving the bound.
-    solver.parameters.num_search_workers = 8
+    solver.parameters.num_search_workers = 16
     # Stop the search when the gap between the best feasible objective (O) and
     # our best objective bound (B) is smaller than a limit.
     # Relative: abs(O - B) / max(1, abs(O)).
